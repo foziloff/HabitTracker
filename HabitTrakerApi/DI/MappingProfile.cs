@@ -9,5 +9,8 @@ public class MappingProfile : Profile
     public MappingProfile()
     {
         CreateMap<Habit, HabitDto>();
+        
+        CreateMap<User, UserDto>();
     }
+
 }

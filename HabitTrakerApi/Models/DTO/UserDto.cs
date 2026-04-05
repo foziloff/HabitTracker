@@ -1,14 +1,11 @@
-using HabitTrakerApi.Models.Enums;
+using HabitTrakerApi.Models.Data;
 
-namespace HabitTrakerApi.Models.Data;
+namespace HabitTrakerApi.Models.DTO;
 
-public class User : EntityBase
+public class UserDto
 {
     public string Login { get; set; }
     public string Password { get; set; }
     public string? Email { get; set; }
-
-    public UserRole Role { get; set; } = UserRole.User;
-
     public List<Habit> Habits { get; set; } = new List<Habit>();
 }

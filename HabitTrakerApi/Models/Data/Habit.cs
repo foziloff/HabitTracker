@@ -10,6 +10,7 @@ public class Habit : EntityBase
     public HabitType Type { get; set; }
 
     public int UserId { get; set; }
+    public User User { get; set; }
 
     public bool IsCompleted { get; set; }
 }

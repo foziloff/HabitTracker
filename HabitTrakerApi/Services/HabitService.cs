@@ -1,60 +1,36 @@
 using HabitTrakerApi.Models.Data;
-using HabitTrakerApi.Models.DTO;
-using AutoMapper;
 using HabitTrakerApi.Repositories;
-
 
 namespace HabitTrakerApi.Services;
 
-public interface IHabitService
+interface IHabitService
 {
-    void Create(CreateHabitDto dto, string token);
-    void Complete(int habitId, string token);
-    List<HabitDto> GetMy(string token);
+   List<Habit> GetMyHabits( string login, string password);
+   string AddHabit(Habit habit, string  login, string password);
+   string DeleteHabit(Habit habit, string  login, string password);
 }
 
 public class HabitService : IHabitService
 {
-    private readonly IHabitRepository _repo;
-    private readonly IAuthService _auth;
-    private readonly IMapper _mapper;
+   private IUserRepository _repository;
 
-    public HabitService(IHabitRepository repo, IAuthService auth, IMapper mapper)
-    {
-        _repo = repo;
-        _auth = auth;
-        _mapper = mapper;
-    }
+   public HabitService(IUserRepository repository)
+   {
+      _repository = repository;
+   }
+   public List<Habit> GetMyHabits(string login, string password)
+   {
+      return _repository.GetListMyHabits( login, password);
+   }
 
-    public void Create(CreateHabitDto dto, string token)
-    {
-        var user = _auth.GetCurrent(token);
+   public string AddHabit(Habit habit, string login, string password)
+   {
+     return _repository.AddHabits(habit, login, password);
+   }
 
-        var habit = new Habit
-        {
-            Title = dto.Title,
-            Type = dto.Type,
-            UserId = user.id
-        };
-
-        _repo.Add(habit);
-    }
-
-    public void Complete(int habitId, string token)
-    {
-        var user = _auth.GetCurrent(token);
-
-        var habit = _repo.GetById(habitId);
-
-        if (habit == null || habit.UserId != user.id)
-            throw new Exception("Access denied");
-
-        habit.IsCompleted = true;
-    }
-
-    public List<HabitDto> GetMy(string token)
-    {
-        var user = _auth.GetCurrent(token);
-        return _mapper.Map<List<HabitDto>>(_repo.GetByUserId(user.id));
-    }
+   public string DeleteHabit(Habit habit, string login, string password)
+   {
+     return _repository.DeleteMyHabit(login, password, habit);
+     
+   }
 }
