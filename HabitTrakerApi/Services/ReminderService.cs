@@ -1,6 +1,6 @@
 
 using HabitTrakerApi.Common.Exeptions;
-using HabitTrakerApi.DTOs.Reminders;
+using HabitTrakerApi.DTO.Reminders;
 using HabitTrakerApi.Mappers;
 using HabitTrakerApi.Models.Data;
 using HabitTrakerApi.Repositories.Interfaces;

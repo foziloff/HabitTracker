@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace HabitTrakerApi.DTOs.Categories;
+namespace HabitTrakerApi.DTO.Categories;
 
 public class CategoryDto
 {

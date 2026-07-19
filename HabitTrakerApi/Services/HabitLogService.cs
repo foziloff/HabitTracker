@@ -1,5 +1,5 @@
 using HabitTrakerApi.Common.Exeptions;
-using HabitTrakerApi.DTOs.HabitLogs;
+using HabitTrakerApi.DTO.HabitLogs;
 using HabitTrakerApi.Mappers;
 using HabitTrakerApi.Models.Data;
 using HabitTrakerApi.Models.Enums;

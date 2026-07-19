@@ -1,6 +1,6 @@
 using HabitTrakerApi.Common;
 using HabitTrakerApi.Common.Exeptions;
-using HabitTrakerApi.DTOs.Categories;
+using HabitTrakerApi.DTO.Categories;
 using HabitTrakerApi.Mappers;
 using HabitTrakerApi.Repositories.Interfaces;
 using HabitTrakerApi.Services.Interfaces;

@@ -1,4 +1,4 @@
-using HabitTrakerApi.DTOs.Users;
+using HabitTrakerApi.DTO.Users;
 using HabitTrakerApi.Models.Data;
 
 namespace HabitTrakerApi.Mappers;

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using HabitTrakerApi.DTOs.Users;
+using HabitTrakerApi.DTO.Users;
 
-namespace HabitTrakerApi.DTOs.Auth;
+namespace HabitTrakerApi.DTO.Auth;
 
 public class RegisterDto
 {
@@ -13,20 +13,4 @@ public class RegisterDto
 
     [Required, MinLength(6), MaxLength(100)]
     public string Password { get; set; } = null!;
-}
-
-public class LoginDto
-{
-    [Required]
-    public string Login { get; set; } = null!;
-
-    [Required]
-    public string Password { get; set; } = null!;
-}
-
-public class AuthResponseDto
-{
-    public string Token { get; set; } = null!;
-    public DateTime ExpiresAt { get; set; }
-    public UserDto User { get; set; } = null!;
 }

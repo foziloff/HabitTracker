@@ -1,4 +1,4 @@
-using HabitTrakerApi.DTOs.Habits;
+using HabitTrakerApi.DTO.Habits;
 using HabitTrakerApi.Models.Data;
 
 namespace HabitTrakerApi.Repositories.Interfaces;

@@ -1,5 +1,5 @@
 using HabitTrakerApi.Common;
-using HabitTrakerApi.DTOs.Habits;
+using HabitTrakerApi.DTO.Habits;
 using HabitTrakerApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

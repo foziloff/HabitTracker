@@ -1,10 +1,10 @@
 using HabitTrakerApi.Common;
-using HabitTrakerApi.DTOs.Auth;
-using HabitTrakerApi.DTOs.Categories;
-using HabitTrakerApi.DTOs.Habits;
-using HabitTrakerApi.DTOs.HabitLogs;
-using HabitTrakerApi.DTOs.Reminders;
-using HabitTrakerApi.DTOs.Users;
+using HabitTrakerApi.DTO.Auth;
+using HabitTrakerApi.DTO.Categories;
+using HabitTrakerApi.DTO.Habits;
+using HabitTrakerApi.DTO.HabitLogs;
+using HabitTrakerApi.DTO.Reminders;
+using HabitTrakerApi.DTO.Users;
 using HabitTrakerApi.Models.Enums;
 
 namespace HabitTrakerApi.Services.Interfaces;

@@ -1,6 +1,6 @@
 using HabitTrakerApi.Models.Data;
 using HabitTrakerApi.DbContext;
-using HabitTrakerApi.DTOs.Habits;
+using HabitTrakerApi.DTO.Habits;
 using HabitTrakerApi.Models.Data;
 using HabitTrakerApi.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;

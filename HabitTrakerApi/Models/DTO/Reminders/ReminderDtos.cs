@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace HabitTrakerApi.DTOs.Reminders;
+namespace HabitTrakerApi.DTO.Reminders;
 
 public class ReminderDto
 {

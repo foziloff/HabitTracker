@@ -1,4 +1,4 @@
-using HabitTrakerApi.DTOs.Auth;
+using HabitTrakerApi.DTO.Auth;
 using HabitTrakerApi.Services;
 using HabitTrakerApi.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;

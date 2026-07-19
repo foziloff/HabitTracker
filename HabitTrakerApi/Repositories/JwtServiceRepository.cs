@@ -1,7 +1,6 @@
 using HabitTrakerApi.DbContext;
-using HabitTrakerApi.DTOs.Auth;
+using HabitTrakerApi.DTO.Auth;
 using HabitTrakerApi.Models.Data;
-using HabitTrakerApi.Models.DTO;
 
 namespace HabitTrakerApi.Repositories;
 

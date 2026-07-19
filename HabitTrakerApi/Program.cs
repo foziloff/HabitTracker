@@ -1,10 +1,16 @@
 using FluentValidation;
+using HabitTrakerApi.Common;
 using HabitTrakerApi.DbContext;
 using HabitTrakerApi.FluentValidation;
 using HabitTrakerApi.Repositories;
+using HabitTrakerApi.Repositories.Interfaces;
 using HabitTrakerApi.Services;
+using HabitTrakerApi.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 
@@ -16,23 +22,29 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddLogging();
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDbContext<AppDbContext>
-    ( o=> o.UseSqlServer
-        (builder.Configuration.GetConnectionString("DefaultConnection")));
-
- Log.Logger = new LoggerConfiguration()
+Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug() // Уровень детализации
             .WriteTo.Console()    // Дублировать в консоль
             .WriteTo.File("logs/myapp.txt", rollingInterval: RollingInterval.Day) 
             .CreateLogger();
 
+builder.Services.AddScoped<ICategoryRepository , CategoryRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IHabitLogRepository , HabitLogRepository>();
+builder.Services.AddScoped<IHabitRepository, HabitRepository>();
+builder.Services.AddScoped<IJwtServiceRepository, JwtServiceRepository>();
+builder.Services.AddScoped <IReminderRepository, ReminderRepository>();
+builder.Services.AddScoped<IAuthService,AuthServiceJwt >();
+builder.Services.AddScoped<ICategoryService ,  CategoryService>();
+builder.Services.AddScoped<IHabitService, HabitService>();
+builder.Services.AddScoped<IHabitLogService, HabitLogService>();
+builder.Services.AddScoped<IReminderService, ReminderService>();
+builder.Services.AddScoped<IUserService,UserService>();
 
- builder.Services.AddScoped<IHabitTrackerRepository,HabitTrackerRepository>();
- builder.Services.AddScoped<IServiceHabits, ServiceHabit>();
- builder.Services.AddScoped<IAuthService, AuthServiceJwt>();
- builder.Services.AddScoped<IJwtServiceRepository, JwtServiceRepository>();
- 
+
 using var loggerFactory = LoggerFactory.Create(builder =>
 {
             builder.AddSerilog(); 
@@ -41,7 +53,38 @@ using var loggerFactory = LoggerFactory.Create(builder =>
         ILogger logger = loggerFactory.CreateLogger<Program>();
 
 builder.Services.AddValidatorsFromAssemblyContaining<UserValidation>();
- logger.LogInformation("APi Запущено!");
+// JWT Authentication configuration
+var jwtKey = builder.Configuration["Jwt:key"];
+if (string.IsNullOrEmpty(jwtKey))
+{
+    logger.LogWarning("JWT key is not configured (Jwt:key). Authentication will not validate tokens correctly.");
+}
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey ?? string.Empty)),
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+
+builder.Services.AddAuthorization();
+
+// Current user accessor
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+
+logger.LogInformation("APi Запущено!");
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -50,5 +93,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(); 
 }
 //app.UseMiddleware<GlobalExtentionHandler>();
+// Authentication & Authorization middleware
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 app.Run();

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace HabitTrakerApi.DTOs.HabitLogs;
+namespace HabitTrakerApi.DTO.HabitLogs;
 
 public class HabitLogDto
 {

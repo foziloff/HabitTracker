@@ -1,4 +1,4 @@
-using HabitTrakerApi.DTOs.Reminders;
+using HabitTrakerApi.DTO.Reminders;
 using HabitTrakerApi.Models.Data;
 
 namespace HabitTrakerApi.Mappers;

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using HabitTrakerApi.Models.Enums;
 
-namespace HabitTrakerApi.DTOs.Habits;
+namespace HabitTrakerApi.DTO.Habits;
 
 public class HabitDto
 {

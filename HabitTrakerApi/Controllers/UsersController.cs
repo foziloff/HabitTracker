@@ -1,5 +1,5 @@
 using HabitTrakerApi.Common;
-using HabitTrakerApi.DTOs.Users;
+using HabitTrakerApi.DTO.Users;
 using HabitTrakerApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +14,7 @@ public class UsersController : ControllerBase
     private readonly IUserService _userService;
     private readonly ICurrentUserService _currentUser;
 
+
     public UsersController(IUserService userService, ICurrentUserService currentUser)
     {
         _userService = userService;
@@ -27,6 +28,8 @@ public class UsersController : ControllerBase
         return Ok(await _userService.GetProfileAsync(_currentUser.UserId));
     }
 
+
+    
     [HttpPut("me")]
     public async Task<IActionResult> UpdateMe([FromBody] UpdateUserDto dto)
     {
