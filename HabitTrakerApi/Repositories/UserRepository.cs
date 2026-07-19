@@ -1,90 +1,37 @@
+using HabitTrakerApi.DbContext;
 using HabitTrakerApi.Models.Data;
-
+using HabitTrakerApi.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace HabitTrakerApi.Repositories;
 
-public interface IUserRepository
+public class UserRepository : GenericRepository<User>, IUserRepository
 {
-     List<User> GetListUsers();
-     User? GetUser(string  login, string password);
-     
-     string Adduser(User user);
-     string AddHabits(Habit habit, string login, string password);
-     
-     List<Habit> GetListMyHabits(string login , string password);
-     string DeleteMyHabit(string login, string password , Habit habit);
-}
-public class UserRepository : IUserRepository
-{
-     public List<User> Users;
-     public ILogger<UserRepository> _logger;
+    public UserRepository(AppDbContext context) : base(context) { }
 
-     public UserRepository( ILogger<UserRepository> logger)
-     {
-          User user = new User()
-          {
-               Login = "admin",
-               Password = "123456",
-               Email = "admin@gmail.com",
-          };
-          Users.Add(user);
-          _logger = logger;
-     }
-     public List<User> GetListUsers()
-     {
-          return Users;
-     }
+    public async Task<User?> GetByLoginAsync(string login)
+    {
+        return await DbSet.Include(u => u.Habits)
+            .FirstOrDefaultAsync(u => u.Login.ToLower() == login.ToLower());
+    }
 
-     public User? GetUser(string login, string password)
-     { 
-          return Users.FirstOrDefault( u => u.Login == login && u.Password == password );
-     }
+    public async Task<User?> GetByEmailAsync(string email)
+    {
+        return await DbSet.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
+    }
 
-     public string Adduser(User user)
-     {
-          Users.Add(user);
-          return "пользователь успешно добавлен в базу";
-     }
+    public async Task<bool> ExistsByLoginOrEmailAsync(string login, string email)
+    {
+        return await DbSet.AnyAsync(u =>
+            u.Login.ToLower() == login.ToLower() ||
+            u.Email.ToLower() == email.ToLower());
+    }
 
-     public string AddHabits(Habit habit, string login, string password)
-     {
-          User user = Users.FirstOrDefault(u => u.Login == login && u.Password == password);
-          if (user == null)
-               return "такой пользователь не найден! ";
-          
-          user.Habits.Add(habit);
+    public async Task<bool> AddUserAsync(User user)
+    {
 
-
-          return "привычка добавлена!";
-     }
-
-     public List<Habit> GetListMyHabits(string login, string password)
-     {
-          try
-          {
-               User? user = Users.FirstOrDefault(u => u.Login == login && u.Password == password );
-               if (user == null)
-                    throw new Exception("такой пользователь не найден! ");
-         
-               return user.Habits;
-          }
-          catch (Exception e)
-          {
-               Console.WriteLine(e);
-               _logger.LogInformation($"Ощибка {e}");
-               throw;
-          }
-         
-     }
-
-     public string DeleteMyHabit(string login, string password, Habit habit)
-     {
-       User?  user=    Users.FirstOrDefault(u => u.Login == login && u.Password == password);
-       if (user == null)
-            return "такой пользователь не существует";
-
-       user.Habits.Remove(habit);
-       
-       return "привычка успешно удалена!";
-     }
+      var newUser = await Context.Users.AddAsync(user);
+      await Context.SaveChangesAsync();
+      return true;
+    }
 }
