@@ -11,6 +11,7 @@ using Serilog;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using HabitTrakerApi.Data;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 
@@ -86,6 +87,12 @@ builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
 logger.LogInformation("APi Запущено!");
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await DbSeeder.SeedAsync(context);
+}
 
 if (app.Environment.IsDevelopment())
 {

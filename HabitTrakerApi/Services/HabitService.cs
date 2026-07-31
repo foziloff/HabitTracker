@@ -1,12 +1,13 @@
-using HabitTrakerApi;
+using HabitTrakerApi.Analytics;
+using HabitTrakerApi.Analytics.Queries;
 using HabitTrakerApi.Common;
 using HabitTrakerApi.Common.Exeptions;
 using HabitTrakerApi.DTO.Habits;
 using HabitTrakerApi.Mappers;
 using HabitTrakerApi.Models.Data;
-using HabitTrakerApi.Models.Enums;
 using HabitTrakerApi.Repositories.Interfaces;
 using HabitTrakerApi.Services.Interfaces;
+using MediatR;
 
 namespace HabitTrakerApi.Services;
 
@@ -14,24 +15,25 @@ public class HabitService : IHabitService
 {
     private readonly IHabitRepository _habitRepository;
     private readonly ICategoryRepository _categoryRepository;
+    private readonly IMediator _mediator;
 
-    public HabitService(IHabitRepository habitRepository, ICategoryRepository categoryRepository)
+    public HabitService(IHabitRepository habitRepository, ICategoryRepository categoryRepository, IMediator mediator)
     {
         _habitRepository = habitRepository;
         _categoryRepository = categoryRepository;
+        _mediator = mediator;
     }
 
     public async Task<PagedResult<HabitDto>> GetAllAsync(int userId, HabitQueryParams query)
     {
         var (items, totalCount) = await _habitRepository.GetFilteredAsync(userId, query);
 
-        var dtos = items.Select(h =>
+        var dtos = new List<HabitDto>();
+        foreach (var habit in items)
         {
-            var streak = HabitAnalyticsHelper.CalculateCurrentStreak(h, h.Logs.ToList());
-            var longest = HabitAnalyticsHelper.CalculateLongestStreak(h, h.Logs.ToList());
-            var rate = HabitAnalyticsHelper.CalculateCompletionRate(h, h.Logs.ToList());
-            return h.ToDto(streak, longest, rate);
-        }).ToList();
+            var analytics = await _mediator.Send(new GetHabitAnalyticsQuery(habit));
+            dtos.Add(habit.ToDto(analytics.CurrentStreak, analytics.LongestStreak, analytics.CompletionRate));
+        }
 
         return new PagedResult<HabitDto>
         {
@@ -46,12 +48,8 @@ public class HabitService : IHabitService
     {
         var habit = await GetOwnedHabitAsync(habitId, userId, isAdmin);
 
-        var logs = habit.Logs.ToList();
-        var streak = HabitAnalyticsHelper.CalculateCurrentStreak(habit, logs);
-        var longest = HabitAnalyticsHelper.CalculateLongestStreak(habit, logs);
-        var rate = HabitAnalyticsHelper.CalculateCompletionRate(habit, logs);
-
-        return habit.ToDto(streak, longest, rate);
+        var analytics = await _mediator.Send(new GetHabitAnalyticsQuery(habit));
+        return habit.ToDto(analytics.CurrentStreak, analytics.LongestStreak, analytics.CompletionRate);
     }
 
     public async Task<HabitDto> CreateAsync(int userId, CreateHabitDto dto)
@@ -83,12 +81,8 @@ public class HabitService : IHabitService
         _habitRepository.Update(habit);
         await _habitRepository.SaveChangesAsync();
 
-        var logs = habit.Logs.ToList();
-        var streak = HabitAnalyticsHelper.CalculateCurrentStreak(habit, logs);
-        var longest = HabitAnalyticsHelper.CalculateLongestStreak(habit, logs);
-        var rate = HabitAnalyticsHelper.CalculateCompletionRate(habit, logs);
-
-        return habit.ToDto(streak, longest, rate);
+        var analytics = await _mediator.Send(new GetHabitAnalyticsQuery(habit));
+        return habit.ToDto(analytics.CurrentStreak, analytics.LongestStreak, analytics.CompletionRate);
     }
 
     public async Task<HabitDto> UpdateStatusAsync(int habitId, int userId, bool isAdmin, UpdateHabitStatusDto dto)
@@ -115,20 +109,21 @@ public class HabitService : IHabitService
         var habit = await GetOwnedHabitAsync(habitId, userId, isAdmin);
         var logs = habit.Logs.ToList();
 
+        var analytics = await _mediator.Send(new GetHabitAnalyticsQuery(habit));
+
         return new HabitStatsDto
         {
             HabitId = habit.Id,
             Title = habit.Title,
             TotalLogs = logs.Count,
             TotalValue = logs.Sum(l => l.Value),
-            CurrentStreak = HabitAnalyticsHelper.CalculateCurrentStreak(habit, logs),
-            LongestStreak = HabitAnalyticsHelper.CalculateLongestStreak(habit, logs),
-            CompletionRate = HabitAnalyticsHelper.CalculateCompletionRate(habit, logs),
+            CurrentStreak = analytics.CurrentStreak,
+            LongestStreak = analytics.LongestStreak,
+            CompletionRate = analytics.CompletionRate,
             LastDoneDate = logs.OrderByDescending(l => l.DoneDate).FirstOrDefault()?.DoneDate
         };
     }
 
-    // Общая проверка владения привычкой: только сам владелец либо Admin
     private async Task<Habit> GetOwnedHabitAsync(int habitId, int userId, bool isAdmin)
     {
         var habit = await _habitRepository.GetByIdWithDetailsAsync(habitId)
