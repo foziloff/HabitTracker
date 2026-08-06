@@ -1,13 +1,12 @@
 using HabitTrakerApi.Models.Data;
 using HabitTrakerApi.DbContext;
 using HabitTrakerApi.DTO.Habits;
-using HabitTrakerApi.Models.Data;
 using HabitTrakerApi.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace HabitTrakerApi.Repositories;
 
-public class HabitRepository : GenericRepository<Habit>, IHabitRepository
+public class HabitRepository : GenericRepository<Habit>, IGenericRepository<Habit>, IHabitRepository
 {
     public HabitRepository(AppDbContext context) : base(context) { }
 

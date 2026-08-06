@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HabitTrakerApi.Repositories;
 
-public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
+public class CategoryRepository : GenericRepository<Category>, IGenericRepository<Category>, ICategoryRepository
 {
     public CategoryRepository(AppDbContext context) : base(context) { }
 

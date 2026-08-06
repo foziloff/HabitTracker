@@ -1,17 +1,18 @@
 using FluentValidation;
 using HabitTrakerApi.Common;
+using HabitTrakerApi.Data;
 using HabitTrakerApi.DbContext;
 using HabitTrakerApi.FluentValidation;
 using HabitTrakerApi.Repositories;
 using HabitTrakerApi.Repositories.Interfaces;
 using HabitTrakerApi.Services;
+using HabitTrakerApi.Services.BackraundServices;
 using HabitTrakerApi.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using Serilog;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System.Text;
-using HabitTrakerApi.Data;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 
@@ -23,6 +24,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddLogging();
 
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -31,7 +33,9 @@ Log.Logger = new LoggerConfiguration()
             .WriteTo.Console()    // Дублировать в консоль
             .WriteTo.File("logs/myapp.txt", rollingInterval: RollingInterval.Day) 
             .CreateLogger();
+builder.Services.AddHostedService<TelegramService>();
 
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 builder.Services.AddScoped<ICategoryRepository , CategoryRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IHabitLogRepository , HabitLogRepository>();
@@ -44,6 +48,7 @@ builder.Services.AddScoped<IHabitService, HabitService>();
 builder.Services.AddScoped<IHabitLogService, HabitLogService>();
 builder.Services.AddScoped<IReminderService, ReminderService>();
 builder.Services.AddScoped<IUserService,UserService>();
+
 
 
 using var loggerFactory = LoggerFactory.Create(builder =>
@@ -94,10 +99,11 @@ using (var scope = app.Services.CreateScope())
     await DbSeeder.SeedAsync(context);
 }
 
+
+app.UseSwagger();
+app.UseSwaggerUI();
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger(); 
-    app.UseSwaggerUI(); 
 }
 //app.UseMiddleware<GlobalExtentionHandler>();
 // Authentication & Authorization middleware

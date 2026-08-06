@@ -404,5 +404,8 @@ C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\refint\
 C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\HabitTrakerApi.pdb
 C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\HabitTrakerApi.genruntimeconfig.cache
 C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\ref\HabitTrakerApi.dll
-C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\bin\Debug\net10.0\MediatR.dll
+C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\bin\Debug\net10.0\MediatR.Contracts.dll
+C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\bin\Debug\net10.0\Telegram.Bot.dll
+C:\Users\alisher.f\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

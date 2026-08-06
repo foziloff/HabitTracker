@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HabitTrakerApi.Repositories;
 
-public class ReminderRepository : BaseRepository<Reminder>, IReminderRepository
+public class ReminderRepository : GenericRepository<Reminder>, IGenericRepository<Reminder>, IReminderRepository
 {
     public ReminderRepository(AppDbContext context) : base(context) { }
 

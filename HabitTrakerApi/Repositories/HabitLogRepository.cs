@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HabitTrakerApi.Repositories;
 
-public class HabitLogRepository : GenericRepository<HabitLog>, IHabitLogRepository
+public class HabitLogRepository : GenericRepository<HabitLog>, IGenericRepository<HabitLog>, IHabitLogRepository
 {
     public HabitLogRepository(AppDbContext context) : base(context) { }
 
