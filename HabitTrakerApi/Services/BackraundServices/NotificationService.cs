@@ -1,25 +1,29 @@
-﻿using HabitTrakerApi.Data;
+using HabitTrakerApi.Data;
 using HabitTrakerApi.DbContext;
+using HabitTrakerApi.Messaging.Events;
 using HabitTrakerApi.Models.Data;
 using HabitTrakerApi.Models.Enums;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
 namespace HabitTrakerApi.Services.BackraundServices
 {
     public class NotificationService : BackgroundService
     {
-        private readonly TelegramService _telegramService;
+        private readonly IPublishEndpoint _publishEndpoint;
         private readonly IServiceScopeFactory _scopeFactory;
         private readonly ILogger<NotificationService> _logger;
 
         private static readonly TimeSpan CheckInterval = TimeSpan.FromMinutes(1);
 
+        // Раньше здесь был TelegramService напрямую — теперь его нет, вместо него IPublishEndpoint.
+        // Кто реально шлёт сообщение — TelegramNotificationConsumer (Messaging/Consumers).
         public NotificationService(
-            TelegramService telegramService,
+            IPublishEndpoint publishEndpoint,
             IServiceScopeFactory scopeFactory,
             ILogger<NotificationService> logger)
         {
-            _telegramService = telegramService;
+            _publishEndpoint = publishEndpoint;
             _scopeFactory = scopeFactory;
             _logger = logger;
         }
@@ -52,7 +56,6 @@ namespace HabitTrakerApi.Services.BackraundServices
             var nowDateTime = DateTime.Now;
             var now = TimeOnly.FromDateTime(nowDateTime);
 
-            // Время у напоминания совпало — это общий фильтр для всех типов привычек.
             var remindersAtThisTime = await db.Reminders
                 .Include(r => r.Habit)
                     .ThenInclude(h => h.User)
@@ -63,7 +66,6 @@ namespace HabitTrakerApi.Services.BackraundServices
                             && r.Habit.User.ChatId != null)
                 .ToListAsync(stoppingToken);
 
-            
             var dueReminders = remindersAtThisTime
                 .Where(r => IsDueToday(r.Habit, nowDateTime))
                 .ToList();
@@ -72,19 +74,17 @@ namespace HabitTrakerApi.Services.BackraundServices
             {
                 var habit = reminder.Habit;
                 var chatId = habit.User.ChatId!.Value;
-
                 var text = $"⏰ Пора выполнить привычку «{habit.Title}» ({GetTypeLabel(habit.Type)})";
 
-                await _telegramService.SendMessageAsync(chatId, text);
+                // Раньше: await _telegramService.SendMessageAsync(chatId, text);
+                // Теперь: публикуем событие, доставку берёт на себя TelegramNotificationConsumer.
+                await _publishEndpoint.Publish(new HabitReminderDueEvent { ChatId = chatId, Text = text }, stoppingToken);
             }
 
             if (dueReminders.Count > 0)
-                _logger.LogInformation("Отправлено {Count} уведомлений на {Time:HH:mm}", dueReminders.Count, now);
+                _logger.LogInformation("Опубликовано {Count} событий на {Time:HH:mm}", dueReminders.Count, now);
         }
 
-        // Daily — каждый день. Weekly — только в тот же день недели, когда привычка создана.
-        // Monthly — только в тот же день месяца (с поправкой на короткие месяцы). Disposable —
-        // каждый день, пока привычка не выполнена и не переведена в Completed/Archived вручную.
         private static bool IsDueToday(Habit habit, DateTime now)
         {
             return habit.Type switch

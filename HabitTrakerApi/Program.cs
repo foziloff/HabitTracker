@@ -13,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System.Text;
+using HabitTrakerApi.Messaging.Consumers;
+using MassTransit;
 
 // 1. НАСТРОЙКА ЛОГГЕРА (Serilog) ДО СТАРТА ПРИЛОЖЕНИЯ
 Log.Logger = new LoggerConfiguration()
@@ -61,6 +63,16 @@ try
     builder.Services.AddScoped<IJwtServiceRepository, JwtServiceRepository>();
     builder.Services.AddScoped<IReminderRepository, ReminderRepository>();
 
+    builder.Services.AddMassTransit(x =>
+    {
+        x.AddConsumer<TelegramNotificationConsumer>();
+
+        // In-memory шина — без RabbitMQ и прочей инфраструктуры. Живёт внутри процесса.
+        x.UsingInMemory((context, cfg) =>
+        {
+            cfg.ConfigureEndpoints(context);
+        });
+    });
     // Регистрация бизнес-сервисов (Business Logic Layer)
     builder.Services.AddScoped<IAuthService, AuthServiceJwt>();
     builder.Services.AddScoped<ICategoryService, CategoryService>();

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "K3x7aOf7zHQ=",
+  "dgSpecHash": "lHHt1bKryeI=",
   "success": true,
   "projectFilePath": "C:\\Users\\ITService\\Desktop\\HabitTracker\\HabitTrakerApi\\HabitTrakerApi.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\ITService\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
     "C:\\Users\\ITService\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "C:\\Users\\ITService\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\ITService\\.nuget\\packages\\masstransit\\9.2.0\\masstransit.9.2.0.nupkg.sha512",
+    "C:\\Users\\ITService\\.nuget\\packages\\masstransit.abstractions\\9.2.0\\masstransit.abstractions.9.2.0.nupkg.sha512",
     "C:\\Users\\ITService\\.nuget\\packages\\mediatr\\14.2.0\\mediatr.14.2.0.nupkg.sha512",
     "C:\\Users\\ITService\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\ITService\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.10\\microsoft.aspnetcore.authentication.jwtbearer.10.0.10.nupkg.sha512",
