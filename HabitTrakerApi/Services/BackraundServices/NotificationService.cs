@@ -1,4 +1,3 @@
-using HabitTrakerApi.Data;
 using HabitTrakerApi.DbContext;
 using HabitTrakerApi.Messaging.Events;
 using HabitTrakerApi.Models.Data;
@@ -16,8 +15,6 @@ namespace HabitTrakerApi.Services.BackraundServices
 
         private static readonly TimeSpan CheckInterval = TimeSpan.FromMinutes(1);
 
-        // Раньше здесь был TelegramService напрямую — теперь его нет, вместо него IPublishEndpoint.
-        // Кто реально шлёт сообщение — TelegramNotificationConsumer (Messaging/Consumers).
         public NotificationService(
             IPublishEndpoint publishEndpoint,
             IServiceScopeFactory scopeFactory,
@@ -49,8 +46,6 @@ namespace HabitTrakerApi.Services.BackraundServices
         private async Task CheckHabitsAndNotifyAsync(CancellationToken stoppingToken)
         {
             using var scope = _scopeFactory.CreateScope();
-
-            // ВАЖНО: если ваш DbContext называется иначе, чем AppDbContext — замените имя здесь.
             var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
             var nowDateTime = DateTime.Now;
@@ -76,8 +71,6 @@ namespace HabitTrakerApi.Services.BackraundServices
                 var chatId = habit.User.ChatId!.Value;
                 var text = $"⏰ Пора выполнить привычку «{habit.Title}» ({GetTypeLabel(habit.Type)})";
 
-                // Раньше: await _telegramService.SendMessageAsync(chatId, text);
-                // Теперь: публикуем событие, доставку берёт на себя TelegramNotificationConsumer.
                 await _publishEndpoint.Publish(new HabitReminderDueEvent { ChatId = chatId, Text = text }, stoppingToken);
             }
 
@@ -91,16 +84,20 @@ namespace HabitTrakerApi.Services.BackraundServices
             {
                 HabitType.Daily => true,
                 HabitType.Disposable => true,
-                HabitType.Weekly => now.DayOfWeek == habit.CreatedAt.DayOfWeek,
-                HabitType.Monthly => now.Day == GetAnchorDayClamped(habit.CreatedAt, now),
+                HabitType.Weekly => habit.ExecutionDayOfWeek.HasValue 
+                    ? now.DayOfWeek == habit.ExecutionDayOfWeek.Value 
+                    : now.DayOfWeek == habit.CreatedAt.DayOfWeek,
+                HabitType.Monthly => habit.ExecutionDayOfMonth.HasValue 
+                    ? now.Day == GetAnchorDayClamped(habit.ExecutionDayOfMonth.Value, now) 
+                    : now.Day == GetAnchorDayClamped(habit.CreatedAt.Day, now),
                 _ => true
             };
         }
 
-        private static int GetAnchorDayClamped(DateTime createdAt, DateTime now)
+        private static int GetAnchorDayClamped(int targetDay, DateTime now)
         {
             var daysInCurrentMonth = DateTime.DaysInMonth(now.Year, now.Month);
-            return Math.Min(createdAt.Day, daysInCurrentMonth);
+            return Math.Min(targetDay, daysInCurrentMonth);
         }
 
         private static string GetTypeLabel(HabitType type) => type switch

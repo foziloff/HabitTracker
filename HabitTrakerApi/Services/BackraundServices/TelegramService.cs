@@ -17,22 +17,22 @@ public class TelegramService : BackgroundService
     private readonly IServiceScopeFactory _scopeFactory;
     private readonly TelegramBotClient _telegramBotClient;
     
-    // Состояния авторизации[cite: 12]
     private readonly ConcurrentDictionary<long, TelegramAuthState> _authStates = new();
     private readonly ConcurrentDictionary<long, string> _currentUserLogin = new();
 
-    // Внутренние состояния бота для создания сущностей
     private enum BotActionState
     {
         None,
         WaitingForCategoryName,
-        WaitingForHabitTitle
+        WaitingForHabitTitle,
+        WaitingForHabitDayOfMonth,
+        WaitingForReminderTime,
+        WaitingForProof
     }
     
     private readonly ConcurrentDictionary<long, BotActionState> _actionStates = new();
-    
-    // Временное хранилище для черновика привычки (до того как сохраним в БД)
     private readonly ConcurrentDictionary<long, Habit> _draftHabits = new();
+    private readonly ConcurrentDictionary<long, int> _pendingProofHabitIds = new();
 
     public TelegramService(IServiceScopeFactory scope, IConfiguration config)
     {
@@ -42,10 +42,7 @@ public class TelegramService : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        var receiverOptions = new ReceiverOptions
-        {
-            AllowedUpdates = [] 
-        };
+        var receiverOptions = new ReceiverOptions { AllowedUpdates = [] };
 
         _telegramBotClient.StartReceiving(
             updateHandler: Update,
@@ -62,32 +59,42 @@ public class TelegramService : BackgroundService
         using var scope = _scopeFactory.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-        // Обработка Inline-кнопок
         if (update.Type == UpdateType.CallbackQuery && update.CallbackQuery != null)
         {
             await HandleCallbackQuery(client, update.CallbackQuery, context, token);
             return;
         }
 
-        // Обработка текстовых сообщений
         var message = update.Message;
-        if (message == null || string.IsNullOrEmpty(message.Text)) return;
+        if (message == null) return;
         
         long chatId = message.Chat.Id;
 
-        // Идентифицируем пользователя в БД[cite: 6]
         var dbUser = await context.Users.FirstOrDefaultAsync(u => u.ChatId == chatId, token);
         if (dbUser != null)
         {
-            _authStates[chatId] = TelegramAuthState.Authorized; //[cite: 12]
+            _authStates[chatId] = TelegramAuthState.Authorized;
         }
 
-        // --- 1. ЛОГИКА АВТОРИЗОВАННОГО ПОЛЬЗОВАТЕЛЯ ---
         if (_authStates.TryGetValue(chatId, out var authState) && authState == TelegramAuthState.Authorized)
         {
             var actionState = _actionStates.GetValueOrDefault(chatId, BotActionState.None);
 
-            // Обработка команд главного меню
+            if (actionState == BotActionState.WaitingForProof && (message.Photo != null || message.Video != null))
+            {
+                if (_pendingProofHabitIds.TryGetValue(chatId, out int habitId))
+                {
+                    await client.SendMessage(chatId, "Всё, верю! Молодец! 👏", cancellationToken: token);
+                    await SaveHabitLog(client, chatId, habitId, context, "С подтверждением (медиа)", token);
+                    
+                    _actionStates[chatId] = BotActionState.None;
+                    _pendingProofHabitIds.TryRemove(chatId, out _);
+                }
+                return;
+            }
+
+            if (string.IsNullOrEmpty(message.Text)) return;
+
             switch (message.Text)
             {
                 case "📅 Мои привычки":
@@ -108,7 +115,6 @@ public class TelegramService : BackgroundService
                     return;
             }
 
-            // Обработка ввода данных для создания категории[cite: 1]
             if (actionState == BotActionState.WaitingForCategoryName)
             {
                 var category = new Category { Name = message.Text };
@@ -120,29 +126,94 @@ public class TelegramService : BackgroundService
                 return;
             }
 
-            // Обработка ввода названия для новой привычки[cite: 3]
             if (actionState == BotActionState.WaitingForHabitTitle)
             {
                 if (_draftHabits.TryGetValue(chatId, out var draftHabit))
                 {
-                    draftHabit.UserId = dbUser!.Id;
                     draftHabit.Title = message.Text;
-                    draftHabit.Status = HabitStatus.Active; //[cite: 9]
-                    draftHabit.CreatedAt = DateTime.UtcNow;
 
-                    context.Habits.Add(draftHabit);
-                    await context.SaveChangesAsync(token);
+                    if (draftHabit.Type == HabitType.Weekly)
+                    {
+                        var daysKeyboard = new InlineKeyboardMarkup(new[]
+                        {
+                            new[] { InlineKeyboardButton.WithCallbackData("Понедельник", "dow_1"), InlineKeyboardButton.WithCallbackData("Вторник", "dow_2") },
+                            new[] { InlineKeyboardButton.WithCallbackData("Среда", "dow_3"), InlineKeyboardButton.WithCallbackData("Четверг", "dow_4") },
+                            new[] { InlineKeyboardButton.WithCallbackData("Пятница", "dow_5"), InlineKeyboardButton.WithCallbackData("Суббота", "dow_6") },
+                            new[] { InlineKeyboardButton.WithCallbackData("Воскресенье", "dow_0") }
+                        });
+                        _actionStates[chatId] = BotActionState.None; 
+                        await client.SendMessage(chatId, "Выберите день недели для выполнения:", replyMarkup: daysKeyboard, cancellationToken: token);
+                    }
+                    else if (draftHabit.Type == HabitType.Monthly)
+                    {
+                        _actionStates[chatId] = BotActionState.WaitingForHabitDayOfMonth;
+                        await client.SendMessage(chatId, "Введите число месяца, когда нужно выполнять привычку (от 1 до 31):", cancellationToken: token);
+                    }
+                    else 
+                    {
+                        _actionStates[chatId] = BotActionState.WaitingForReminderTime;
+                        await client.SendMessage(chatId, "Введите время уведомления в формате ЧЧ:ММ (например, 08:30):", cancellationToken: token);
+                    }
+                }
+                return;
+            }
 
-                    _actionStates[chatId] = BotActionState.None;
-                    _draftHabits.TryRemove(chatId, out _);
+            if (actionState == BotActionState.WaitingForHabitDayOfMonth)
+            {
+                if (int.TryParse(message.Text, out int day) && day >= 1 && day <= 31)
+                {
+                    if (_draftHabits.TryGetValue(chatId, out var draftHabit))
+                    {
+                        draftHabit.ExecutionDayOfMonth = day;
+                        _actionStates[chatId] = BotActionState.WaitingForReminderTime;
+                        await client.SendMessage(chatId, "Отлично! Теперь введите время уведомления (например, 09:00):", cancellationToken: token);
+                    }
+                }
+                else
+                {
+                    await client.SendMessage(chatId, "Пожалуйста, введите корректное число от 1 до 31.", cancellationToken: token);
+                }
+                return;
+            }
 
-                    await client.SendMessage(chatId, $"✅ Привычка '{draftHabit.Title}' успешно создана!", replyMarkup: GetMainMenu(), cancellationToken: token);
+            if (actionState == BotActionState.WaitingForReminderTime)
+            {
+                if (TimeOnly.TryParse(message.Text, out TimeOnly time))
+                {
+                    if (_draftHabits.TryGetValue(chatId, out var draftHabit))
+                    {
+                        draftHabit.UserId = dbUser!.Id;
+                        draftHabit.Status = HabitStatus.Active;
+                        draftHabit.CreatedAt = DateTime.UtcNow;
+
+                        context.Habits.Add(draftHabit);
+                        
+                        var reminder = new Reminder
+                        {
+                            Habit = draftHabit,
+                            ReminderTime = time,
+                            IsEnabled = true
+                        };
+                        context.Reminders.Add(reminder);
+
+                        await context.SaveChangesAsync(token);
+
+                        _actionStates[chatId] = BotActionState.None;
+                        _draftHabits.TryRemove(chatId, out _);
+
+                        await client.SendMessage(chatId, $"✅ Привычка '{draftHabit.Title}' успешно создана! Напоминание установлено на {time:HH:mm}.", replyMarkup: GetMainMenu(), cancellationToken: token);
+                    }
+                }
+                else
+                {
+                    await client.SendMessage(chatId, "Неверный формат времени. Пожалуйста, введите время в формате ЧЧ:ММ (например, 08:30 или 21:00):", cancellationToken: token);
                 }
                 return;
             }
         }
 
-        // --- 2. ЛОГИКА АВТОРИЗАЦИИ (Если пользователь не авторизован) ---
+        if (string.IsNullOrEmpty(message?.Text)) return;
+
         if (message.Text.Equals("/start", StringComparison.OrdinalIgnoreCase))
         {
             if (dbUser is not null)
@@ -150,7 +221,6 @@ public class TelegramService : BackgroundService
                 await client.SendMessage(chatId, "Привет! Вы уже авторизованы.", replyMarkup: GetMainMenu(), cancellationToken: token);
                 return;
             }
-
             _authStates[chatId] = TelegramAuthState.None;
             var replyKeyboards = new ReplyKeyboardMarkup(new[] { new KeyboardButton[] { "/auth" } }) { ResizeKeyboard = true };
             await client.SendMessage(chatId, "Привет! Пожалуйста, авторизуйтесь.", replyMarkup: replyKeyboards, cancellationToken: token);
@@ -178,7 +248,6 @@ public class TelegramService : BackgroundService
                 await client.SendMessage(chatId, "Неверный логин! Нажмите /auth для повтора.", cancellationToken: token);
                 return;
             }
-            
             _authStates[chatId] = TelegramAuthState.WaitingPassword;
             _currentUserLogin[chatId] = userToAuth.Login;
             await client.SendMessage(chatId, "Введите свой пароль:", cancellationToken: token);
@@ -188,13 +257,11 @@ public class TelegramService : BackgroundService
         if (_authStates.TryGetValue(chatId, out var passState) && passState == TelegramAuthState.WaitingPassword)
         {
             var userToAuth = await context.Users.AsTracking().FirstOrDefaultAsync(u => u.Login == _currentUserLogin[chatId], token);
-
             if (userToAuth != null && PasswordHasher.Verify(message.Text.Trim(), userToAuth.Password))
             {
                 userToAuth.ChatId = chatId;
                 _authStates[chatId] = TelegramAuthState.Authorized;
                 await context.SaveChangesAsync(token);
-                
                 await client.SendMessage(chatId, "Вы успешно авторизовались!", replyMarkup: GetMainMenu(), cancellationToken: token);
             }
             else
@@ -205,21 +272,17 @@ public class TelegramService : BackgroundService
         }
     }
 
-    // --- ОБРАБОТЧИКИ СОБЫТИЙ ---
-
     private async Task HandleCallbackQuery(ITelegramBotClient client, CallbackQuery callbackQuery, AppDbContext context, CancellationToken token)
     {
         var data = callbackQuery.Data;
         long chatId = callbackQuery.Message!.Chat.Id;
         if (data == null) return;
 
-        // 1. Выбор категории при создании привычки
         if (data.StartsWith("cat_"))
         {
             int categoryId = int.Parse(data.Replace("cat_", ""));
-            _draftHabits[chatId] = new Habit { CategoryId = categoryId }; //[cite: 3]
+            _draftHabits[chatId] = new Habit { CategoryId = categoryId };
             
-            // Запрашиваем тип привычки[cite: 10]
             var typeKeyboard = new InlineKeyboardMarkup(new[]
             {
                 new[] { InlineKeyboardButton.WithCallbackData("Ежедневная", $"type_{(int)HabitType.Daily}") },
@@ -232,55 +295,94 @@ public class TelegramService : BackgroundService
             return;
         }
 
-        // 2. Выбор типа привычки
         if (data.StartsWith("type_"))
         {
             int typeId = int.Parse(data.Replace("type_", ""));
             if (_draftHabits.TryGetValue(chatId, out var draft))
             {
-                draft.Type = (HabitType)typeId; //[cite: 10]
+                draft.Type = (HabitType)typeId;
                 _actionStates[chatId] = BotActionState.WaitingForHabitTitle;
-
                 await client.EditMessageText(chatId, callbackQuery.Message.MessageId, "Отлично! Теперь отправьте текстовым сообщением название привычки:", cancellationToken: token);
             }
             return;
         }
 
-        // 3. Отметка выполнения привычки
+        if (data.StartsWith("dow_"))
+        {
+            int dayOfWeek = int.Parse(data.Replace("dow_", "")); 
+            if (_draftHabits.TryGetValue(chatId, out var draft))
+            {
+                draft.ExecutionDayOfWeek = (DayOfWeek)dayOfWeek;
+                _actionStates[chatId] = BotActionState.WaitingForReminderTime; 
+                await client.EditMessageText(chatId, callbackQuery.Message.MessageId, "День установлен. Теперь введите время уведомления в формате ЧЧ:ММ (например, 08:30):", cancellationToken: token);
+            }
+            return;
+        }
+
         if (data.StartsWith("done_"))
         {
             int habitId = int.Parse(data.Replace("done_", ""));
-            var today = DateOnly.FromDateTime(DateTime.UtcNow);
             
-            bool alreadyLogged = await context.HabitLogs.AnyAsync(l => l.HabitId == habitId && l.DoneDate == today, token); //[cite: 4]
+            await client.EditMessageReplyMarkup(chatId, callbackQuery.Message.MessageId, replyMarkup: null, cancellationToken: token);
 
-            if (!alreadyLogged)
+            _actionStates[chatId] = BotActionState.WaitingForProof;
+            _pendingProofHabitIds[chatId] = habitId;
+
+            var skipKeyboard = new InlineKeyboardMarkup(
+                InlineKeyboardButton.WithCallbackData("Не могу отправить", "skip_proof")
+            );
+
+            await client.SendMessage(
+                chatId, 
+                "Если выполнили, можете отправить фото или видео, как вы это сделали? 📸📹", 
+                replyMarkup: skipKeyboard, 
+                cancellationToken: token);
+            return;
+        }
+
+        if (data == "skip_proof")
+        {
+            if (_actionStates.GetValueOrDefault(chatId) == BotActionState.WaitingForProof &&
+                _pendingProofHabitIds.TryGetValue(chatId, out int habitId))
             {
-                var log = new HabitLog //[cite: 4]
-                {
-                    HabitId = habitId,
-                    DoneDate = today,
-                    Value = 1,
-                    Note = "Telegram"
-                };
-                context.HabitLogs.Add(log);
-                await context.SaveChangesAsync(token);
-
-                // Подсчет режима (стрика)
-                var logs = await context.HabitLogs.Where(l => l.HabitId == habitId).Select(l => l.DoneDate).OrderByDescending(d => d).ToListAsync(token);
-                int streak = CalculateStreak(logs);
-
-                await client.AnswerCallbackQuery(callbackQuery.Id, $"Отмечено! 🔥 Серия: {streak} выполнений подряд!", showAlert: true, cancellationToken: token);
                 await client.EditMessageReplyMarkup(chatId, callbackQuery.Message.MessageId, replyMarkup: null, cancellationToken: token);
+                
+                await SaveHabitLog(client, chatId, habitId, context, "Отмечено без подтверждения", token);
+                
+                _actionStates[chatId] = BotActionState.None;
+                _pendingProofHabitIds.TryRemove(chatId, out _);
             }
-            else
-            {
-                await client.AnswerCallbackQuery(callbackQuery.Id, "Вы уже отмечали это сегодня!", cancellationToken: token);
-            }
+            return;
         }
     }
 
-    // --- ВСПОМОГАТЕЛЬНЫЕ МЕТОДЫ ---
+    private async Task SaveHabitLog(ITelegramBotClient client, long chatId, int habitId, AppDbContext context, string note, CancellationToken token)
+    {
+        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        bool alreadyLogged = await context.HabitLogs.AnyAsync(l => l.HabitId == habitId && l.DoneDate == today, token);
+
+        if (!alreadyLogged)
+        {
+            var log = new HabitLog
+            {
+                HabitId = habitId,
+                DoneDate = today,
+                Value = 1,
+                Note = note
+            };
+            context.HabitLogs.Add(log);
+            await context.SaveChangesAsync(token);
+
+            var logs = await context.HabitLogs.Where(l => l.HabitId == habitId).Select(l => l.DoneDate).OrderByDescending(d => d).ToListAsync(token);
+            int streak = CalculateStreak(logs);
+
+            await client.SendMessage(chatId, $"Отмечено! 🔥 Серия: {streak} выполнений подряд!", cancellationToken: token);
+        }
+        else
+        {
+            await client.SendMessage(chatId, "Вы уже отмечали это сегодня!", cancellationToken: token);
+        }
+    }
 
     private ReplyKeyboardMarkup GetMainMenu()
     {
@@ -294,20 +396,19 @@ public class TelegramService : BackgroundService
 
     private async Task StartHabitCreationFlow(ITelegramBotClient client, long chatId, AppDbContext context, CancellationToken token)
     {
-        var categories = await context.Categories.ToListAsync(token); //[cite: 1]
+        var categories = await context.Categories.ToListAsync(token);
         if (!categories.Any())
         {
             await client.SendMessage(chatId, "Сначала создайте хотя бы одну категорию (кнопка '📁 Добавить категорию').", cancellationToken: token);
             return;
         }
-
         var buttons = categories.Select(c => InlineKeyboardButton.WithCallbackData(c.Name, $"cat_{c.Id}")).Chunk(2).ToList();
         await client.SendMessage(chatId, "Выберите категорию для новой привычки:", replyMarkup: new InlineKeyboardMarkup(buttons), cancellationToken: token);
     }
 
     private async Task ShowUserHabits(ITelegramBotClient client, long chatId, int userId, AppDbContext context, CancellationToken token)
     {
-        var habits = await context.Habits.Include(h => h.Logs).Where(h => h.UserId == userId && h.Status == HabitStatus.Active).ToListAsync(token); //[cite: 3],[cite: 9]
+        var habits = await context.Habits.Include(h => h.Logs).Where(h => h.UserId == userId && h.Status == HabitStatus.Active).ToListAsync(token);
 
         if (!habits.Any())
         {
@@ -323,7 +424,7 @@ public class TelegramService : BackgroundService
             bool isDone = CheckIfDone(habit, today);
             
             string statusEmoji = isDone ? "✅" : "⏳";
-            string typeEmoji = habit.Type switch //[cite: 10]
+            string typeEmoji = habit.Type switch
             {
                 HabitType.Daily => "Ежедневно",
                 HabitType.Weekly => "Еженедельно",
@@ -346,11 +447,11 @@ public class TelegramService : BackgroundService
 
     private async Task ShowUserStats(ITelegramBotClient client, long chatId, int userId, AppDbContext context, CancellationToken token)
     {
-        var habits = await context.Habits.Include(h => h.Logs).Where(h => h.UserId == userId).ToListAsync(token); //[cite: 3]
+        var habits = await context.Habits.Include(h => h.Logs).Where(h => h.UserId == userId).ToListAsync(token);
         
         int total = habits.Count;
-        int dailyCount = habits.Count(h => h.Type == HabitType.Daily); //[cite: 10]
-        int weeklyCount = habits.Count(h => h.Type == HabitType.Weekly); //[cite: 10]
+        int dailyCount = habits.Count(h => h.Type == HabitType.Daily);
+        int weeklyCount = habits.Count(h => h.Type == HabitType.Weekly);
         
         var today = DateOnly.FromDateTime(DateTime.UtcNow);
         int doneToday = habits.Count(h => h.Type == HabitType.Daily && h.Logs.Any(l => l.DoneDate == today));
@@ -363,22 +464,20 @@ public class TelegramService : BackgroundService
         await client.SendMessage(chatId, stats, parseMode: ParseMode.Html, cancellationToken: token);
     }
 
-    // Проверка, выполнена ли привычка, с учетом её типа (HabitType)[cite: 10]
     private bool CheckIfDone(Habit habit, DateOnly today)
     {
         if (!habit.Logs.Any()) return false;
 
-        return habit.Type switch //[cite: 10]
+        return habit.Type switch
         {
             HabitType.Daily => habit.Logs.Any(l => l.DoneDate == today),
-            HabitType.Weekly => habit.Logs.Any(l => l.DoneDate >= today.AddDays(-7)), // Упрощенная неделя (последние 7 дней)
+            HabitType.Weekly => habit.Logs.Any(l => l.DoneDate >= today.AddDays(-7)),
             HabitType.Monthly => habit.Logs.Any(l => l.DoneDate.Month == today.Month && l.DoneDate.Year == today.Year),
-            HabitType.Disposable => true, // Если есть лог, то одноразовая выполнена навсегда
+            HabitType.Disposable => true,
             _ => false
         };
     }
 
-    // Подсчет режима (стрика) для ежедневных привычек
     private int CalculateStreak(List<DateOnly> doneDatesDesc)
     {
         if (!doneDatesDesc.Any()) return 0;
