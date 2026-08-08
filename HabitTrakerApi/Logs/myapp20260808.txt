@@ -1,0 +1,1506 @@
+2026-08-08 10:14:17.289 +03:00 [INF] APi Запущено!
+2026-08-08 10:15:05.952 +03:00 [INF] APi Запущено!
+2026-08-08 10:15:57.142 +03:00 [INF] APi Запущено!
+2026-08-08 10:16:11.338 +03:00 [INF] APi Запущено!
+2026-08-08 10:23:56.559 +03:00 [INF] Запуск веб-хоста приложения...
+2026-08-08 10:23:57.042 +03:00 [FTL] Приложение аварийно завершило свою работу во время инициализации хоста!
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\Program.cs:line 100
+2026-08-08 10:24:24.956 +03:00 [INF] Запуск веб-хоста приложения...
+2026-08-08 10:24:25.193 +03:00 [FTL] Приложение аварийно завершило свою работу во время инициализации хоста!
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\Program.cs:line 100
+2026-08-08 10:26:49.109 +03:00 [INF] Запуск веб-хоста приложения...
+2026-08-08 10:26:50.326 +03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-08-08 10:26:50.351 +03:00 [INF] Анализ миграций и запуск наполнения базы данных (DbSeeder)...
+2026-08-08 10:26:51.410 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-08 10:26:51.632 +03:00 [DBG] Creating DbConnection.
+2026-08-08 10:26:51.674 +03:00 [DBG] Created DbConnection. (39ms).
+2026-08-08 10:26:51.682 +03:00 [DBG] Migrating using database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:51.702 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:51.986 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:52.006 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-08 10:26:52.023 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (14ms).
+2026-08-08 10:26:52.034 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (33ms).
+2026-08-08 10:26:52.059 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-08 10:26:52.133 +03:00 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-08 10:26:52.154 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:52.183 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (13ms).
+2026-08-08 10:26:52.223 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:52.229 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:52.265 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-08 10:26:52.290 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-08 10:26:52.291 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2026-08-08 10:26:52.296 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (5ms).
+2026-08-08 10:26:52.328 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-08 10:26:52.394 +03:00 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-08 10:26:52.520 +03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-08-08 10:26:52.530 +03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-08-08 10:26:52.548 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-08 10:26:52.560 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (11ms).
+2026-08-08 10:26:52.570 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (21ms).
+2026-08-08 10:26:52.579 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-08 10:26:52.627 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-08 10:26:52.665 +03:00 [DBG] Committing transaction.
+2026-08-08 10:26:52.690 +03:00 [DBG] Committed transaction.
+2026-08-08 10:26:52.696 +03:00 [DBG] Disposing transaction.
+2026-08-08 10:26:52.713 +03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-08-08 10:26:52.715 +03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-08-08 10:26:52.729 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-08 10:26:52.731 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2026-08-08 10:26:52.736 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (6ms).
+2026-08-08 10:26:52.739 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-08 10:26:52.755 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-08 10:26:52.764 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-08 10:26:52.770 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (6ms).
+2026-08-08 10:26:52.774 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (10ms).
+2026-08-08 10:26:52.777 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-08 10:26:52.828 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-08 10:26:52.853 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 10:26:52.857 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2026-08-08 10:26:52.904 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (50ms).
+2026-08-08 10:26:52.928 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-08 10:26:52.937 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-08 10:26:52.965 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:52.972 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 21ms reading results.
+2026-08-08 10:26:52.987 +03:00 [INF] No migrations were applied. The database is already up to date.
+2026-08-08 10:26:52.991 +03:00 [DBG] Committing transaction.
+2026-08-08 10:26:52.993 +03:00 [DBG] Committed transaction.
+2026-08-08 10:26:52.996 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-08 10:26:52.998 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2026-08-08 10:26:53.004 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (7ms).
+2026-08-08 10:26:53.007 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-08 10:26:53.022 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-08 10:26:53.028 +03:00 [DBG] Disposing transaction.
+2026-08-08 10:26:53.032 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:53.038 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (6ms).
+2026-08-08 10:26:53.156 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2026-08-08 10:26:53.460 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u), 
+            False, 
+            MultipleParameters
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: HabitTrakerApi.DbContext.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-08 10:26:53.519 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:53.521 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:53.522 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 10:26:53.523 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2026-08-08 10:26:53.524 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2026-08-08 10:26:53.526 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-08 10:26:53.532 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-08 10:26:53.543 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:53.545 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 7ms reading results.
+2026-08-08 10:26:53.546 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:53.547 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (0ms).
+2026-08-08 10:26:54.099 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'User.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.209 +03:00 [DBG] Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.213 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'User.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.217 +03:00 [DBG] Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.221 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'User.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.224 +03:00 [DBG] Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.232 +03:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2026-08-08 10:26:54.239 +03:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2026-08-08 10:26:54.296 +03:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2026-08-08 10:26:54.396 +03:00 [DBG] Executing 3 update commands as a batch.
+2026-08-08 10:26:54.417 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:54.420 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:54.431 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 10:26:54.433 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2026-08-08 10:26:54.455 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (24ms).
+2026-08-08 10:26:54.466 +03:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int64), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Int64), @p9='?' (DbType = DateTime2), @p10='?' (Size = 450), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Int64), @p14='?' (DbType = Int32), @p15='?' (DbType = Int32), @p16='?' (DbType = Int64), @p17='?' (DbType = DateTime2), @p18='?' (Size = 450), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Int64), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2)) AS i ([ChatId], [CreatedAt], [Email], [Login], [Password], [PendingChatId], [Role], [TelegramAuthState], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([ChatId], [CreatedAt], [Email], [Login], [Password], [PendingChatId], [Role], [TelegramAuthState])
+VALUES (i.[ChatId], i.[CreatedAt], i.[Email], i.[Login], i.[Password], i.[PendingChatId], i.[Role], i.[TelegramAuthState])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:54.554 +03:00 [INF] Executed DbCommand (94ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime2), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int64), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Int64), @p9='?' (DbType = DateTime2), @p10='?' (Size = 450), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Int64), @p14='?' (DbType = Int32), @p15='?' (DbType = Int32), @p16='?' (DbType = Int64), @p17='?' (DbType = DateTime2), @p18='?' (Size = 450), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Int64), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2)) AS i ([ChatId], [CreatedAt], [Email], [Login], [Password], [PendingChatId], [Role], [TelegramAuthState], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([ChatId], [CreatedAt], [Email], [Login], [Password], [PendingChatId], [Role], [TelegramAuthState])
+VALUES (i.[ChatId], i.[CreatedAt], i.[Email], i.[Login], i.[Password], i.[PendingChatId], i.[Role], i.[TelegramAuthState])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:54.579 +03:00 [DBG] The foreign key property 'User.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:54.588 +03:00 [DBG] The foreign key property 'User.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:54.589 +03:00 [DBG] The foreign key property 'User.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:54.594 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:54.600 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 43ms reading results.
+2026-08-08 10:26:54.610 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:54.614 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (3ms).
+2026-08-08 10:26:54.658 +03:00 [DBG] An entity of type 'User' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.664 +03:00 [DBG] An entity of type 'User' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.673 +03:00 [DBG] An entity of type 'User' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.691 +03:00 [DBG] SaveChanges completed for 'AppDbContext' with 3 entities written to the database.
+2026-08-08 10:26:54.707 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Category.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.743 +03:00 [DBG] Context 'AppDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.747 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Category.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.759 +03:00 [DBG] Context 'AppDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.764 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Category.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.773 +03:00 [DBG] Context 'AppDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.778 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Category.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.789 +03:00 [DBG] Context 'AppDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.793 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Category.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.806 +03:00 [DBG] Context 'AppDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.812 +03:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2026-08-08 10:26:54.820 +03:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2026-08-08 10:26:54.832 +03:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2026-08-08 10:26:54.836 +03:00 [DBG] Executing 5 update commands as a batch.
+2026-08-08 10:26:54.838 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:54.839 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:54.840 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 10:26:54.841 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-08-08 10:26:54.848 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (8ms).
+2026-08-08 10:26:54.849 +03:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Categories] USING (
+VALUES (@p0, 0),
+(@p1, 1),
+(@p2, 2),
+(@p3, 3),
+(@p4, 4)) AS i ([Name], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name])
+VALUES (i.[Name])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:54.862 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Categories] USING (
+VALUES (@p0, 0),
+(@p1, 1),
+(@p2, 2),
+(@p3, 3),
+(@p4, 4)) AS i ([Name], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name])
+VALUES (i.[Name])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:54.866 +03:00 [DBG] The foreign key property 'Category.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:54.867 +03:00 [DBG] The foreign key property 'Category.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:54.871 +03:00 [DBG] The foreign key property 'Category.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:54.873 +03:00 [DBG] The foreign key property 'Category.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:54.874 +03:00 [DBG] The foreign key property 'Category.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:54.875 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:54.879 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 15ms reading results.
+2026-08-08 10:26:54.881 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:54.884 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (3ms).
+2026-08-08 10:26:54.890 +03:00 [DBG] An entity of type 'Category' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.894 +03:00 [DBG] An entity of type 'Category' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.898 +03:00 [DBG] An entity of type 'Category' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.904 +03:00 [DBG] An entity of type 'Category' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.913 +03:00 [DBG] An entity of type 'Category' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:54.917 +03:00 [DBG] SaveChanges completed for 'AppDbContext' with 5 entities written to the database.
+2026-08-08 10:26:55.100 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Habit.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.169 +03:00 [DBG] The navigation 'Habit.Category' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.197 +03:00 [DBG] The navigation 'Habit.User' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.215 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.232 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Habit.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.267 +03:00 [DBG] The navigation 'Habit.Category' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.360 +03:00 [DBG] The navigation 'Habit.User' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.383 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.384 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Habit.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.386 +03:00 [DBG] The navigation 'Habit.Category' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.388 +03:00 [DBG] The navigation 'Habit.User' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.389 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.390 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Habit.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.393 +03:00 [DBG] The navigation 'Habit.Category' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.396 +03:00 [DBG] The navigation 'Habit.User' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.398 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.401 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Habit.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.406 +03:00 [DBG] The navigation 'Habit.Category' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.410 +03:00 [DBG] The navigation 'Habit.User' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.413 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.424 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Habit.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.427 +03:00 [DBG] The navigation 'Habit.Category' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.429 +03:00 [DBG] The navigation 'Habit.User' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.432 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.507 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Habit.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.510 +03:00 [DBG] The navigation 'Habit.Category' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.513 +03:00 [DBG] The navigation 'Habit.User' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.515 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.522 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Habit.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.639 +03:00 [DBG] The navigation 'Habit.Category' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.642 +03:00 [DBG] The navigation 'Habit.User' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.705 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:55.709 +03:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2026-08-08 10:26:55.712 +03:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2026-08-08 10:26:55.744 +03:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2026-08-08 10:26:55.784 +03:00 [DBG] Executing 8 update commands as a batch.
+2026-08-08 10:26:55.804 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:55.826 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:55.828 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 10:26:55.830 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-08-08 10:26:55.844 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (15ms).
+2026-08-08 10:26:55.848 +03:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 4000), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = Int32), @p28='?' (DbType = DateTime2), @p29='?' (Size = 4000), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Int32), @p33='?' (Size = 4000), @p34='?' (DbType = Int32), @p35='?' (DbType = Int32), @p36='?' (DbType = Int32), @p37='?' (DbType = DateTime2), @p38='?' (Size = 4000), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?' (Size = 4000), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (DbType = Int32), @p46='?' (DbType = DateTime2), @p47='?' (Size = 4000), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (Size = 4000), @p52='?' (DbType = Int32), @p53='?' (DbType = Int32), @p54='?' (DbType = Int32), @p55='?' (DbType = DateTime2), @p56='?' (Size = 4000), @p57='?' (DbType = Int32), @p58='?' (DbType = Int32), @p59='?' (DbType = Int32), @p60='?' (Size = 4000), @p61='?' (DbType = Int32), @p62='?' (DbType = Int32), @p63='?' (DbType = Int32), @p64='?' (DbType = DateTime2), @p65='?' (Size = 4000), @p66='?' (DbType = Int32), @p67='?' (DbType = Int32), @p68='?' (DbType = Int32), @p69='?' (Size = 4000), @p70='?' (DbType = Int32), @p71='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Habits] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, 0),
+(@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, 1),
+(@p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, 2),
+(@p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, 3),
+(@p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, 4),
+(@p45, @p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53, 5),
+(@p54, @p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62, 6),
+(@p63, @p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71, 7)) AS i ([CategoryId], [CreatedAt], [Description], [Priority], [Status], [TargetCount], [Title], [Type], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CategoryId], [CreatedAt], [Description], [Priority], [Status], [TargetCount], [Title], [Type], [UserId])
+VALUES (i.[CategoryId], i.[CreatedAt], i.[Description], i.[Priority], i.[Status], i.[TargetCount], i.[Title], i.[Type], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:56.180 +03:00 [INF] Executed DbCommand (332ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (Size = 4000), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (Size = 4000), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = Int32), @p28='?' (DbType = DateTime2), @p29='?' (Size = 4000), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Int32), @p33='?' (Size = 4000), @p34='?' (DbType = Int32), @p35='?' (DbType = Int32), @p36='?' (DbType = Int32), @p37='?' (DbType = DateTime2), @p38='?' (Size = 4000), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?' (Size = 4000), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (DbType = Int32), @p46='?' (DbType = DateTime2), @p47='?' (Size = 4000), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (Size = 4000), @p52='?' (DbType = Int32), @p53='?' (DbType = Int32), @p54='?' (DbType = Int32), @p55='?' (DbType = DateTime2), @p56='?' (Size = 4000), @p57='?' (DbType = Int32), @p58='?' (DbType = Int32), @p59='?' (DbType = Int32), @p60='?' (Size = 4000), @p61='?' (DbType = Int32), @p62='?' (DbType = Int32), @p63='?' (DbType = Int32), @p64='?' (DbType = DateTime2), @p65='?' (Size = 4000), @p66='?' (DbType = Int32), @p67='?' (DbType = Int32), @p68='?' (DbType = Int32), @p69='?' (Size = 4000), @p70='?' (DbType = Int32), @p71='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Habits] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, 0),
+(@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, 1),
+(@p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, 2),
+(@p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, 3),
+(@p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, 4),
+(@p45, @p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53, 5),
+(@p54, @p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62, 6),
+(@p63, @p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71, 7)) AS i ([CategoryId], [CreatedAt], [Description], [Priority], [Status], [TargetCount], [Title], [Type], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CategoryId], [CreatedAt], [Description], [Priority], [Status], [TargetCount], [Title], [Type], [UserId])
+VALUES (i.[CategoryId], i.[CreatedAt], i.[Description], i.[Priority], i.[Status], i.[TargetCount], i.[Title], i.[Type], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:56.400 +03:00 [DBG] The foreign key property 'Habit.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:56.423 +03:00 [DBG] The foreign key property 'Habit.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:56.426 +03:00 [DBG] The foreign key property 'Habit.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:56.428 +03:00 [DBG] The foreign key property 'Habit.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:56.458 +03:00 [DBG] The foreign key property 'Habit.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:56.474 +03:00 [DBG] The foreign key property 'Habit.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:56.513 +03:00 [DBG] The foreign key property 'Habit.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:56.522 +03:00 [DBG] The foreign key property 'Habit.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:56.545 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:56.549 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 154ms reading results.
+2026-08-08 10:26:56.555 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:56.561 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (6ms).
+2026-08-08 10:26:56.582 +03:00 [DBG] An entity of type 'Habit' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.593 +03:00 [DBG] An entity of type 'Habit' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.612 +03:00 [DBG] An entity of type 'Habit' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.616 +03:00 [DBG] An entity of type 'Habit' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.634 +03:00 [DBG] An entity of type 'Habit' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.656 +03:00 [DBG] An entity of type 'Habit' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.661 +03:00 [DBG] An entity of type 'Habit' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.665 +03:00 [DBG] An entity of type 'Habit' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.674 +03:00 [DBG] SaveChanges completed for 'AppDbContext' with 8 entities written to the database.
+2026-08-08 10:26:56.694 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.732 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.754 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.758 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.785 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.791 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.843 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.848 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.850 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.877 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.881 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.884 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.892 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.896 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.898 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.901 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.908 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.911 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.913 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.917 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.924 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.926 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.929 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.931 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.934 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.941 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.944 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.946 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.948 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.951 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.966 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.979 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:56.982 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.040 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.041 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.042 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.044 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.046 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.049 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.051 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.058 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.060 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.249 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.251 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.252 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.256 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.259 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.262 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.264 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.267 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.273 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.276 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.278 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.281 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.283 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.289 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.297 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.307 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.309 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.311 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.314 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.321 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.323 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.325 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.328 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.330 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.339 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.344 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.346 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.351 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.356 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.358 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.361 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.539 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.541 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.543 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.546 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.550 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.574 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.578 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.579 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.581 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.582 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.624 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.631 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.684 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.685 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.690 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.692 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.693 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.694 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.698 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.700 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.702 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.708 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.710 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.714 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.717 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.718 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.721 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.724 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.726 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.730 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.733 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.735 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.741 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.743 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.747 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.749 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.751 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.756 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.759 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.764 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.767 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.772 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.774 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.779 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.781 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.785 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.796 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.798 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.800 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.801 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.808 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.809 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.810 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.811 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.812 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.977 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.984 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.989 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.991 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.993 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.995 +03:00 [DBG] The navigation 'HabitLog.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:57.999 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.002 +03:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2026-08-08 10:26:58.007 +03:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2026-08-08 10:26:58.024 +03:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2026-08-08 10:26:58.029 +03:00 [DBG] Executing 42 update commands as a batch.
+2026-08-08 10:26:58.031 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.032 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.034 +03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-08-08 10:26:58.036 +03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-08-08 10:26:58.038 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 10:26:58.039 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-08-08 10:26:58.041 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2026-08-08 10:26:58.042 +03:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Date), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Date), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = Date), @p9='?' (DbType = Int32), @p10='?' (Size = 4000), @p11='?' (DbType = Int32), @p12='?' (DbType = Date), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (DbType = Date), @p17='?' (DbType = Int32), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Date), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = Date), @p25='?' (DbType = Int32), @p26='?' (Size = 4000), @p27='?' (DbType = Int32), @p28='?' (DbType = Date), @p29='?' (DbType = Int32), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = Date), @p33='?' (DbType = Int32), @p34='?' (Size = 4000), @p35='?' (DbType = Int32), @p36='?' (DbType = Date), @p37='?' (DbType = Int32), @p38='?' (Size = 4000), @p39='?' (DbType = Int32), @p40='?' (DbType = Date), @p41='?' (DbType = Int32), @p42='?' (Size = 4000), @p43='?' (DbType = Int32), @p44='?' (DbType = Date), @p45='?' (DbType = Int32), @p46='?' (Size = 4000), @p47='?' (DbType = Int32), @p48='?' (DbType = Date), @p49='?' (DbType = Int32), @p50='?' (Size = 4000), @p51='?' (DbType = Int32), @p52='?' (DbType = Date), @p53='?' (DbType = Int32), @p54='?' (Size = 4000), @p55='?' (DbType = Int32), @p56='?' (DbType = Date), @p57='?' (DbType = Int32), @p58='?' (Size = 4000), @p59='?' (DbType = Int32), @p60='?' (DbType = Date), @p61='?' (DbType = Int32), @p62='?' (Size = 4000), @p63='?' (DbType = Int32), @p64='?' (DbType = Date), @p65='?' (DbType = Int32), @p66='?' (Size = 4000), @p67='?' (DbType = Int32), @p68='?' (DbType = Date), @p69='?' (DbType = Int32), @p70='?' (Size = 4000), @p71='?' (DbType = Int32), @p72='?' (DbType = Date), @p73='?' (DbType = Int32), @p74='?' (Size = 4000), @p75='?' (DbType = Int32), @p76='?' (DbType = Date), @p77='?' (DbType = Int32), @p78='?' (Size = 4000), @p79='?' (DbType = Int32), @p80='?' (DbType = Date), @p81='?' (DbType = Int32), @p82='?' (Size = 4000), @p83='?' (DbType = Int32), @p84='?' (DbType = Date), @p85='?' (DbType = Int32), @p86='?' (Size = 4000), @p87='?' (DbType = Int32), @p88='?' (DbType = Date), @p89='?' (DbType = Int32), @p90='?' (Size = 4000), @p91='?' (DbType = Int32), @p92='?' (DbType = Date), @p93='?' (DbType = Int32), @p94='?' (Size = 4000), @p95='?' (DbType = Int32), @p96='?' (DbType = Date), @p97='?' (DbType = Int32), @p98='?' (Size = 4000), @p99='?' (DbType = Int32), @p100='?' (DbType = Date), @p101='?' (DbType = Int32), @p102='?' (Size = 4000), @p103='?' (DbType = Int32), @p104='?' (DbType = Date), @p105='?' (DbType = Int32), @p106='?' (Size = 4000), @p107='?' (DbType = Int32), @p108='?' (DbType = Date), @p109='?' (DbType = Int32), @p110='?' (Size = 4000), @p111='?' (DbType = Int32), @p112='?' (DbType = Date), @p113='?' (DbType = Int32), @p114='?' (Size = 4000), @p115='?' (DbType = Int32), @p116='?' (DbType = Date), @p117='?' (DbType = Int32), @p118='?' (Size = 4000), @p119='?' (DbType = Int32), @p120='?' (DbType = Date), @p121='?' (DbType = Int32), @p122='?' (Size = 4000), @p123='?' (DbType = Int32), @p124='?' (DbType = Date), @p125='?' (DbType = Int32), @p126='?' (Size = 4000), @p127='?' (DbType = Int32), @p128='?' (DbType = Date), @p129='?' (DbType = Int32), @p130='?' (Size = 4000), @p131='?' (DbType = Int32), @p132='?' (DbType = Date), @p133='?' (DbType = Int32), @p134='?' (Size = 4000), @p135='?' (DbType = Int32), @p136='?' (DbType = Date), @p137='?' (DbType = Int32), @p138='?' (Size = 4000), @p139='?' (DbType = Int32), @p140='?' (DbType = Date), @p141='?' (DbType = Int32), @p142='?' (Size = 4000), @p143='?' (DbType = Int32), @p144='?' (DbType = Date), @p145='?' (DbType = Int32), @p146='?' (Size = 4000), @p147='?' (DbType = Int32), @p148='?' (DbType = Date), @p149='?' (DbType = Int32), @p150='?' (Size = 4000), @p151='?' (DbType = Int32), @p152='?' (DbType = Date), @p153='?' (DbType = Int32), @p154='?' (Size = 4000), @p155='?' (DbType = Int32), @p156='?' (DbType = Date), @p157='?' (DbType = Int32), @p158='?' (Size = 4000), @p159='?' (DbType = Int32), @p160='?' (DbType = Date), @p161='?' (DbType = Int32), @p162='?' (Size = 4000), @p163='?' (DbType = Int32), @p164='?' (DbType = Date), @p165='?' (DbType = Int32), @p166='?' (Size = 4000), @p167='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [HabitLogs] USING (
+VALUES (@p0, @p1, @p2, @p3, 0),
+(@p4, @p5, @p6, @p7, 1),
+(@p8, @p9, @p10, @p11, 2),
+(@p12, @p13, @p14, @p15, 3),
+(@p16, @p17, @p18, @p19, 4),
+(@p20, @p21, @p22, @p23, 5),
+(@p24, @p25, @p26, @p27, 6),
+(@p28, @p29, @p30, @p31, 7),
+(@p32, @p33, @p34, @p35, 8),
+(@p36, @p37, @p38, @p39, 9),
+(@p40, @p41, @p42, @p43, 10),
+(@p44, @p45, @p46, @p47, 11),
+(@p48, @p49, @p50, @p51, 12),
+(@p52, @p53, @p54, @p55, 13),
+(@p56, @p57, @p58, @p59, 14),
+(@p60, @p61, @p62, @p63, 15),
+(@p64, @p65, @p66, @p67, 16),
+(@p68, @p69, @p70, @p71, 17),
+(@p72, @p73, @p74, @p75, 18),
+(@p76, @p77, @p78, @p79, 19),
+(@p80, @p81, @p82, @p83, 20),
+(@p84, @p85, @p86, @p87, 21),
+(@p88, @p89, @p90, @p91, 22),
+(@p92, @p93, @p94, @p95, 23),
+(@p96, @p97, @p98, @p99, 24),
+(@p100, @p101, @p102, @p103, 25),
+(@p104, @p105, @p106, @p107, 26),
+(@p108, @p109, @p110, @p111, 27),
+(@p112, @p113, @p114, @p115, 28),
+(@p116, @p117, @p118, @p119, 29),
+(@p120, @p121, @p122, @p123, 30),
+(@p124, @p125, @p126, @p127, 31),
+(@p128, @p129, @p130, @p131, 32),
+(@p132, @p133, @p134, @p135, 33),
+(@p136, @p137, @p138, @p139, 34),
+(@p140, @p141, @p142, @p143, 35),
+(@p144, @p145, @p146, @p147, 36),
+(@p148, @p149, @p150, @p151, 37),
+(@p152, @p153, @p154, @p155, 38),
+(@p156, @p157, @p158, @p159, 39),
+(@p160, @p161, @p162, @p163, 40),
+(@p164, @p165, @p166, @p167, 41)) AS i ([DoneDate], [HabitId], [Note], [Value], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([DoneDate], [HabitId], [Note], [Value])
+VALUES (i.[DoneDate], i.[HabitId], i.[Note], i.[Value])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:58.085 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[@p0='?' (DbType = Date), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Date), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = Date), @p9='?' (DbType = Int32), @p10='?' (Size = 4000), @p11='?' (DbType = Int32), @p12='?' (DbType = Date), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (DbType = Date), @p17='?' (DbType = Int32), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Date), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = Date), @p25='?' (DbType = Int32), @p26='?' (Size = 4000), @p27='?' (DbType = Int32), @p28='?' (DbType = Date), @p29='?' (DbType = Int32), @p30='?' (Size = 4000), @p31='?' (DbType = Int32), @p32='?' (DbType = Date), @p33='?' (DbType = Int32), @p34='?' (Size = 4000), @p35='?' (DbType = Int32), @p36='?' (DbType = Date), @p37='?' (DbType = Int32), @p38='?' (Size = 4000), @p39='?' (DbType = Int32), @p40='?' (DbType = Date), @p41='?' (DbType = Int32), @p42='?' (Size = 4000), @p43='?' (DbType = Int32), @p44='?' (DbType = Date), @p45='?' (DbType = Int32), @p46='?' (Size = 4000), @p47='?' (DbType = Int32), @p48='?' (DbType = Date), @p49='?' (DbType = Int32), @p50='?' (Size = 4000), @p51='?' (DbType = Int32), @p52='?' (DbType = Date), @p53='?' (DbType = Int32), @p54='?' (Size = 4000), @p55='?' (DbType = Int32), @p56='?' (DbType = Date), @p57='?' (DbType = Int32), @p58='?' (Size = 4000), @p59='?' (DbType = Int32), @p60='?' (DbType = Date), @p61='?' (DbType = Int32), @p62='?' (Size = 4000), @p63='?' (DbType = Int32), @p64='?' (DbType = Date), @p65='?' (DbType = Int32), @p66='?' (Size = 4000), @p67='?' (DbType = Int32), @p68='?' (DbType = Date), @p69='?' (DbType = Int32), @p70='?' (Size = 4000), @p71='?' (DbType = Int32), @p72='?' (DbType = Date), @p73='?' (DbType = Int32), @p74='?' (Size = 4000), @p75='?' (DbType = Int32), @p76='?' (DbType = Date), @p77='?' (DbType = Int32), @p78='?' (Size = 4000), @p79='?' (DbType = Int32), @p80='?' (DbType = Date), @p81='?' (DbType = Int32), @p82='?' (Size = 4000), @p83='?' (DbType = Int32), @p84='?' (DbType = Date), @p85='?' (DbType = Int32), @p86='?' (Size = 4000), @p87='?' (DbType = Int32), @p88='?' (DbType = Date), @p89='?' (DbType = Int32), @p90='?' (Size = 4000), @p91='?' (DbType = Int32), @p92='?' (DbType = Date), @p93='?' (DbType = Int32), @p94='?' (Size = 4000), @p95='?' (DbType = Int32), @p96='?' (DbType = Date), @p97='?' (DbType = Int32), @p98='?' (Size = 4000), @p99='?' (DbType = Int32), @p100='?' (DbType = Date), @p101='?' (DbType = Int32), @p102='?' (Size = 4000), @p103='?' (DbType = Int32), @p104='?' (DbType = Date), @p105='?' (DbType = Int32), @p106='?' (Size = 4000), @p107='?' (DbType = Int32), @p108='?' (DbType = Date), @p109='?' (DbType = Int32), @p110='?' (Size = 4000), @p111='?' (DbType = Int32), @p112='?' (DbType = Date), @p113='?' (DbType = Int32), @p114='?' (Size = 4000), @p115='?' (DbType = Int32), @p116='?' (DbType = Date), @p117='?' (DbType = Int32), @p118='?' (Size = 4000), @p119='?' (DbType = Int32), @p120='?' (DbType = Date), @p121='?' (DbType = Int32), @p122='?' (Size = 4000), @p123='?' (DbType = Int32), @p124='?' (DbType = Date), @p125='?' (DbType = Int32), @p126='?' (Size = 4000), @p127='?' (DbType = Int32), @p128='?' (DbType = Date), @p129='?' (DbType = Int32), @p130='?' (Size = 4000), @p131='?' (DbType = Int32), @p132='?' (DbType = Date), @p133='?' (DbType = Int32), @p134='?' (Size = 4000), @p135='?' (DbType = Int32), @p136='?' (DbType = Date), @p137='?' (DbType = Int32), @p138='?' (Size = 4000), @p139='?' (DbType = Int32), @p140='?' (DbType = Date), @p141='?' (DbType = Int32), @p142='?' (Size = 4000), @p143='?' (DbType = Int32), @p144='?' (DbType = Date), @p145='?' (DbType = Int32), @p146='?' (Size = 4000), @p147='?' (DbType = Int32), @p148='?' (DbType = Date), @p149='?' (DbType = Int32), @p150='?' (Size = 4000), @p151='?' (DbType = Int32), @p152='?' (DbType = Date), @p153='?' (DbType = Int32), @p154='?' (Size = 4000), @p155='?' (DbType = Int32), @p156='?' (DbType = Date), @p157='?' (DbType = Int32), @p158='?' (Size = 4000), @p159='?' (DbType = Int32), @p160='?' (DbType = Date), @p161='?' (DbType = Int32), @p162='?' (Size = 4000), @p163='?' (DbType = Int32), @p164='?' (DbType = Date), @p165='?' (DbType = Int32), @p166='?' (Size = 4000), @p167='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [HabitLogs] USING (
+VALUES (@p0, @p1, @p2, @p3, 0),
+(@p4, @p5, @p6, @p7, 1),
+(@p8, @p9, @p10, @p11, 2),
+(@p12, @p13, @p14, @p15, 3),
+(@p16, @p17, @p18, @p19, 4),
+(@p20, @p21, @p22, @p23, 5),
+(@p24, @p25, @p26, @p27, 6),
+(@p28, @p29, @p30, @p31, 7),
+(@p32, @p33, @p34, @p35, 8),
+(@p36, @p37, @p38, @p39, 9),
+(@p40, @p41, @p42, @p43, 10),
+(@p44, @p45, @p46, @p47, 11),
+(@p48, @p49, @p50, @p51, 12),
+(@p52, @p53, @p54, @p55, 13),
+(@p56, @p57, @p58, @p59, 14),
+(@p60, @p61, @p62, @p63, 15),
+(@p64, @p65, @p66, @p67, 16),
+(@p68, @p69, @p70, @p71, 17),
+(@p72, @p73, @p74, @p75, 18),
+(@p76, @p77, @p78, @p79, 19),
+(@p80, @p81, @p82, @p83, 20),
+(@p84, @p85, @p86, @p87, 21),
+(@p88, @p89, @p90, @p91, 22),
+(@p92, @p93, @p94, @p95, 23),
+(@p96, @p97, @p98, @p99, 24),
+(@p100, @p101, @p102, @p103, 25),
+(@p104, @p105, @p106, @p107, 26),
+(@p108, @p109, @p110, @p111, 27),
+(@p112, @p113, @p114, @p115, 28),
+(@p116, @p117, @p118, @p119, 29),
+(@p120, @p121, @p122, @p123, 30),
+(@p124, @p125, @p126, @p127, 31),
+(@p128, @p129, @p130, @p131, 32),
+(@p132, @p133, @p134, @p135, 33),
+(@p136, @p137, @p138, @p139, 34),
+(@p140, @p141, @p142, @p143, 35),
+(@p144, @p145, @p146, @p147, 36),
+(@p148, @p149, @p150, @p151, 37),
+(@p152, @p153, @p154, @p155, 38),
+(@p156, @p157, @p158, @p159, 39),
+(@p160, @p161, @p162, @p163, 40),
+(@p164, @p165, @p166, @p167, 41)) AS i ([DoneDate], [HabitId], [Note], [Value], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([DoneDate], [HabitId], [Note], [Value])
+VALUES (i.[DoneDate], i.[HabitId], i.[Note], i.[Value])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:58.107 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.114 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.117 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.127 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.131 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.143 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.148 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.152 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.174 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.179 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.190 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.195 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.208 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.212 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.217 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.230 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.234 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.236 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.241 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.243 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.251 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.257 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.260 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.262 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.266 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.269 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.275 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.277 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.280 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.282 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.284 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.290 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.293 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.301 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.306 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.308 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.312 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.314 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.316 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.319 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.323 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.325 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.467 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.468 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 367ms reading results.
+2026-08-08 10:26:58.476 +03:00 [DBG] Executing 3 update commands as a batch.
+2026-08-08 10:26:58.480 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 10:26:58.482 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2026-08-08 10:26:58.485 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (5ms).
+2026-08-08 10:26:58.489 +03:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Date), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Date), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = Date), @p9='?' (DbType = Int32), @p10='?' (Size = 4000), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [HabitLogs] USING (
+VALUES (@p0, @p1, @p2, @p3, 0),
+(@p4, @p5, @p6, @p7, 1),
+(@p8, @p9, @p10, @p11, 2)) AS i ([DoneDate], [HabitId], [Note], [Value], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([DoneDate], [HabitId], [Note], [Value])
+VALUES (i.[DoneDate], i.[HabitId], i.[Note], i.[Value])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:58.499 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Date), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Date), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = Date), @p9='?' (DbType = Int32), @p10='?' (Size = 4000), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [HabitLogs] USING (
+VALUES (@p0, @p1, @p2, @p3, 0),
+(@p4, @p5, @p6, @p7, 1),
+(@p8, @p9, @p10, @p11, 2)) AS i ([DoneDate], [HabitId], [Note], [Value], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([DoneDate], [HabitId], [Note], [Value])
+VALUES (i.[DoneDate], i.[HabitId], i.[Note], i.[Value])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:58.504 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.505 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.506 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.507 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.509 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 4ms reading results.
+2026-08-08 10:26:58.510 +03:00 [DBG] Committing transaction.
+2026-08-08 10:26:58.512 +03:00 [DBG] Committed transaction.
+2026-08-08 10:26:58.512 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.513 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (1ms).
+2026-08-08 10:26:58.515 +03:00 [DBG] Disposing transaction.
+2026-08-08 10:26:58.521 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.524 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.525 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.526 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.527 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.529 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.531 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.533 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.535 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.538 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.541 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.542 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.544 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.546 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.550 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.552 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.555 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.558 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.559 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.560 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.562 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.564 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.566 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.567 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.569 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.572 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.573 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.575 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.579 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.581 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.582 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.583 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.585 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.586 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.589 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.590 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.592 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.594 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.598 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.601 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.602 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.605 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.606 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.608 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.609 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.610 +03:00 [DBG] SaveChanges completed for 'AppDbContext' with 45 entities written to the database.
+2026-08-08 10:26:58.617 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Reminder.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.638 +03:00 [DBG] The navigation 'Reminder.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.644 +03:00 [DBG] Context 'AppDbContext' started tracking 'Reminder' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.646 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Reminder.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.647 +03:00 [DBG] The navigation 'Reminder.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.649 +03:00 [DBG] Context 'AppDbContext' started tracking 'Reminder' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.650 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Reminder.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.652 +03:00 [DBG] The navigation 'Reminder.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.654 +03:00 [DBG] Context 'AppDbContext' started tracking 'Reminder' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.657 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Reminder.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.662 +03:00 [DBG] The navigation 'Reminder.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.666 +03:00 [DBG] Context 'AppDbContext' started tracking 'Reminder' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.669 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Reminder.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.681 +03:00 [DBG] The navigation 'Reminder.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.691 +03:00 [DBG] Context 'AppDbContext' started tracking 'Reminder' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.695 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Reminder.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.701 +03:00 [DBG] The navigation 'Reminder.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.711 +03:00 [DBG] Context 'AppDbContext' started tracking 'Reminder' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.715 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'Reminder.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.719 +03:00 [DBG] The navigation 'Reminder.Habit' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.729 +03:00 [DBG] Context 'AppDbContext' started tracking 'Reminder' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.734 +03:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2026-08-08 10:26:58.742 +03:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2026-08-08 10:26:58.761 +03:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2026-08-08 10:26:58.764 +03:00 [DBG] Executing 7 update commands as a batch.
+2026-08-08 10:26:58.766 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.768 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.781 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 10:26:58.790 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (9ms).
+2026-08-08 10:26:58.796 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (15ms).
+2026-08-08 10:26:58.828 +03:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (DbType = Time), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Time), @p6='?' (DbType = Int32), @p7='?' (DbType = Boolean), @p8='?' (DbType = Time), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Time), @p12='?' (DbType = Int32), @p13='?' (DbType = Boolean), @p14='?' (DbType = Time), @p15='?' (DbType = Int32), @p16='?' (DbType = Boolean), @p17='?' (DbType = Time), @p18='?' (DbType = Int32), @p19='?' (DbType = Boolean), @p20='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Reminders] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1),
+(@p6, @p7, @p8, 2),
+(@p9, @p10, @p11, 3),
+(@p12, @p13, @p14, 4),
+(@p15, @p16, @p17, 5),
+(@p18, @p19, @p20, 6)) AS i ([HabitId], [IsEnabled], [ReminderTime], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([HabitId], [IsEnabled], [ReminderTime])
+VALUES (i.[HabitId], i.[IsEnabled], i.[ReminderTime])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:58.858 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (DbType = Time), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Time), @p6='?' (DbType = Int32), @p7='?' (DbType = Boolean), @p8='?' (DbType = Time), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Time), @p12='?' (DbType = Int32), @p13='?' (DbType = Boolean), @p14='?' (DbType = Time), @p15='?' (DbType = Int32), @p16='?' (DbType = Boolean), @p17='?' (DbType = Time), @p18='?' (DbType = Int32), @p19='?' (DbType = Boolean), @p20='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Reminders] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1),
+(@p6, @p7, @p8, 2),
+(@p9, @p10, @p11, 3),
+(@p12, @p13, @p14, 4),
+(@p15, @p16, @p17, 5),
+(@p18, @p19, @p20, 6)) AS i ([HabitId], [IsEnabled], [ReminderTime], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([HabitId], [IsEnabled], [ReminderTime])
+VALUES (i.[HabitId], i.[IsEnabled], i.[ReminderTime])
+OUTPUT INSERTED.[Id], i._Position;
+2026-08-08 10:26:58.868 +03:00 [DBG] The foreign key property 'Reminder.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.872 +03:00 [DBG] The foreign key property 'Reminder.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.875 +03:00 [DBG] The foreign key property 'Reminder.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.878 +03:00 [DBG] The foreign key property 'Reminder.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.882 +03:00 [DBG] The foreign key property 'Reminder.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.884 +03:00 [DBG] The foreign key property 'Reminder.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.887 +03:00 [DBG] The foreign key property 'Reminder.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-08 10:26:58.891 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.893 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 29ms reading results.
+2026-08-08 10:26:58.895 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.898 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (2ms).
+2026-08-08 10:26:58.902 +03:00 [DBG] An entity of type 'Reminder' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.907 +03:00 [DBG] An entity of type 'Reminder' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.909 +03:00 [DBG] An entity of type 'Reminder' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.912 +03:00 [DBG] An entity of type 'Reminder' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.923 +03:00 [DBG] An entity of type 'Reminder' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.935 +03:00 [DBG] An entity of type 'Reminder' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.942 +03:00 [DBG] An entity of type 'Reminder' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-08 10:26:58.947 +03:00 [DBG] SaveChanges completed for 'AppDbContext' with 7 entities written to the database.
+2026-08-08 10:26:58.949 +03:00 [INF] База данных успешно проверена и заполнена тестовыми данными!
+2026-08-08 10:26:58.953 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-08 10:26:58.961 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 10:26:58.977 +03:00 [DBG] Disposed connection to database '' on server '' (16ms).
+2026-08-08 10:26:59.090 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-08-08 10:26:59.222 +03:00 [INF] API успешно сконфигурировано и начинает слушать порты...
+2026-08-08 10:26:59.227 +03:00 [DBG] Hosting starting
+2026-08-08 10:26:59.265 +03:00 [INF] User profile is available. Using 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-08 10:26:59.290 +03:00 [DBG] Reading data from file 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys\key-0f2061ab-bbee-420a-8dc9-7a86076fd805.xml'.
+2026-08-08 10:26:59.297 +03:00 [DBG] Reading data from file 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys\key-ff7eef80-ca71-4115-99c5-9ffb8b18ba77.xml'.
+2026-08-08 10:26:59.309 +03:00 [DBG] Found key {0f2061ab-bbee-420a-8dc9-7a86076fd805}.
+2026-08-08 10:26:59.330 +03:00 [DBG] Found key {ff7eef80-ca71-4115-99c5-9ffb8b18ba77}.
+2026-08-08 10:26:59.351 +03:00 [DBG] Considering key {0f2061ab-bbee-420a-8dc9-7a86076fd805} with expiration date 2026-08-28 05:34:58Z as default key.
+2026-08-08 10:26:59.362 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-08 10:26:59.364 +03:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-08-08 10:26:59.371 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-08 10:26:59.377 +03:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-08-08 10:26:59.381 +03:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-08-08 10:26:59.386 +03:00 [DBG] Using key {0f2061ab-bbee-420a-8dc9-7a86076fd805} as the default key.
+2026-08-08 10:26:59.391 +03:00 [DBG] Key ring with default key {0f2061ab-bbee-420a-8dc9-7a86076fd805} was loaded during application startup.
+2026-08-08 10:26:59.459 +03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-08-08 10:26:59.462 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-08-08 10:26:59.503 +03:00 [INF] Now listening on: http://localhost:5203
+2026-08-08 10:26:59.509 +03:00 [DBG] Loaded hosting startup assembly HabitTrakerApi
+2026-08-08 10:26:59.512 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-08 10:26:59.518 +03:00 [INF] Hosting environment: Development
+2026-08-08 10:26:59.520 +03:00 [INF] Content root path: C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi
+2026-08-08 10:26:59.523 +03:00 [DBG] Hosting started
+2026-08-08 10:27:11.774 +03:00 [DBG] Connection id "0HNNL3PR6LIVQ" accepted.
+2026-08-08 10:27:11.804 +03:00 [DBG] Connection id "0HNNL3PR6LIVQ" started.
+2026-08-08 10:27:11.932 +03:00 [DBG] Connection id "0HNNL3PR6LIVR" accepted.
+2026-08-08 10:27:11.930 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/ - null null
+2026-08-08 10:27:11.938 +03:00 [DBG] Connection id "0HNNL3PR6LIVR" started.
+2026-08-08 10:27:12.156 +03:00 [DBG] No candidates found for the request path '/'
+2026-08-08 10:27:12.158 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 10:27:12.307 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-08-08 10:27:12.321 +03:00 [DBG] Connection id "0HNNL3PR6LIVQ" completed keep alive response.
+2026-08-08 10:27:12.325 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/ - 404 0 null 398.1138ms
+2026-08-08 10:27:12.339 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5203/, Response status code: 404
+2026-08-08 10:27:23.318 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/index.html - null null
+2026-08-08 10:27:23.380 +03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2026-08-08 10:27:23.381 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 10:27:23.509 +03:00 [DBG] Connection id "0HNNL3PR6LIVQ" completed keep alive response.
+2026-08-08 10:27:23.510 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/index.html - 200 null text/html;charset=utf-8 191.8236ms
+2026-08-08 10:27:23.557 +03:00 [DBG] Connection id "0HNNL3PR6LIVS" accepted.
+2026-08-08 10:27:23.563 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui.css - null null
+2026-08-08 10:27:23.583 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2026-08-08 10:27:23.576 +03:00 [DBG] Connection id "0HNNL3PR6LIVT" accepted.
+2026-08-08 10:27:23.576 +03:00 [DBG] Connection id "0HNNL3PR6LIVS" started.
+2026-08-08 10:27:23.571 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/index.css - null null
+2026-08-08 10:27:23.586 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 10:27:23.587 +03:00 [DBG] Connection id "0HNNL3PR6LIVU" accepted.
+2026-08-08 10:27:23.593 +03:00 [DBG] Connection id "0HNNL3PR6LIVT" started.
+2026-08-08 10:27:23.596 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-08 10:27:23.588 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/index.js - null null
+2026-08-08 10:27:23.611 +03:00 [DBG] No candidates found for the request path '/swagger/index.js'
+2026-08-08 10:27:23.603 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2026-08-08 10:27:23.609 +03:00 [DBG] Connection id "0HNNL3PR6LIVQ" completed keep alive response.
+2026-08-08 10:27:23.591 +03:00 [DBG] No candidates found for the request path '/swagger/index.css'
+2026-08-08 10:27:23.612 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 10:27:23.613 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 10:27:23.614 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui.css - 200 26479 text/css 50.3274ms
+2026-08-08 10:27:23.630 +03:00 [DBG] Connection id "0HNNL3PR6LIVU" started.
+2026-08-08 10:27:23.642 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-bundle.js - null null
+2026-08-08 10:27:23.617 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 10:27:23.618 +03:00 [DBG] Connection id "0HNNL3PR6LIVS" completed keep alive response.
+2026-08-08 10:27:23.675 +03:00 [DBG] Connection id "0HNNL3PR6LIVT" completed keep alive response.
+2026-08-08 10:27:23.894 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2026-08-08 10:27:23.896 +03:00 [DBG] Connection id "0HNNL3PR6LIVR" completed keep alive response.
+2026-08-08 10:27:23.897 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/index.js - 200 null application/javascript;charset=utf-8 308.9732ms
+2026-08-08 10:27:23.902 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-standalone-preset.js - 200 76613 text/javascript 305.9811ms
+2026-08-08 10:27:23.904 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 10:27:23.931 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/index.css - 200 152 text/css 359.3219ms
+2026-08-08 10:27:23.975 +03:00 [DBG] Connection id "0HNNL3PR6LIVU" completed keep alive response.
+2026-08-08 10:27:24.094 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-bundle.js - 200 418181 text/javascript 451.6277ms
+2026-08-08 10:27:24.587 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/v1/swagger.json - null null
+2026-08-08 10:27:24.593 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/favicon-32x32.png - null null
+2026-08-08 10:27:24.656 +03:00 [DBG] No candidates found for the request path '/swagger/favicon-32x32.png'
+2026-08-08 10:27:24.636 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2026-08-08 10:27:24.763 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 10:27:24.764 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 10:27:24.771 +03:00 [DBG] Connection id "0HNNL3PR6LIVT" completed keep alive response.
+2026-08-08 10:27:24.774 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/favicon-32x32.png - 200 628 image/png 180.3305ms
+2026-08-08 10:27:24.788 +03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-08-08 10:27:24.793 +03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-08-08 10:27:25.114 +03:00 [DBG] Connection id "0HNNL3PR6LIVU" completed keep alive response.
+2026-08-08 10:27:25.115 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 528.1796ms
+2026-08-08 10:29:33.979 +03:00 [DBG] Connection id "0HNNL3PR6LIVQ" disconnecting.
+2026-08-08 10:29:33.986 +03:00 [DBG] Connection id "0HNNL3PR6LIVQ" stopped.
+2026-08-08 10:29:33.993 +03:00 [DBG] Connection id "0HNNL3PR6LIVQ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 10:29:34.980 +03:00 [DBG] Connection id "0HNNL3PR6LIVS" disconnecting.
+2026-08-08 10:29:34.980 +03:00 [DBG] Connection id "0HNNL3PR6LIVR" disconnecting.
+2026-08-08 10:29:34.982 +03:00 [DBG] Connection id "0HNNL3PR6LIVS" stopped.
+2026-08-08 10:29:34.987 +03:00 [DBG] Connection id "0HNNL3PR6LIVR" stopped.
+2026-08-08 10:29:34.989 +03:00 [DBG] Connection id "0HNNL3PR6LIVS" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 10:29:35.008 +03:00 [DBG] Connection id "0HNNL3PR6LIVR" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 10:29:35.991 +03:00 [DBG] Connection id "0HNNL3PR6LIVT" disconnecting.
+2026-08-08 10:29:35.991 +03:00 [DBG] Connection id "0HNNL3PR6LIVU" disconnecting.
+2026-08-08 10:29:35.992 +03:00 [DBG] Connection id "0HNNL3PR6LIVT" stopped.
+2026-08-08 10:29:35.993 +03:00 [DBG] Connection id "0HNNL3PR6LIVU" stopped.
+2026-08-08 10:29:36.000 +03:00 [DBG] Connection id "0HNNL3PR6LIVT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 10:29:36.002 +03:00 [DBG] Connection id "0HNNL3PR6LIVU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 10:56:09.825 +03:00 [INF] Application is shutting down...
+2026-08-08 10:56:09.832 +03:00 [DBG] Hosting stopping
+2026-08-08 10:56:09.898 +03:00 [DBG] Hosting stopped
+2026-08-08 10:56:22.000 +03:00 [INF] Запуск веб-хоста приложения...
+2026-08-08 10:56:24.460 +03:00 [FTL] Приложение аварийно завершило свою работу во время инициализации хоста!
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: HabitTrakerApi.Services.BackraundServices.NotificationService Lifetime: Singleton ImplementationType: HabitTrakerApi.Services.BackraundServices.NotificationService': Unable to resolve service for type 'HabitTrakerApi.Services.BackraundServices.TelegramService' while attempting to activate 'HabitTrakerApi.Services.BackraundServices.NotificationService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: HabitTrakerApi.Services.BackraundServices.NotificationService Lifetime: Singleton ImplementationType: HabitTrakerApi.Services.BackraundServices.NotificationService': Unable to resolve service for type 'HabitTrakerApi.Services.BackraundServices.TelegramService' while attempting to activate 'HabitTrakerApi.Services.BackraundServices.NotificationService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'HabitTrakerApi.Services.BackraundServices.TelegramService' while attempting to activate 'HabitTrakerApi.Services.BackraundServices.NotificationService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\Program.cs:line 101
+2026-08-08 11:03:12.424 +03:00 [INF] Запуск веб-хоста приложения...
+2026-08-08 11:03:15.689 +03:00 [FTL] Приложение аварийно завершило свою работу во время инициализации хоста!
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: HabitTrakerApi.Services.BackraundServices.NotificationService Lifetime: Singleton ImplementationType: HabitTrakerApi.Services.BackraundServices.NotificationService': Unable to resolve service for type 'HabitTrakerApi.Services.BackraundServices.TelegramService' while attempting to activate 'HabitTrakerApi.Services.BackraundServices.NotificationService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: HabitTrakerApi.Services.BackraundServices.NotificationService Lifetime: Singleton ImplementationType: HabitTrakerApi.Services.BackraundServices.NotificationService': Unable to resolve service for type 'HabitTrakerApi.Services.BackraundServices.TelegramService' while attempting to activate 'HabitTrakerApi.Services.BackraundServices.NotificationService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'HabitTrakerApi.Services.BackraundServices.TelegramService' while attempting to activate 'HabitTrakerApi.Services.BackraundServices.NotificationService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\Program.cs:line 101
+2026-08-08 11:03:28.783 +03:00 [INF] Запуск веб-хоста приложения...
+2026-08-08 11:03:29.864 +03:00 [FTL] Приложение аварийно завершило свою работу во время инициализации хоста!
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: HabitTrakerApi.Services.BackraundServices.NotificationService Lifetime: Singleton ImplementationType: HabitTrakerApi.Services.BackraundServices.NotificationService': Unable to resolve service for type 'HabitTrakerApi.Services.BackraundServices.TelegramService' while attempting to activate 'HabitTrakerApi.Services.BackraundServices.NotificationService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: HabitTrakerApi.Services.BackraundServices.NotificationService Lifetime: Singleton ImplementationType: HabitTrakerApi.Services.BackraundServices.NotificationService': Unable to resolve service for type 'HabitTrakerApi.Services.BackraundServices.TelegramService' while attempting to activate 'HabitTrakerApi.Services.BackraundServices.NotificationService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'HabitTrakerApi.Services.BackraundServices.TelegramService' while attempting to activate 'HabitTrakerApi.Services.BackraundServices.NotificationService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\Program.cs:line 101
+2026-08-08 11:05:46.619 +03:00 [INF] Запуск веб-хоста приложения...
+2026-08-08 11:05:48.398 +03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-08-08 11:05:48.536 +03:00 [INF] Анализ миграций и запуск наполнения базы данных (DbSeeder)...
+2026-08-08 11:05:52.446 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-08 11:05:53.956 +03:00 [DBG] Creating DbConnection.
+2026-08-08 11:05:54.192 +03:00 [DBG] Created DbConnection. (221ms).
+2026-08-08 11:05:54.271 +03:00 [DBG] Migrating using database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:05:54.374 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:05:55.160 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:05:55.253 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-08 11:05:55.316 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (50ms).
+2026-08-08 11:05:55.336 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (107ms).
+2026-08-08 11:05:55.449 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-08 11:05:55.753 +03:00 [INF] Executed DbCommand (362ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-08 11:05:55.798 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:05:55.849 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (18ms).
+2026-08-08 11:05:55.918 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:05:55.983 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:05:56.108 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-08 11:05:56.167 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-08 11:05:56.616 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (452ms).
+2026-08-08 11:05:56.778 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (613ms).
+2026-08-08 11:05:56.809 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-08 11:05:56.994 +03:00 [INF] Executed DbCommand (186ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-08 11:05:57.511 +03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-08-08 11:05:57.576 +03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-08-08 11:05:57.591 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-08 11:05:57.605 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (13ms).
+2026-08-08 11:05:57.657 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (65ms).
+2026-08-08 11:05:57.694 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-08 11:05:57.885 +03:00 [INF] Executed DbCommand (191ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-08 11:05:58.001 +03:00 [DBG] Committing transaction.
+2026-08-08 11:05:58.101 +03:00 [DBG] Committed transaction.
+2026-08-08 11:05:58.155 +03:00 [DBG] Disposing transaction.
+2026-08-08 11:05:58.261 +03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-08-08 11:05:58.293 +03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-08-08 11:05:58.331 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-08 11:05:58.477 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (146ms).
+2026-08-08 11:05:58.844 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (513ms).
+2026-08-08 11:05:59.058 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-08 11:05:59.184 +03:00 [INF] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-08 11:05:59.278 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-08 11:05:59.309 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (31ms).
+2026-08-08 11:05:59.351 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (72ms).
+2026-08-08 11:05:59.391 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-08 11:05:59.862 +03:00 [INF] Executed DbCommand (470ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-08 11:05:59.914 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 11:05:59.945 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (31ms).
+2026-08-08 11:05:59.953 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (39ms).
+2026-08-08 11:05:59.962 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-08 11:06:00.212 +03:00 [INF] Executed DbCommand (250ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-08 11:06:00.347 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:06:00.378 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 121ms reading results.
+2026-08-08 11:06:00.462 +03:00 [INF] No migrations were applied. The database is already up to date.
+2026-08-08 11:06:00.500 +03:00 [DBG] Committing transaction.
+2026-08-08 11:06:00.560 +03:00 [DBG] Committed transaction.
+2026-08-08 11:06:00.592 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-08 11:06:00.603 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (11ms).
+2026-08-08 11:06:00.617 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (25ms).
+2026-08-08 11:06:00.634 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-08 11:06:00.681 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-08 11:06:00.707 +03:00 [DBG] Disposing transaction.
+2026-08-08 11:06:00.737 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:06:00.769 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (32ms).
+2026-08-08 11:06:01.531 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2026-08-08 11:06:02.437 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u), 
+            False, 
+            MultipleParameters
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: HabitTrakerApi.DbContext.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-08 11:06:02.589 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:06:02.602 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:06:02.606 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 11:06:02.612 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (6ms).
+2026-08-08 11:06:02.636 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (30ms).
+2026-08-08 11:06:02.694 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-08 11:06:02.826 +03:00 [INF] Executed DbCommand (132ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-08 11:06:02.980 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:06:03.212 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 264ms reading results.
+2026-08-08 11:06:03.472 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:06:03.493 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (21ms).
+2026-08-08 11:06:03.559 +03:00 [INF] База данных успешно проверена и заполнена тестовыми данными!
+2026-08-08 11:06:03.578 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-08 11:06:03.619 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:06:03.645 +03:00 [DBG] Disposed connection to database '' on server '' (29ms).
+2026-08-08 11:06:03.828 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-08-08 11:06:04.462 +03:00 [INF] API успешно сконфигурировано и начинает слушать порты...
+2026-08-08 11:06:04.528 +03:00 [DBG] Hosting starting
+2026-08-08 11:06:04.627 +03:00 [INF] User profile is available. Using 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-08 11:06:04.695 +03:00 [DBG] Reading data from file 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys\key-0f2061ab-bbee-420a-8dc9-7a86076fd805.xml'.
+2026-08-08 11:06:04.738 +03:00 [DBG] Reading data from file 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys\key-ff7eef80-ca71-4115-99c5-9ffb8b18ba77.xml'.
+2026-08-08 11:06:04.796 +03:00 [DBG] Found key {0f2061ab-bbee-420a-8dc9-7a86076fd805}.
+2026-08-08 11:06:04.846 +03:00 [DBG] Found key {ff7eef80-ca71-4115-99c5-9ffb8b18ba77}.
+2026-08-08 11:06:04.934 +03:00 [DBG] Considering key {0f2061ab-bbee-420a-8dc9-7a86076fd805} with expiration date 2026-08-28 05:34:58Z as default key.
+2026-08-08 11:06:05.292 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-08 11:06:05.525 +03:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-08-08 11:06:05.606 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-08 11:06:05.617 +03:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-08-08 11:06:05.629 +03:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-08-08 11:06:05.664 +03:00 [DBG] Using key {0f2061ab-bbee-420a-8dc9-7a86076fd805} as the default key.
+2026-08-08 11:06:05.697 +03:00 [DBG] Key ring with default key {0f2061ab-bbee-420a-8dc9-7a86076fd805} was loaded during application startup.
+2026-08-08 11:06:06.069 +03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-08-08 11:06:06.125 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-08-08 11:06:06.432 +03:00 [INF] Now listening on: http://localhost:5203
+2026-08-08 11:06:06.479 +03:00 [DBG] Loaded hosting startup assembly HabitTrakerApi
+2026-08-08 11:06:06.655 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-08 11:06:06.664 +03:00 [INF] Hosting environment: Development
+2026-08-08 11:06:06.673 +03:00 [INF] Content root path: C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi
+2026-08-08 11:06:06.698 +03:00 [DBG] Hosting started
+2026-08-08 11:07:11.400 +03:00 [DBG] Connection id "0HNNL4G6B9KKL" accepted.
+2026-08-08 11:07:11.537 +03:00 [DBG] Connection id "0HNNL4G6B9KKM" accepted.
+2026-08-08 11:07:11.537 +03:00 [DBG] Connection id "0HNNL4G6B9KKL" started.
+2026-08-08 11:07:11.560 +03:00 [DBG] Connection id "0HNNL4G6B9KKM" started.
+2026-08-08 11:07:11.735 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/ - null null
+2026-08-08 11:07:12.818 +03:00 [DBG] No candidates found for the request path '/'
+2026-08-08 11:07:12.963 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 11:07:13.997 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-08-08 11:07:14.330 +03:00 [DBG] Connection id "0HNNL4G6B9KKL" completed keep alive response.
+2026-08-08 11:07:14.897 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/ - 404 0 null 3188.748ms
+2026-08-08 11:07:15.163 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5203/, Response status code: 404
+2026-08-08 11:07:19.880 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/index.html - null null
+2026-08-08 11:07:19.899 +03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2026-08-08 11:07:19.906 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 11:07:20.173 +03:00 [DBG] Connection id "0HNNL4G6B9KKL" completed keep alive response.
+2026-08-08 11:07:20.260 +03:00 [DBG] Connection id "0HNNL4G6B9KKN" accepted.
+2026-08-08 11:07:20.262 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/index.html - 304 null null 382.2245ms
+2026-08-08 11:07:20.267 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/index.css - null null
+2026-08-08 11:07:20.278 +03:00 [DBG] Connection id "0HNNL4G6B9KKN" started.
+2026-08-08 11:07:20.279 +03:00 [DBG] Connection id "0HNNL4G6B9KKO" accepted.
+2026-08-08 11:07:20.300 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui.css - null null
+2026-08-08 11:07:20.460 +03:00 [DBG] No candidates found for the request path '/swagger/index.css'
+2026-08-08 11:07:20.467 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-bundle.js - null null
+2026-08-08 11:07:20.492 +03:00 [DBG] Connection id "0HNNL4G6B9KKP" accepted.
+2026-08-08 11:07:20.516 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2026-08-08 11:07:20.581 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 11:07:20.675 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2026-08-08 11:07:20.734 +03:00 [DBG] Connection id "0HNNL4G6B9KKO" started.
+2026-08-08 11:07:20.757 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 11:07:20.779 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 11:07:20.783 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-08 11:07:20.785 +03:00 [DBG] Connection id "0HNNL4G6B9KKM" completed keep alive response.
+2026-08-08 11:07:20.869 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/index.css - 304 null null 602.1326ms
+2026-08-08 11:07:20.839 +03:00 [DBG] Connection id "0HNNL4G6B9KKN" completed keep alive response.
+2026-08-08 11:07:20.865 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2026-08-08 11:07:20.804 +03:00 [DBG] Connection id "0HNNL4G6B9KKL" completed keep alive response.
+2026-08-08 11:07:20.936 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui.css - 304 null null 635.7526ms
+2026-08-08 11:07:20.914 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-bundle.js - 304 null null 446.9746ms
+2026-08-08 11:07:20.918 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 11:07:20.910 +03:00 [DBG] Connection id "0HNNL4G6B9KKP" started.
+2026-08-08 11:07:22.516 +03:00 [DBG] Connection id "0HNNL4G6B9KKO" completed keep alive response.
+2026-08-08 11:07:22.535 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/index.js - null null
+2026-08-08 11:07:22.563 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-standalone-preset.js - 304 null null 1779.7698ms
+2026-08-08 11:07:22.599 +03:00 [DBG] No candidates found for the request path '/swagger/index.js'
+2026-08-08 11:07:22.959 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 11:07:23.090 +03:00 [DBG] Connection id "0HNNL4G6B9KKP" completed keep alive response.
+2026-08-08 11:07:23.597 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/index.js - 304 null null 1061.7853ms
+2026-08-08 11:07:23.685 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/v1/swagger.json - null null
+2026-08-08 11:07:23.933 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2026-08-08 11:07:24.095 +03:00 [DBG] Request did not match any endpoints
+2026-08-08 11:07:24.365 +03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-08-08 11:07:24.557 +03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-08-08 11:07:26.133 +03:00 [DBG] Connection id "0HNNL4G6B9KKP" completed keep alive response.
+2026-08-08 11:07:26.136 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 2451.1546ms
+2026-08-08 11:07:50.951 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-08 11:07:51.044 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .FirstOrDefault(u => u.Login == @message_Text)'
+2026-08-08 11:07:51.358 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.ChatId (long?), 1], [Property: User.CreatedAt (DateTime) Required, 2], [Property: User.Email (string) Required Index, 3], [Property: User.Login (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.PendingChatId (long?), 6], [Property: User.Role (UserRole) Required, 7], [Property: User.TelegramAuthState (TelegramAuthState) Required, 8] }
+            SELECT TOP(1) u.Id, u.ChatId, u.CreatedAt, u.Email, u.Login, u.Password, u.PendingChatId, u.Role, u.TelegramAuthState
+            FROM Users AS u
+            WHERE u.Login == @message_Text) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.ChatId (long?), 1], [Property: User.CreatedAt (DateTime) Required, 2], [Property: User.Email (string) Required Index, 3], [Property: User.Login (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.PendingChatId (long?), 6], [Property: User.Role (UserRole) Required, 7], [Property: User.TelegramAuthState (TelegramAuthState) Required, 8] }
+            SELECT TOP(1) u.Id, u.ChatId, u.CreatedAt, u.Email, u.Login, u.Password, u.PendingChatId, u.Role, u.TelegramAuthState
+            FROM Users AS u
+            WHERE u.Login == @message_Text, 
+            False, 
+            MultipleParameters
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            User entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                User instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(User);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (User)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User")]: 
+                            {
+                                return 
+                                {
+                                    User instance;
+                                    instance = new User();
+                                    instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                    instance.<ChatId>k__BackingField = dataReader.IsDBNull(1) ? default(long?) : (long?)dataReader.GetInt64(1);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(2);
+                                    instance.<Email>k__BackingField = dataReader.GetString(3);
+                                    instance.<Login>k__BackingField = dataReader.GetString(4);
+                                    instance.<Password>k__BackingField = dataReader.GetString(5);
+                                    instance.<PendingChatId>k__BackingField = dataReader.IsDBNull(6) ? default(long?) : (long?)dataReader.GetInt64(6);
+                                    instance.<Role>k__BackingField = Invoke(((EnumToNumberConverter<UserRole, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: User.Role (UserRole) Required | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User").FindProperty("Role")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(7));
+                                    instance.<TelegramAuthState>k__BackingField = Invoke(((EnumToNumberConverter<TelegramAuthState, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: User.TelegramAuthState (TelegramAuthState) Required | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User").FindProperty("TelegramAuthState")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(8));
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(User)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: HabitTrakerApi.DbContext.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-08 11:07:51.458 +03:00 [DBG] Creating DbConnection.
+2026-08-08 11:07:51.497 +03:00 [DBG] Created DbConnection. (38ms).
+2026-08-08 11:07:51.563 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:07:51.573 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:07:51.704 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 11:07:51.781 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (77ms).
+2026-08-08 11:07:51.878 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (174ms).
+2026-08-08 11:07:51.898 +03:00 [DBG] Executing DbCommand [Parameters=[@message_Text='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[Login] = @message_Text
+2026-08-08 11:07:52.184 +03:00 [INF] Executed DbCommand (293ms) [Parameters=[@message_Text='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[Login] = @message_Text
+2026-08-08 11:07:52.197 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:07:52.279 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 85ms reading results.
+2026-08-08 11:07:52.904 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:07:52.909 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (4ms).
+2026-08-08 11:07:53.236 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-08 11:07:53.344 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:07:53.483 +03:00 [DBG] Disposed connection to database '' on server '' (138ms).
+2026-08-08 11:08:02.020 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-08 11:08:02.041 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .FirstOrDefault(u => u.ChatId == @message_Chat_Id)'
+2026-08-08 11:08:02.087 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.ChatId (long?), 1], [Property: User.CreatedAt (DateTime) Required, 2], [Property: User.Email (string) Required Index, 3], [Property: User.Login (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.PendingChatId (long?), 6], [Property: User.Role (UserRole) Required, 7], [Property: User.TelegramAuthState (TelegramAuthState) Required, 8] }
+            SELECT TOP(1) u.Id, u.ChatId, u.CreatedAt, u.Email, u.Login, u.Password, u.PendingChatId, u.Role, u.TelegramAuthState
+            FROM Users AS u
+            WHERE u.ChatId == @message_Chat_Id) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.ChatId (long?), 1], [Property: User.CreatedAt (DateTime) Required, 2], [Property: User.Email (string) Required Index, 3], [Property: User.Login (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.PendingChatId (long?), 6], [Property: User.Role (UserRole) Required, 7], [Property: User.TelegramAuthState (TelegramAuthState) Required, 8] }
+            SELECT TOP(1) u.Id, u.ChatId, u.CreatedAt, u.Email, u.Login, u.Password, u.PendingChatId, u.Role, u.TelegramAuthState
+            FROM Users AS u
+            WHERE u.ChatId == @message_Chat_Id, 
+            False, 
+            MultipleParameters
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            User entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                User instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(User);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (User)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User")]: 
+                            {
+                                return 
+                                {
+                                    User instance;
+                                    instance = new User();
+                                    instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                    instance.<ChatId>k__BackingField = dataReader.IsDBNull(1) ? default(long?) : (long?)dataReader.GetInt64(1);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(2);
+                                    instance.<Email>k__BackingField = dataReader.GetString(3);
+                                    instance.<Login>k__BackingField = dataReader.GetString(4);
+                                    instance.<Password>k__BackingField = dataReader.GetString(5);
+                                    instance.<PendingChatId>k__BackingField = dataReader.IsDBNull(6) ? default(long?) : (long?)dataReader.GetInt64(6);
+                                    instance.<Role>k__BackingField = Invoke(((EnumToNumberConverter<UserRole, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: User.Role (UserRole) Required | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User").FindProperty("Role")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(7));
+                                    instance.<TelegramAuthState>k__BackingField = Invoke(((EnumToNumberConverter<TelegramAuthState, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: User.TelegramAuthState (TelegramAuthState) Required | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User").FindProperty("TelegramAuthState")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(8));
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(User)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: HabitTrakerApi.DbContext.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-08 11:08:02.256 +03:00 [DBG] Creating DbConnection.
+2026-08-08 11:08:02.270 +03:00 [DBG] Created DbConnection. (14ms).
+2026-08-08 11:08:02.278 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:08:02.284 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:08:02.303 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-08 11:08:02.314 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (11ms).
+2026-08-08 11:08:02.330 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (26ms).
+2026-08-08 11:08:02.344 +03:00 [DBG] Executing DbCommand [Parameters=[@message_Chat_Id='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[ChatId] = @message_Chat_Id
+2026-08-08 11:08:02.521 +03:00 [INF] Executed DbCommand (184ms) [Parameters=[@message_Chat_Id='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[ChatId] = @message_Chat_Id
+2026-08-08 11:08:02.730 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:08:03.349 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 619ms reading results.
+2026-08-08 11:08:03.355 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:08:03.378 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (23ms).
+2026-08-08 11:08:03.917 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-08 11:08:03.921 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-08 11:08:03.934 +03:00 [DBG] Disposed connection to database '' on server '' (13ms).
+2026-08-08 11:08:27.924 +03:00 [INF] Application is shutting down...
+2026-08-08 11:08:27.929 +03:00 [DBG] Hosting stopping
+2026-08-08 11:08:27.976 +03:00 [DBG] Connection id "0HNNL4G6B9KKM" disconnecting.
+2026-08-08 11:08:27.976 +03:00 [DBG] Connection id "0HNNL4G6B9KKL" disconnecting.
+2026-08-08 11:08:27.979 +03:00 [DBG] Connection id "0HNNL4G6B9KKO" disconnecting.
+2026-08-08 11:08:27.979 +03:00 [DBG] Connection id "0HNNL4G6B9KKN" disconnecting.
+2026-08-08 11:08:27.991 +03:00 [DBG] Connection id "0HNNL4G6B9KKM" stopped.
+2026-08-08 11:08:27.991 +03:00 [DBG] Connection id "0HNNL4G6B9KKL" stopped.
+2026-08-08 11:08:28.029 +03:00 [DBG] Connection id "0HNNL4G6B9KKP" disconnecting.
+2026-08-08 11:08:28.008 +03:00 [DBG] Connection id "0HNNL4G6B9KKN" stopped.
+2026-08-08 11:08:27.993 +03:00 [DBG] Connection id "0HNNL4G6B9KKO" stopped.
+2026-08-08 11:08:28.029 +03:00 [DBG] Connection id "0HNNL4G6B9KKM" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 11:08:28.039 +03:00 [DBG] Connection id "0HNNL4G6B9KKP" stopped.
+2026-08-08 11:08:28.041 +03:00 [DBG] Connection id "0HNNL4G6B9KKL" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 11:08:28.044 +03:00 [DBG] Connection id "0HNNL4G6B9KKN" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 11:08:28.050 +03:00 [DBG] Connection id "0HNNL4G6B9KKO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 11:08:28.072 +03:00 [DBG] Connection id "0HNNL4G6B9KKP" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-08 11:08:28.133 +03:00 [DBG] Hosting stopped
+2026-08-08 12:13:38.483 +03:00 [INF] Запуск веб-хоста приложения...

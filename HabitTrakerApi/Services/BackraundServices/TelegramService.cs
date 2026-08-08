@@ -2,14 +2,11 @@
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
-using Microsoft.Extensions.Hosting;
+
 using System.Collections.Concurrent;
 using HabitTrakerApi.Models.Enums;
 using HabitTrakerApi.DbContext;
-using HabitTrakerApi.Mappers;
-using HabitTrakerApi.Models.Data;
 using HabitTrakerApi.Common;
-using Microsoft.Extensions.Primitives;
 using Microsoft.EntityFrameworkCore;
 
 namespace HabitTrakerApi.Services.BackraundServices;
@@ -28,8 +25,6 @@ public class TelegramService : BackgroundService
         // В реальном проекте токен лучше вынести в appsettings.json
         _telegramBotClient = new TelegramBotClient("8821028314:AAHh_tPx9mWs3ZP8LDmDxCUJNlzoGXOZKyk");
         _scopeFactory = scope;
-
-
     }
 
     // Этот метод .NET автоматически вызывает при запуске приложения
@@ -50,7 +45,6 @@ public class TelegramService : BackgroundService
         // Ждем сигнала остановки приложения
         await Task.Delay(Timeout.Infinite, stoppingToken);
     }
-
     private async Task Update(ITelegramBotClient client, Update update, CancellationToken token)
     {
         using (var scope = _scopeFactory.CreateScope())
@@ -72,7 +66,6 @@ public class TelegramService : BackgroundService
                     _chats[message.Chat.Id] = TelegramAuthState.Authorized;
                     await client.SendMessage(message.Chat.Id, "Привет! Вы уже авторизованный польователь", cancellationToken: token);
                     return;
-
                 }
                 // Используем [chatId] = value, чтобы не падать при повторном /start
                 _chats[message.Chat.Id] = TelegramAuthState.None;
@@ -86,7 +79,6 @@ public class TelegramService : BackgroundService
                 {
                     ResizeKeyboard = true
                 };
-
                 await client.SendMessage(
                     chatId: message.Chat.Id,
                     text: "Выберите действие:",
@@ -120,8 +112,6 @@ public class TelegramService : BackgroundService
 
             if (_chats.TryGetValue(message.Chat.Id, out var stat) && stat == TelegramAuthState.WaitingPassword)
             {
-
-
                 var user1 =await _context.Users.AsTracking().FirstOrDefaultAsync(u => u.Login == CurrentUser[message.Chat.Id]);
 
 
@@ -141,21 +131,16 @@ public class TelegramService : BackgroundService
 
                     _chats[message.Chat.Id] = TelegramAuthState.None;
                     await client.SendMessage(message.Chat.Id, "Неверный пароль!", cancellationToken: token);
-
                     return;
-
                 }
             }
 
-            }
         }
-    
-
+    }
     public async Task SendMessageAsync(long chatId, string message, CancellationToken token = default)
     {
         await _telegramBotClient.SendMessage(chatId, message, cancellationToken: token);
     }
-
     private Task Error(ITelegramBotClient client, Exception exception, HandleErrorSource source, CancellationToken token)
     {
         Console.WriteLine($"Telegram error: {exception.Message}");
