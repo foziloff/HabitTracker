@@ -8,10 +8,11 @@
     ".NETCoreApp,Version=v10.0": {
       "HabitTrakerApi/1.0.0": {
         "dependencies": {
-          "AutoMapper": "16.1.1",
+          "AutoMapper": "14.0.0",
           "FluentValidation": "12.1.1",
           "FluentValidation.AspNetCore": "11.3.1",
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
+          "MassTransit": "8.0.8",
           "MediatR": "14.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.10",
           "Microsoft.AspNetCore.OpenApi": "10.0.3",
@@ -32,14 +33,11 @@
           "HabitTrakerApi.dll": {}
         }
       },
-      "AutoMapper/16.1.1": {
-        "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "8.19.2"
-        },
+      "AutoMapper/14.0.0": {
         "runtime": {
-          "lib/net10.0/AutoMapper.dll": {
-            "assemblyVersion": "16.0.0.0",
-            "fileVersion": "16.1.1.0"
+          "lib/net8.0/AutoMapper.dll": {
+            "assemblyVersion": "14.0.0.0",
+            "fileVersion": "14.0.0.0"
           }
         }
       },
@@ -105,6 +103,25 @@
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "MassTransit/8.0.8": {
+        "dependencies": {
+          "MassTransit.Abstractions": "8.0.8"
+        },
+        "runtime": {
+          "lib/net6.0/MassTransit.dll": {
+            "assemblyVersion": "8.0.8.0",
+            "fileVersion": "8.0.8.0"
+          }
+        }
+      },
+      "MassTransit.Abstractions/8.0.8": {
+        "runtime": {
+          "lib/net6.0/MassTransit.Abstractions.dll": {
+            "assemblyVersion": "8.0.8.0",
+            "fileVersion": "8.0.8.0"
           }
         }
       },
@@ -1017,12 +1034,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AutoMapper/16.1.1": {
+    "AutoMapper/14.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VNEky8JA15ci+oIDRGHITOGOpV4dILsf8pnn24QhDl2urtqgJ2IXiS/V2EtGU17P/+f6OeFQPJETaZXV9QOIZg==",
-      "path": "automapper/16.1.1",
-      "hashPath": "automapper.16.1.1.nupkg.sha512"
+      "sha512": "sha512-OC+1neAPM4oCCqQj3g2GJ2shziNNhOkxmNB9cVS8jtx4JbgmRzLcUOxB9Tsz6cVPHugdkHgCaCrTjjSI0Z5sCQ==",
+      "path": "automapper/14.0.0",
+      "hashPath": "automapper.14.0.0.nupkg.sha512"
     },
     "Azure.Core/1.47.1": {
       "type": "package",
@@ -1065,6 +1082,20 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "MassTransit/8.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j4AuKXFzWHDFBnH0cawXLVpL3hKR4G/vWSQ3TotoNm1oHJyBjx6XNOYnWmBhWKK0B3221AbzDD03knryk3vF0Q==",
+      "path": "masstransit/8.0.8",
+      "hashPath": "masstransit.8.0.8.nupkg.sha512"
+    },
+    "MassTransit.Abstractions/8.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HJWOdK1eznwxBxZnuv4deyoC4zTKqkJclv5xmV4G2evJbvtnIv1BKvm4P7cXh7r0hHu7gWwxmPFCSjs9Ero8pw==",
+      "path": "masstransit.abstractions/8.0.8",
+      "hashPath": "masstransit.abstractions.8.0.8.nupkg.sha512"
     },
     "MediatR/14.2.0": {
       "type": "package",

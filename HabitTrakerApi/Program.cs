@@ -50,8 +50,8 @@ try
     builder.Services.AddHostedService<TelegramService>(provider => provider.GetRequiredService<TelegramService>());
 
 // 3. Явно регистрируем NotificationService (если Scrutor не делает это за вас автоматически как Singleton)
-    builder.Services.AddSingleton<NotificationService>();    builder.Services.AddSingleton<NotificationService>();
-
+    builder.Services.AddScoped<NotificationService>();   
+    
     // Регистрация MediatR для реализации паттерна CQRS
     builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 

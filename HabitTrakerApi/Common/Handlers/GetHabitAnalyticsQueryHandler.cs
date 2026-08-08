@@ -2,8 +2,6 @@ using HabitTrakerApi.Analytics.Queries;
 using MediatR;
 namespace HabitTrakerApi.Analytics.Handlers;
 
-// Композитный хендлер: не считает ничего сам, а раскладывает задачу
-// на три независимых CQRS-запроса и параллельно их выполняет через IMediator.
 public class GetHabitAnalyticsQueryHandler : IRequestHandler<GetHabitAnalyticsQuery, HabitAnalyticsResult>
 {
     private readonly IMediator _mediator;

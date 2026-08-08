@@ -589,3 +589,5 @@ C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\refint\
 C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\HabitTrakerApi.pdb
 C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\HabitTrakerApi.genruntimeconfig.cache
 C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\obj\Debug\net10.0\ref\HabitTrakerApi.dll
+C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\bin\Debug\net10.0\MassTransit.dll
+C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi\bin\Debug\net10.0\MassTransit.Abstractions.dll
