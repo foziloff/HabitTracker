@@ -29,7 +29,6 @@ public class HabitLogsController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>Отметить привычку выполненной на конкретную дату</summary>
     [HttpPost]
     public async Task<IActionResult> Create(int habitId, [FromBody] CreateHabitLogDto dto)
     {

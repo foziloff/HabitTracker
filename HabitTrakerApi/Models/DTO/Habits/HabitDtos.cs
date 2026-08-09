@@ -19,6 +19,12 @@ public class HabitDto
     public int CurrentStreak { get; set; }
     public int LongestStreak { get; set; }
     public double CompletionRate { get; set; }
+
+    // Актуально только для Type == Weekly
+    public DayOfWeek? ExecutionDayOfWeek { get; set; }
+
+    // Актуально только для Type == Monthly
+    public int? ExecutionDayOfMonth { get; set; }
 }
 
 public class CreateHabitDto
@@ -39,6 +45,14 @@ public class CreateHabitDto
 
     [Range(1, int.MaxValue, ErrorMessage = "TargetCount должен быть больше нуля")]
     public int TargetCount { get; set; } = 1;
+
+    // Обязательно, если Type == Weekly. Проверяется в HabitService, не здесь,
+    // т.к. DataAnnotations не умеют "обязательно только при определённом Type".
+    public DayOfWeek? ExecutionDayOfWeek { get; set; }
+
+    // Обязательно, если Type == Monthly.
+    [Range(1, 31, ErrorMessage = "ExecutionDayOfMonth должен быть от 1 до 31")]
+    public int? ExecutionDayOfMonth { get; set; }
 }
 
 public class UpdateHabitDto
@@ -57,6 +71,11 @@ public class UpdateHabitDto
 
     [Range(1, int.MaxValue)]
     public int? TargetCount { get; set; }
+
+    public DayOfWeek? ExecutionDayOfWeek { get; set; }
+
+    [Range(1, 31, ErrorMessage = "ExecutionDayOfMonth должен быть от 1 до 31")]
+    public int? ExecutionDayOfMonth { get; set; }
 }
 
 public class UpdateHabitStatusDto

@@ -5,6 +5,7 @@ using HabitTrakerApi.Common.Exeptions;
 using HabitTrakerApi.DTO.Habits;
 using HabitTrakerApi.Mappers;
 using HabitTrakerApi.Models.Data;
+using HabitTrakerApi.Models.Enums;
 using HabitTrakerApi.Repositories.Interfaces;
 using HabitTrakerApi.Services.Interfaces;
 using MediatR;
@@ -59,6 +60,10 @@ public class HabitService : IHabitService
             throw new NotFoundException($"Категория с Id={dto.CategoryId} не найдена");
 
         var habit = dto.ToEntity(userId);
+
+        ClearIrrelevantSchedule(habit);
+        ValidateExecutionSchedule(habit);
+
         await _habitRepository.AddAsync(habit);
         await _habitRepository.SaveChangesAsync();
 
@@ -78,6 +83,12 @@ public class HabitService : IHabitService
         }
 
         habit.ApplyUpdate(dto);
+
+        // Если тип сменился (например, был Weekly, стал Daily) — не оставляем
+        // устаревшее значение ExecutionDayOfWeek/ExecutionDayOfMonth висеть в базе.
+        ClearIrrelevantSchedule(habit);
+        ValidateExecutionSchedule(habit);
+
         _habitRepository.Update(habit);
         await _habitRepository.SaveChangesAsync();
 
@@ -133,5 +144,32 @@ public class HabitService : IHabitService
             throw new ForbiddenException("Эта привычка принадлежит другому пользователю");
 
         return habit;
+    }
+
+    // Weekly требует ExecutionDayOfWeek, Monthly требует ExecutionDayOfMonth (1-31).
+    // Для Daily/Disposable оба поля не нужны.
+    private static void ValidateExecutionSchedule(Habit habit)
+    {
+        if (habit.Type == HabitType.Weekly && habit.ExecutionDayOfWeek is null)
+            throw new BadRequestException("Для еженедельной привычки нужно указать ExecutionDayOfWeek (день недели выполнения)");
+
+        if (habit.Type == HabitType.Monthly)
+        {
+            if (habit.ExecutionDayOfMonth is null)
+                throw new BadRequestException("Для ежемесячной привычки нужно указать ExecutionDayOfMonth (число месяца, 1-31)");
+
+            if (habit.ExecutionDayOfMonth is < 1 or > 31)
+                throw new BadRequestException("ExecutionDayOfMonth должен быть от 1 до 31");
+        }
+    }
+
+    // Убирает значение поля расписания, если оно не относится к текущему Type привычки.
+    private static void ClearIrrelevantSchedule(Habit habit)
+    {
+        if (habit.Type != HabitType.Weekly)
+            habit.ExecutionDayOfWeek = null;
+
+        if (habit.Type != HabitType.Monthly)
+            habit.ExecutionDayOfMonth = null;
     }
 }

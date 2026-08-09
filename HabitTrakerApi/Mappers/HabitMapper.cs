@@ -23,7 +23,9 @@ public static class HabitMapper
             CreatedAt = habit.CreatedAt,
             CurrentStreak = currentStreak,
             LongestStreak = longestStreak,
-            CompletionRate = completionRate
+            CompletionRate = completionRate,
+            ExecutionDayOfWeek = habit.ExecutionDayOfWeek,
+            ExecutionDayOfMonth = habit.ExecutionDayOfMonth
         };
     }
 
@@ -39,7 +41,9 @@ public static class HabitMapper
             Priority = dto.Priority,
             TargetCount = dto.TargetCount,
             Status = HabitStatus.Active,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            ExecutionDayOfWeek = dto.ExecutionDayOfWeek,
+            ExecutionDayOfMonth = dto.ExecutionDayOfMonth
         };
     }
 
@@ -51,5 +55,7 @@ public static class HabitMapper
         if (dto.Type.HasValue) habit.Type = dto.Type.Value;
         if (dto.Priority.HasValue) habit.Priority = dto.Priority.Value;
         if (dto.TargetCount.HasValue) habit.TargetCount = dto.TargetCount.Value;
+        if (dto.ExecutionDayOfWeek.HasValue) habit.ExecutionDayOfWeek = dto.ExecutionDayOfWeek.Value;
+        if (dto.ExecutionDayOfMonth.HasValue) habit.ExecutionDayOfMonth = dto.ExecutionDayOfMonth.Value;
     }
 }

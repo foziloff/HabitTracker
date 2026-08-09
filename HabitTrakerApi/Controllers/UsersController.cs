@@ -38,16 +38,6 @@ public class UsersController : ControllerBase
         await _userService.ChangePasswordAsync(_currentUser.UserId, dto);
         return NoContent();
     }
-
-    // ПРИВЯЗКА Telegram теперь идёт только через самого бота (/start -> кнопка ->
-    // логин -> пароль, см. Integrations/Telegram/TelegramUpdateProcessor.cs) —
-    // отдельного эндпоинта для этого больше нет.
-    // Отвязку оставляем через API — это законное действие со стороны самого приложения,
-    // не требующее диалога в Telegram.
-
-    /// <summary>Отвязать Telegram — уведомления снова будут приходить только в приложение</summary>
-
-    /// <summary>Список всех пользователей — только Admin</summary>
     [HttpGet]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetAll()
