@@ -32,7 +32,6 @@ public class CategoriesController : ControllerBase
 
     /// <summary>Создание категории — только Admin, т.к. категории общие для всех пользователей</summary>
     [HttpPost]
-    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<CategoryDto>> Create([FromBody] CreateCategoryDto dto)
     {
         var created = await _categoryService.CreateAsync(dto);
@@ -40,7 +39,6 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
-    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<CategoryDto>> Update(int id, [FromBody] UpdateCategoryDto dto)
     {
         return Ok(await _categoryService.UpdateAsync(id, dto));

@@ -27,7 +27,9 @@ public class TelegramService : BackgroundService
         WaitingForHabitTitle,
         WaitingForHabitDayOfMonth,
         WaitingForReminderTime,
-        WaitingForProof
+        WaitingForProof,
+        WaitingForExtraReminderTime, 
+        WaitingForHabitIdForReminders 
     }
     
     private readonly ConcurrentDictionary<long, BotActionState> _actionStates = new();
@@ -112,6 +114,10 @@ public class TelegramService : BackgroundService
                 case "➕ Добавить привычку":
                     _actionStates[chatId] = BotActionState.None;
                     await StartHabitCreationFlow(client, chatId, context, token);
+                    return;
+                case "⏰ Напоминания": 
+                    _actionStates[chatId] = BotActionState.WaitingForHabitIdForReminders;
+                    await ShowHabitsForRemindersMenu(client, chatId, dbUser!.Id, context, token);
                     return;
             }
 
@@ -210,6 +216,36 @@ public class TelegramService : BackgroundService
                 }
                 return;
             }
+
+            if (actionState == BotActionState.WaitingForExtraReminderTime)
+            {
+                if (TimeOnly.TryParse(message.Text, out TimeOnly time))
+                {
+                    if (_draftHabits.TryGetValue(chatId, out var draftHabit)) 
+                    {
+                        int habitId = draftHabit.Id;
+                        
+                        var reminder = new Reminder
+                        {
+                            HabitId = habitId,
+                            ReminderTime = time,
+                            IsEnabled = true
+                        };
+                        context.Reminders.Add(reminder);
+                        await context.SaveChangesAsync(token);
+
+                        _actionStates[chatId] = BotActionState.None;
+                        _draftHabits.TryRemove(chatId, out _);
+
+                        await client.SendMessage(chatId, $"✅ Дополнительное напоминание на {time:HH:mm} успешно добавлено!", replyMarkup: GetMainMenu(), cancellationToken: token);
+                    }
+                }
+                else
+                {
+                    await client.SendMessage(chatId, "Неверный формат времени. Введите в формате ЧЧ:ММ (например, 20:00):", cancellationToken: token);
+                }
+                return;
+            }
         }
 
         if (string.IsNullOrEmpty(message?.Text)) return;
@@ -277,6 +313,73 @@ public class TelegramService : BackgroundService
         var data = callbackQuery.Data;
         long chatId = callbackQuery.Message!.Chat.Id;
         if (data == null) return;
+
+        // --- Добавлено: Удаление привычки ---
+        if (data.StartsWith("del_habit_"))
+        {
+            int habitId = int.Parse(data.Replace("del_habit_", ""));
+            var habit = await context.Habits.FindAsync(new object[] { habitId }, token);
+
+            if (habit != null)
+            {
+                context.Habits.Remove(habit);
+                await context.SaveChangesAsync(token);
+                
+                await client.AnswerCallbackQuery(callbackQuery.Id, "🗑 Привычка успешно удалена!", showAlert: true, cancellationToken: token);
+                
+                try 
+                {
+                    await client.DeleteMessage(chatId, callbackQuery.Message.MessageId, cancellationToken: token);
+                } 
+                catch 
+                { 
+                    // Игнорируем, если сообщение уже удалено
+                }
+            }
+            else
+            {
+                await client.AnswerCallbackQuery(callbackQuery.Id, "Привычка не найдена или уже удалена.", cancellationToken: token);
+            }
+            return;
+        }
+        // ------------------------------------
+
+        if (data.StartsWith("rem_habit_"))
+        {
+            int habitId = int.Parse(data.Replace("rem_habit_", ""));
+            await ShowRemindersForHabit(client, chatId, habitId, context, token);
+            return;
+        }
+
+        if (data.StartsWith("add_rem_"))
+        {
+            int habitId = int.Parse(data.Replace("add_rem_", ""));
+            _draftHabits[chatId] = new Habit { Id = habitId };
+            _actionStates[chatId] = BotActionState.WaitingForExtraReminderTime;
+            await client.SendMessage(chatId, "Введите время для нового напоминания в формате ЧЧ:ММ (например, 19:30):", cancellationToken: token);
+            return;
+        }
+
+        if (data.StartsWith("del_rem_"))
+        {
+            int reminderId = int.Parse(data.Replace("del_rem_", ""));
+            var reminder = await context.Reminders.FindAsync(reminderId);
+
+            if (reminder != null)
+            {
+                int hId = reminder.HabitId;
+                context.Reminders.Remove(reminder);
+                await context.SaveChangesAsync(token);
+                await client.AnswerCallbackQuery(callbackQuery.Id, "Напоминание удалено!", showAlert: true, cancellationToken: token);
+                
+                await ShowRemindersForHabit(client, chatId, hId, context, token, callbackQuery.Message.MessageId);
+            }
+            else
+            {
+                await client.AnswerCallbackQuery(callbackQuery.Id, "Напоминание не найдено.", cancellationToken: token);
+            }
+            return;
+        }
 
         if (data.StartsWith("cat_"))
         {
@@ -389,7 +492,8 @@ public class TelegramService : BackgroundService
         return new ReplyKeyboardMarkup(new[]
         {
             new KeyboardButton[] { "📅 Мои привычки", "📊 Статистика" },
-            new KeyboardButton[] { "➕ Добавить привычку", "📁 Добавить категорию" }
+            new KeyboardButton[] { "➕ Добавить привычку", "⏰ Напоминания" },
+            new KeyboardButton[] { "📁 Добавить категорию" }
         })
         { ResizeKeyboard = true };
     }
@@ -404,6 +508,63 @@ public class TelegramService : BackgroundService
         }
         var buttons = categories.Select(c => InlineKeyboardButton.WithCallbackData(c.Name, $"cat_{c.Id}")).Chunk(2).ToList();
         await client.SendMessage(chatId, "Выберите категорию для новой привычки:", replyMarkup: new InlineKeyboardMarkup(buttons), cancellationToken: token);
+    }
+
+    private async Task ShowHabitsForRemindersMenu(ITelegramBotClient client, long chatId, int userId, AppDbContext context, CancellationToken token)
+    {
+        var habits = await context.Habits.Where(h => h.UserId == userId && h.Status == HabitStatus.Active).ToListAsync(token);
+
+        if (!habits.Any())
+        {
+            await client.SendMessage(chatId, "У вас нет активных привычек.", replyMarkup: GetMainMenu(), cancellationToken: token);
+            return;
+        }
+
+        var buttons = habits.Select(h => InlineKeyboardButton.WithCallbackData(h.Title, $"rem_habit_{h.Id}")).Chunk(1).ToList();
+        await client.SendMessage(chatId, "Выберите привычку, чтобы настроить её напоминания:", replyMarkup: new InlineKeyboardMarkup(buttons), cancellationToken: token);
+    }
+
+    private async Task ShowRemindersForHabit(ITelegramBotClient client, long chatId, int habitId, AppDbContext context, CancellationToken token, int? messageIdToEdit = null)
+    {
+        var habit = await context.Habits.Include(h => h.Reminders).FirstOrDefaultAsync(h => h.Id == habitId, token);
+        if (habit == null) return;
+
+        var reminders = habit.Reminders.OrderBy(r => r.ReminderTime).ToList();
+        string text = $"⏰ Напоминания для привычки <b>«{habit.Title}»</b>:\n\n";
+
+        var inlineKeyboardButtons = new List<List<InlineKeyboardButton>>();
+
+        if (reminders.Any())
+        {
+            foreach (var r in reminders)
+            {
+                text += $"• {r.ReminderTime:HH:mm}\n";
+                inlineKeyboardButtons.Add(new List<InlineKeyboardButton>
+                {
+                    InlineKeyboardButton.WithCallbackData($"❌ Удалить {r.ReminderTime:HH:mm}", $"del_rem_{r.Id}")
+                });
+            }
+        }
+        else
+        {
+            text += "У этой привычки пока нет активных напоминаний.\n";
+        }
+
+        inlineKeyboardButtons.Add(new List<InlineKeyboardButton>
+        {
+            InlineKeyboardButton.WithCallbackData("➕ Добавить напоминание", $"add_rem_{habit.Id}")
+        });
+
+        var markup = new InlineKeyboardMarkup(inlineKeyboardButtons);
+
+        if (messageIdToEdit.HasValue)
+        {
+            await client.EditMessageText(chatId, messageIdToEdit.Value, text, parseMode: ParseMode.Html, replyMarkup: markup, cancellationToken: token);
+        }
+        else
+        {
+            await client.SendMessage(chatId, text, parseMode: ParseMode.Html, replyMarkup: markup, cancellationToken: token);
+        }
     }
 
     private async Task ShowUserHabits(ITelegramBotClient client, long chatId, int userId, AppDbContext context, CancellationToken token)
@@ -434,12 +595,17 @@ public class TelegramService : BackgroundService
             };
 
             string text = $"{statusEmoji} <b>{habit.Title}</b> ({typeEmoji})";
-            InlineKeyboardMarkup? inlineKeyboard = null;
-
+            
+            // Изменения: добавляем кнопки выполнения и удаления
+            var buttons = new List<InlineKeyboardButton>();
+            
             if (!isDone)
             {
-                inlineKeyboard = new InlineKeyboardMarkup(InlineKeyboardButton.WithCallbackData("✔ Выполнил!", $"done_{habit.Id}"));
+                buttons.Add(InlineKeyboardButton.WithCallbackData("✔ Выполнил!", $"done_{habit.Id}"));
             }
+            buttons.Add(InlineKeyboardButton.WithCallbackData("🗑 Удалить", $"del_habit_{habit.Id}"));
+
+            var inlineKeyboard = new InlineKeyboardMarkup(buttons);
 
             await client.SendMessage(chatId, text, parseMode: ParseMode.Html, replyMarkup: inlineKeyboard, cancellationToken: token);
         }
