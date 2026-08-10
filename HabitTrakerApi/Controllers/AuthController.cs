@@ -28,7 +28,8 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<ActionResult<string>> Login([FromBody] RegisterDto dto)
     {
-        var result = await _authService.LoginService(dto);
+        var result
+            = await _authService.LoginService(dto);
         
         return Ok(result);
     }

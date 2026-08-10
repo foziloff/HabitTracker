@@ -1,0 +1,1348 @@
+2026-08-10 12:42:08.973 +03:00 [INF] Запуск веб-хоста приложения...
+2026-08-10 12:42:13.656 +03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-08-10 12:42:13.745 +03:00 [INF] Анализ миграций и запуск наполнения базы данных (DbSeeder)...
+2026-08-10 12:42:17.862 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-10 12:42:18.520 +03:00 [DBG] Creating DbConnection.
+2026-08-10 12:42:18.869 +03:00 [DBG] Created DbConnection. (341ms).
+2026-08-10 12:42:19.006 +03:00 [DBG] Migrating using database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:19.117 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:19.530 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:19.563 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-10 12:42:19.594 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (22ms).
+2026-08-10 12:42:19.610 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (52ms).
+2026-08-10 12:42:19.671 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-10 12:42:19.812 +03:00 [INF] Executed DbCommand (143ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-10 12:42:19.954 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:20.003 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (39ms).
+2026-08-10 12:42:20.025 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:20.044 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:20.091 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-10 12:42:20.137 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-10 12:42:20.174 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (37ms).
+2026-08-10 12:42:20.224 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (87ms).
+2026-08-10 12:42:20.243 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-10 12:42:20.384 +03:00 [INF] Executed DbCommand (142ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-10 12:42:20.691 +03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-08-10 12:42:20.731 +03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-08-10 12:42:20.744 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-10 12:42:20.755 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (11ms).
+2026-08-10 12:42:20.777 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (33ms).
+2026-08-10 12:42:20.792 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-10 12:42:20.863 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-10 12:42:20.892 +03:00 [DBG] Committing transaction.
+2026-08-10 12:42:20.918 +03:00 [DBG] Committed transaction.
+2026-08-10 12:42:20.936 +03:00 [DBG] Disposing transaction.
+2026-08-10 12:42:20.973 +03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-08-10 12:42:20.980 +03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-08-10 12:42:21.001 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-10 12:42:21.025 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (23ms).
+2026-08-10 12:42:21.047 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (45ms).
+2026-08-10 12:42:21.063 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-10 12:42:21.114 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-10 12:42:21.147 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-10 12:42:21.151 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (4ms).
+2026-08-10 12:42:21.183 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (35ms).
+2026-08-10 12:42:21.296 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-10 12:42:21.426 +03:00 [INF] Executed DbCommand (130ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-10 12:42:21.473 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:42:21.528 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (54ms).
+2026-08-10 12:42:21.548 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (74ms).
+2026-08-10 12:42:21.564 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-10 12:42:21.693 +03:00 [INF] Executed DbCommand (130ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-10 12:42:21.805 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:21.834 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 64ms reading results.
+2026-08-10 12:42:22.082 +03:00 [INF] No migrations were applied. The database is already up to date.
+2026-08-10 12:42:22.104 +03:00 [DBG] Committing transaction.
+2026-08-10 12:42:22.140 +03:00 [DBG] Committed transaction.
+2026-08-10 12:42:22.147 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-10 12:42:22.156 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (9ms).
+2026-08-10 12:42:22.167 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (20ms).
+2026-08-10 12:42:22.189 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-10 12:42:22.273 +03:00 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-10 12:42:22.290 +03:00 [DBG] Disposing transaction.
+2026-08-10 12:42:22.304 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:22.312 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (8ms).
+2026-08-10 12:42:22.573 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2026-08-10 12:42:23.154 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u), 
+            False, 
+            MultipleParameters
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: HabitTrakerApi.DbContext.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-10 12:42:23.262 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:23.267 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:23.273 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:42:23.281 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (8ms).
+2026-08-10 12:42:23.295 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (21ms).
+2026-08-10 12:42:23.307 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-10 12:42:23.339 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-10 12:42:23.391 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:23.456 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 80ms reading results.
+2026-08-10 12:42:23.511 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:23.533 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (21ms).
+2026-08-10 12:42:23.556 +03:00 [INF] База данных успешно проверена и заполнена тестовыми данными!
+2026-08-10 12:42:23.566 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-10 12:42:23.579 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:23.597 +03:00 [DBG] Disposed connection to database '' on server '' (18ms).
+2026-08-10 12:42:23.750 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-08-10 12:42:23.885 +03:00 [INF] API успешно сконфигурировано и начинает слушать порты...
+2026-08-10 12:42:23.893 +03:00 [DBG] Hosting starting
+2026-08-10 12:42:24.136 +03:00 [INF] Configured endpoint TelegramNotification, Consumer: HabitTrakerApi.Messaging.Consumers.TelegramNotificationConsumer
+2026-08-10 12:42:24.503 +03:00 [INF] User profile is available. Using 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-10 12:42:24.524 +03:00 [DBG] Starting bus instances: IBus
+2026-08-10 12:42:24.533 +03:00 [DBG] Starting bus: "loopback://localhost/"
+2026-08-10 12:42:24.646 +03:00 [DBG] Endpoint Ready: "loopback://localhost/DESKTOP213IU6O_HabitTrakerApi_bus_xoqoyyyezfzrbc6gbdxxpo7qfp"
+2026-08-10 12:42:24.646 +03:00 [DBG] Endpoint Ready: "loopback://localhost/TelegramNotification"
+2026-08-10 12:42:24.656 +03:00 [INF] Bus started: "loopback://localhost/"
+2026-08-10 12:42:24.901 +03:00 [DBG] Reading data from file 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys\key-0f2061ab-bbee-420a-8dc9-7a86076fd805.xml'.
+2026-08-10 12:42:24.944 +03:00 [DBG] Reading data from file 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys\key-ff7eef80-ca71-4115-99c5-9ffb8b18ba77.xml'.
+2026-08-10 12:42:25.090 +03:00 [DBG] Found key {0f2061ab-bbee-420a-8dc9-7a86076fd805}.
+2026-08-10 12:42:25.127 +03:00 [DBG] Found key {ff7eef80-ca71-4115-99c5-9ffb8b18ba77}.
+2026-08-10 12:42:25.615 +03:00 [DBG] Considering key {0f2061ab-bbee-420a-8dc9-7a86076fd805} with expiration date 2026-08-28 05:34:58Z as default key.
+2026-08-10 12:42:25.952 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-10 12:42:25.964 +03:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-08-10 12:42:25.974 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-10 12:42:26.031 +03:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-08-10 12:42:26.258 +03:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-08-10 12:42:26.276 +03:00 [DBG] Using key {0f2061ab-bbee-420a-8dc9-7a86076fd805} as the default key.
+2026-08-10 12:42:26.281 +03:00 [DBG] Key ring with default key {0f2061ab-bbee-420a-8dc9-7a86076fd805} was loaded during application startup.
+2026-08-10 12:42:26.683 +03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-08-10 12:42:27.081 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-08-10 12:42:27.893 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-10 12:42:27.993 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .FirstOrDefault(u => u.ChatId == @chatId)'
+2026-08-10 12:42:29.707 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.ChatId (long?), 1], [Property: User.CreatedAt (DateTime) Required, 2], [Property: User.Email (string) Required Index, 3], [Property: User.Login (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.PendingChatId (long?), 6], [Property: User.Role (UserRole) Required, 7], [Property: User.TelegramAuthState (TelegramAuthState) Required, 8] }
+            SELECT TOP(1) u.Id, u.ChatId, u.CreatedAt, u.Email, u.Login, u.Password, u.PendingChatId, u.Role, u.TelegramAuthState
+            FROM Users AS u
+            WHERE u.ChatId == @chatId) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.ChatId (long?), 1], [Property: User.CreatedAt (DateTime) Required, 2], [Property: User.Email (string) Required Index, 3], [Property: User.Login (string) Required, 4], [Property: User.Password (string) Required, 5], [Property: User.PendingChatId (long?), 6], [Property: User.Role (UserRole) Required, 7], [Property: User.TelegramAuthState (TelegramAuthState) Required, 8] }
+            SELECT TOP(1) u.Id, u.ChatId, u.CreatedAt, u.Email, u.Login, u.Password, u.PendingChatId, u.Role, u.TelegramAuthState
+            FROM Users AS u
+            WHERE u.ChatId == @chatId, 
+            False, 
+            MultipleParameters
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            User entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                User instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(User);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (User)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User")]: 
+                            {
+                                return 
+                                {
+                                    User instance;
+                                    instance = new User();
+                                    instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                    instance.<ChatId>k__BackingField = dataReader.IsDBNull(1) ? default(long?) : (long?)dataReader.GetInt64(1);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(2);
+                                    instance.<Email>k__BackingField = dataReader.GetString(3);
+                                    instance.<Login>k__BackingField = dataReader.GetString(4);
+                                    instance.<Password>k__BackingField = dataReader.GetString(5);
+                                    instance.<PendingChatId>k__BackingField = dataReader.IsDBNull(6) ? default(long?) : (long?)dataReader.GetInt64(6);
+                                    instance.<Role>k__BackingField = Invoke(((EnumToNumberConverter<UserRole, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: User.Role (UserRole) Required | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User").FindProperty("Role")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(7));
+                                    instance.<TelegramAuthState>k__BackingField = Invoke(((EnumToNumberConverter<TelegramAuthState, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: User.TelegramAuthState (TelegramAuthState) Required | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User").FindProperty("TelegramAuthState")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(8));
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.User")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(User)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: HabitTrakerApi.DbContext.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-10 12:42:32.733 +03:00 [DBG] Creating DbConnection.
+2026-08-10 12:42:32.933 +03:00 [INF] Now listening on: http://localhost:5203
+2026-08-10 12:42:33.011 +03:00 [DBG] Created DbConnection. (278ms).
+2026-08-10 12:42:33.432 +03:00 [DBG] Loaded hosting startup assembly HabitTrakerApi
+2026-08-10 12:42:33.443 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:33.450 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-10 12:42:33.464 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:33.468 +03:00 [INF] Hosting environment: Development
+2026-08-10 12:42:33.500 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:42:33.516 +03:00 [INF] Content root path: C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi
+2026-08-10 12:42:33.542 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (41ms).
+2026-08-10 12:42:33.547 +03:00 [DBG] Hosting started
+2026-08-10 12:42:33.584 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (83ms).
+2026-08-10 12:42:33.645 +03:00 [DBG] Executing DbCommand [Parameters=[@chatId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[ChatId] = @chatId
+2026-08-10 12:42:34.040 +03:00 [INF] Executed DbCommand (408ms) [Parameters=[@chatId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[ChatId] = @chatId
+2026-08-10 12:42:34.980 +03:00 [DBG] Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:35.157 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:35.171 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 1121ms reading results.
+2026-08-10 12:42:35.211 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:35.227 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (15ms).
+2026-08-10 12:42:35.338 +03:00 [DBG] Compiling query expression: 
+'DbSet<Habit>()
+    .Include(h => h.Logs)
+    .Where(h => h.UserId == @userId && (int)h.Status == 1)'
+2026-08-10 12:42:35.407 +03:00 [DBG] Including navigation: 'Habit.Logs'.
+2026-08-10 12:42:35.600 +03:00 [DBG] Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<Habit>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> Dictionary<IPropertyBase, int> { [Property: Habit.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Habit.CategoryId (int) Required FK Index, 1], [Property: Habit.CreatedAt (DateTime) Required, 2], [Property: Habit.Description (string), 3], [Property: Habit.ExecutionDayOfMonth (int?), 4], [Property: Habit.ExecutionDayOfWeek (DayOfWeek?), 5], [Property: Habit.Priority (PriorityLevel) Required, 6], [Property: Habit.Status (HabitStatus) Required, 7], [Property: Habit.TargetCount (int) Required, 8], [Property: Habit.Title (string) Required, 9], [Property: Habit.Type (HabitType) Required, 10], [Property: Habit.UserId (int) Required FK Index, 11] }
+            1 -> 0
+            2 -> Dictionary<IPropertyBase, int> { [Property: HabitLog.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 12], [Property: HabitLog.DoneDate (DateOnly) Required, 13], [Property: HabitLog.HabitId (int) Required FK Index, 14], [Property: HabitLog.Note (string), 15], [Property: HabitLog.Value (int) Required, 16] }
+            3 -> 12
+        SELECT h.Id, h.CategoryId, h.CreatedAt, h.Description, h.ExecutionDayOfMonth, h.ExecutionDayOfWeek, h.Priority, h.Status, h.TargetCount, h.Title, h.Type, h.UserId, h0.Id, h0.DoneDate, h0.HabitId, h0.Note, h0.Value
+        FROM Habits AS h
+        LEFT JOIN HabitLogs AS h0 ON h.Id == h0.HabitId
+        WHERE (h.UserId == @userId) && (h.Status == 1)
+        ORDER BY h.Id ASC) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Client Projections:
+            0 -> Dictionary<IPropertyBase, int> { [Property: Habit.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Habit.CategoryId (int) Required FK Index, 1], [Property: Habit.CreatedAt (DateTime) Required, 2], [Property: Habit.Description (string), 3], [Property: Habit.ExecutionDayOfMonth (int?), 4], [Property: Habit.ExecutionDayOfWeek (DayOfWeek?), 5], [Property: Habit.Priority (PriorityLevel) Required, 6], [Property: Habit.Status (HabitStatus) Required, 7], [Property: Habit.TargetCount (int) Required, 8], [Property: Habit.Title (string) Required, 9], [Property: Habit.Type (HabitType) Required, 10], [Property: Habit.UserId (int) Required FK Index, 11] }
+            1 -> 0
+            2 -> Dictionary<IPropertyBase, int> { [Property: HabitLog.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 12], [Property: HabitLog.DoneDate (DateOnly) Required, 13], [Property: HabitLog.HabitId (int) Required FK Index, 14], [Property: HabitLog.Note (string), 15], [Property: HabitLog.Value (int) Required, 16] }
+            3 -> 12
+        SELECT h.Id, h.CategoryId, h.CreatedAt, h.Description, h.ExecutionDayOfMonth, h.ExecutionDayOfWeek, h.Priority, h.Status, h.TargetCount, h.Title, h.Type, h.UserId, h0.Id, h0.DoneDate, h0.HabitId, h0.Note, h0.Value
+        FROM Habits AS h
+        LEFT JOIN HabitLogs AS h0 ON h.Id == h0.HabitId
+        WHERE (h.UserId == @userId) && (h.Status == 1)
+        ORDER BY h.Id ASC, 
+        False, 
+        MultipleParameters
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        resultContext.Values == null ? 
+        {
+            Habit entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                Habit instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(Habit);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: Habit.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (Habit)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: Habit | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: Habit | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit")]: 
+                            {
+                                return 
+                                {
+                                    Habit instance;
+                                    instance = new Habit();
+                                    instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                    instance.<CategoryId>k__BackingField = dataReader.GetInt32(1);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(2);
+                                    instance.<Description>k__BackingField = dataReader.IsDBNull(3) ? default(string) : dataReader.GetString(3);
+                                    instance.<ExecutionDayOfMonth>k__BackingField = dataReader.IsDBNull(4) ? default(int?) : (int?)dataReader.GetInt32(4);
+                                    instance.<ExecutionDayOfWeek>k__BackingField = dataReader.IsDBNull(5) ? default(DayOfWeek?) : (DayOfWeek?)Invoke(((EnumToNumberConverter<DayOfWeek, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Habit.ExecutionDayOfWeek (DayOfWeek?) | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindProperty("ExecutionDayOfWeek")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(5));
+                                    instance.<Priority>k__BackingField = Invoke(((EnumToNumberConverter<PriorityLevel, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Habit.Priority (PriorityLevel) Required | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindProperty("Priority")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(6));
+                                    instance.<Status>k__BackingField = Invoke(((EnumToNumberConverter<HabitStatus, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Habit.Status (HabitStatus) Required | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindProperty("Status")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(7));
+                                    instance.<TargetCount>k__BackingField = dataReader.GetInt32(8);
+                                    instance.<Title>k__BackingField = dataReader.GetString(9);
+                                    instance.<Type>k__BackingField = Invoke(((EnumToNumberConverter<HabitType, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Habit.Type (HabitType) Required | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindProperty("Type")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(10));
+                                    instance.<UserId>k__BackingField = dataReader.GetInt32(11);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: Habit | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(Habit)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            resultContext.Values = new object[]{ entity };
+            ShaperProcessingExpressionVisitor.InitializeIncludeCollection<Habit, Habit>(
+                collectionId: 0, 
+                queryContext: queryContext, 
+                dbDataReader: dataReader, 
+                resultCoordinator: resultCoordinator, 
+                entity: (Habit)(resultContext.Values[0]), 
+                parentIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+                outerIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+                navigation: [LIFTABLE Constant: Navigation: Habit.Logs (ICollection<HabitLog>) Collection ToDependent HabitLog Inverse: Habit | Resolver: namelessParameter{7} => namelessParameter{7}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindNavigation("Logs")], 
+                clrCollectionAccessor: [LIFTABLE Constant: ClrCollectionAccessor<Habit, ICollection<HabitLog>, HabitLog> | Resolver: namelessParameter{8} => namelessParameter{8}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindNavigation("Logs").GetCollectionAccessor()], 
+                trackingQuery: True, 
+                setLoaded: True);
+        } : default(void);
+        ShaperProcessingExpressionVisitor.PopulateIncludeCollection<Habit, HabitLog>(
+            collectionId: 0, 
+            queryContext: queryContext, 
+            dbDataReader: dataReader, 
+            resultCoordinator: resultCoordinator, 
+            parentIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+            outerIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+            selfIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)dataReader.IsDBNull(12) ? default(int?) : (int?)dataReader.GetInt32(12) }], 
+            parentIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+            outerIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+            selfIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+            innerShaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+            {
+                HabitLog entity;
+                entity = 
+                {
+                    MaterializationContext materializationContext2;
+                    IEntityType entityType2;
+                    HabitLog instance2;
+                    InternalEntityEntry entry2;
+                    bool hasNullKey2;
+                    materializationContext2 = new MaterializationContext(
+                        [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                        queryContext.Context
+                    );
+                    instance2 = default(HabitLog);
+                    entry2 = queryContext.TryGetEntry(
+                        key: [LIFTABLE Constant: Key: HabitLog.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog").FindPrimaryKey()], 
+                        keyValues: new object[]{ dataReader.IsDBNull(12) ? default(object) : (object)dataReader.GetInt32(12) }, 
+                        throwOnNullKey: False, 
+                        hasNullKey: hasNullKey2);
+                    !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+                    {
+                        entityType2 = entry2.EntityType;
+                        return instance2 = (HabitLog)entry2.Entity;
+                    } : 
+                    {
+                        ISnapshot shadowSnapshot2;
+                        shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                        entityType2 = [LIFTABLE Constant: EntityType: HabitLog | Resolver: namelessParameter{9} => namelessParameter{9}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog")];
+                        instance2 = switch (entityType2)
+                        {
+                            case [LIFTABLE Constant: EntityType: HabitLog | Resolver: namelessParameter{10} => namelessParameter{10}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog")]: 
+                                {
+                                    return 
+                                    {
+                                        HabitLog instance;
+                                        instance = new HabitLog();
+                                        instance.<Id>k__BackingField = dataReader.IsDBNull(12) ? default(int) : dataReader.GetInt32(12);
+                                        instance.<DoneDate>k__BackingField = dataReader.IsDBNull(13) ? default(DateOnly) : dataReader.GetFieldValue<DateOnly>(13);
+                                        instance.<HabitId>k__BackingField = dataReader.IsDBNull(14) ? default(int) : dataReader.GetInt32(14);
+                                        instance.<Note>k__BackingField = dataReader.IsDBNull(15) ? default(string) : dataReader.GetString(15);
+                                        instance.<Value>k__BackingField = dataReader.IsDBNull(16) ? default(int) : dataReader.GetInt32(16);
+                                        (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                            context: materializationContext2.Context, 
+                                            entity: instance, 
+                                            queryTrackingBehavior: TrackAll, 
+                                            structuralType: [LIFTABLE Constant: EntityType: HabitLog | Resolver: namelessParameter{11} => namelessParameter{11}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog")]) : default(void);
+                                        return instance;
+                                    }}
+                            default: 
+                                default(HabitLog)
+                        }
+                        ;
+                        entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                            entityType: entityType2, 
+                            entity: instance2, 
+                            snapshot: shadowSnapshot2);
+                        return instance2;
+                    } : default(void);
+                    return instance2;
+                };
+                return entity;
+            }, 
+            inverseNavigation: [LIFTABLE Constant: Navigation: HabitLog.Habit (Habit) Required ToPrincipal Habit Inverse: Logs | Resolver: namelessParameter{12} => namelessParameter{12}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog").FindNavigation("Habit")], 
+            fixup: (namelessParameter{13}, namelessParameter{14}) => 
+            {
+                [LIFTABLE Constant: ClrCollectionAccessor<Habit, ICollection<HabitLog>, HabitLog> | Resolver: namelessParameter{15} => namelessParameter{15}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindNavigation("Logs").GetCollectionAccessor()].Add(
+                    entity: namelessParameter{13}, 
+                    value: namelessParameter{14}, 
+                    forMaterialization: True);
+                return namelessParameter{14}.<Habit>k__BackingField = namelessParameter{13};
+            }, 
+            trackingQuery: True);
+        return IsTrue(resultCoordinator.ResultReady)
+         ? (Habit)(resultContext.Values[0]) : default(Habit);
+    }, 
+    contextType: HabitTrakerApi.DbContext.AppDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2026-08-10 12:42:35.762 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:35.812 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:35.822 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:42:35.831 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (8ms).
+2026-08-10 12:42:35.838 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (15ms).
+2026-08-10 12:42:35.851 +03:00 [DBG] Executing DbCommand [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[CategoryId], [h].[CreatedAt], [h].[Description], [h].[ExecutionDayOfMonth], [h].[ExecutionDayOfWeek], [h].[Priority], [h].[Status], [h].[TargetCount], [h].[Title], [h].[Type], [h].[UserId], [h0].[Id], [h0].[DoneDate], [h0].[HabitId], [h0].[Note], [h0].[Value]
+FROM [Habits] AS [h]
+LEFT JOIN [HabitLogs] AS [h0] ON [h].[Id] = [h0].[HabitId]
+WHERE [h].[UserId] = @userId AND [h].[Status] = 1
+ORDER BY [h].[Id]
+2026-08-10 12:42:35.898 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[CategoryId], [h].[CreatedAt], [h].[Description], [h].[ExecutionDayOfMonth], [h].[ExecutionDayOfWeek], [h].[Priority], [h].[Status], [h].[TargetCount], [h].[Title], [h].[Type], [h].[UserId], [h0].[Id], [h0].[DoneDate], [h0].[HabitId], [h0].[Note], [h0].[Value]
+FROM [Habits] AS [h]
+LEFT JOIN [HabitLogs] AS [h0] ON [h].[Id] = [h0].[HabitId]
+WHERE [h].[UserId] = @userId AND [h].[Status] = 1
+ORDER BY [h].[Id]
+2026-08-10 12:42:36.106 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:36.242 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:36.310 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:36.347 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:36.372 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:36.401 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:36.417 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:36.422 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:36.432 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 466ms reading results.
+2026-08-10 12:42:36.449 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:36.461 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (11ms).
+2026-08-10 12:42:37.977 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-10 12:42:37.984 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:37.990 +03:00 [DBG] Disposed connection to database '' on server '' (6ms).
+2026-08-10 12:42:44.118 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-10 12:42:44.138 +03:00 [DBG] Creating DbConnection.
+2026-08-10 12:42:44.142 +03:00 [DBG] Created DbConnection. (4ms).
+2026-08-10 12:42:44.153 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:44.167 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:44.183 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:42:44.201 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (17ms).
+2026-08-10 12:42:44.219 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (35ms).
+2026-08-10 12:42:44.233 +03:00 [DBG] Executing DbCommand [Parameters=[@chatId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[ChatId] = @chatId
+2026-08-10 12:42:44.260 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@chatId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[ChatId] = @chatId
+2026-08-10 12:42:44.275 +03:00 [DBG] Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:44.290 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:44.297 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 22ms reading results.
+2026-08-10 12:42:44.305 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:44.313 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (7ms).
+2026-08-10 12:42:44.338 +03:00 [DBG] Compiling query expression: 
+'DbSet<Habit>()
+    .Include(h => h.Logs)
+    .Where(h => h.UserId == @userId)'
+2026-08-10 12:42:44.348 +03:00 [DBG] Including navigation: 'Habit.Logs'.
+2026-08-10 12:42:44.393 +03:00 [DBG] Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<Habit>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> Dictionary<IPropertyBase, int> { [Property: Habit.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Habit.CategoryId (int) Required FK Index, 1], [Property: Habit.CreatedAt (DateTime) Required, 2], [Property: Habit.Description (string), 3], [Property: Habit.ExecutionDayOfMonth (int?), 4], [Property: Habit.ExecutionDayOfWeek (DayOfWeek?), 5], [Property: Habit.Priority (PriorityLevel) Required, 6], [Property: Habit.Status (HabitStatus) Required, 7], [Property: Habit.TargetCount (int) Required, 8], [Property: Habit.Title (string) Required, 9], [Property: Habit.Type (HabitType) Required, 10], [Property: Habit.UserId (int) Required FK Index, 11] }
+            1 -> 0
+            2 -> Dictionary<IPropertyBase, int> { [Property: HabitLog.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 12], [Property: HabitLog.DoneDate (DateOnly) Required, 13], [Property: HabitLog.HabitId (int) Required FK Index, 14], [Property: HabitLog.Note (string), 15], [Property: HabitLog.Value (int) Required, 16] }
+            3 -> 12
+        SELECT h.Id, h.CategoryId, h.CreatedAt, h.Description, h.ExecutionDayOfMonth, h.ExecutionDayOfWeek, h.Priority, h.Status, h.TargetCount, h.Title, h.Type, h.UserId, h0.Id, h0.DoneDate, h0.HabitId, h0.Note, h0.Value
+        FROM Habits AS h
+        LEFT JOIN HabitLogs AS h0 ON h.Id == h0.HabitId
+        WHERE h.UserId == @userId
+        ORDER BY h.Id ASC) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Client Projections:
+            0 -> Dictionary<IPropertyBase, int> { [Property: Habit.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Habit.CategoryId (int) Required FK Index, 1], [Property: Habit.CreatedAt (DateTime) Required, 2], [Property: Habit.Description (string), 3], [Property: Habit.ExecutionDayOfMonth (int?), 4], [Property: Habit.ExecutionDayOfWeek (DayOfWeek?), 5], [Property: Habit.Priority (PriorityLevel) Required, 6], [Property: Habit.Status (HabitStatus) Required, 7], [Property: Habit.TargetCount (int) Required, 8], [Property: Habit.Title (string) Required, 9], [Property: Habit.Type (HabitType) Required, 10], [Property: Habit.UserId (int) Required FK Index, 11] }
+            1 -> 0
+            2 -> Dictionary<IPropertyBase, int> { [Property: HabitLog.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 12], [Property: HabitLog.DoneDate (DateOnly) Required, 13], [Property: HabitLog.HabitId (int) Required FK Index, 14], [Property: HabitLog.Note (string), 15], [Property: HabitLog.Value (int) Required, 16] }
+            3 -> 12
+        SELECT h.Id, h.CategoryId, h.CreatedAt, h.Description, h.ExecutionDayOfMonth, h.ExecutionDayOfWeek, h.Priority, h.Status, h.TargetCount, h.Title, h.Type, h.UserId, h0.Id, h0.DoneDate, h0.HabitId, h0.Note, h0.Value
+        FROM Habits AS h
+        LEFT JOIN HabitLogs AS h0 ON h.Id == h0.HabitId
+        WHERE h.UserId == @userId
+        ORDER BY h.Id ASC, 
+        False, 
+        MultipleParameters
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        resultContext.Values == null ? 
+        {
+            Habit entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                Habit instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(Habit);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: Habit.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (Habit)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: Habit | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: Habit | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit")]: 
+                            {
+                                return 
+                                {
+                                    Habit instance;
+                                    instance = new Habit();
+                                    instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                    instance.<CategoryId>k__BackingField = dataReader.GetInt32(1);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(2);
+                                    instance.<Description>k__BackingField = dataReader.IsDBNull(3) ? default(string) : dataReader.GetString(3);
+                                    instance.<ExecutionDayOfMonth>k__BackingField = dataReader.IsDBNull(4) ? default(int?) : (int?)dataReader.GetInt32(4);
+                                    instance.<ExecutionDayOfWeek>k__BackingField = dataReader.IsDBNull(5) ? default(DayOfWeek?) : (DayOfWeek?)Invoke(((EnumToNumberConverter<DayOfWeek, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Habit.ExecutionDayOfWeek (DayOfWeek?) | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindProperty("ExecutionDayOfWeek")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(5));
+                                    instance.<Priority>k__BackingField = Invoke(((EnumToNumberConverter<PriorityLevel, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Habit.Priority (PriorityLevel) Required | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindProperty("Priority")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(6));
+                                    instance.<Status>k__BackingField = Invoke(((EnumToNumberConverter<HabitStatus, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Habit.Status (HabitStatus) Required | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindProperty("Status")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(7));
+                                    instance.<TargetCount>k__BackingField = dataReader.GetInt32(8);
+                                    instance.<Title>k__BackingField = dataReader.GetString(9);
+                                    instance.<Type>k__BackingField = Invoke(((EnumToNumberConverter<HabitType, int>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Habit.Type (HabitType) Required | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindProperty("Type")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetInt32(10));
+                                    instance.<UserId>k__BackingField = dataReader.GetInt32(11);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: Habit | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(Habit)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            resultContext.Values = new object[]{ entity };
+            ShaperProcessingExpressionVisitor.InitializeIncludeCollection<Habit, Habit>(
+                collectionId: 0, 
+                queryContext: queryContext, 
+                dbDataReader: dataReader, 
+                resultCoordinator: resultCoordinator, 
+                entity: (Habit)(resultContext.Values[0]), 
+                parentIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+                outerIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+                navigation: [LIFTABLE Constant: Navigation: Habit.Logs (ICollection<HabitLog>) Collection ToDependent HabitLog Inverse: Habit | Resolver: namelessParameter{7} => namelessParameter{7}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindNavigation("Logs")], 
+                clrCollectionAccessor: [LIFTABLE Constant: ClrCollectionAccessor<Habit, ICollection<HabitLog>, HabitLog> | Resolver: namelessParameter{8} => namelessParameter{8}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindNavigation("Logs").GetCollectionAccessor()], 
+                trackingQuery: True, 
+                setLoaded: True);
+        } : default(void);
+        ShaperProcessingExpressionVisitor.PopulateIncludeCollection<Habit, HabitLog>(
+            collectionId: 0, 
+            queryContext: queryContext, 
+            dbDataReader: dataReader, 
+            resultCoordinator: resultCoordinator, 
+            parentIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+            outerIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+            selfIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)dataReader.IsDBNull(12) ? default(int?) : (int?)dataReader.GetInt32(12) }], 
+            parentIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+            outerIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+            selfIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+            innerShaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+            {
+                HabitLog entity;
+                entity = 
+                {
+                    MaterializationContext materializationContext2;
+                    IEntityType entityType2;
+                    HabitLog instance2;
+                    InternalEntityEntry entry2;
+                    bool hasNullKey2;
+                    materializationContext2 = new MaterializationContext(
+                        [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                        queryContext.Context
+                    );
+                    instance2 = default(HabitLog);
+                    entry2 = queryContext.TryGetEntry(
+                        key: [LIFTABLE Constant: Key: HabitLog.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog").FindPrimaryKey()], 
+                        keyValues: new object[]{ dataReader.IsDBNull(12) ? default(object) : (object)dataReader.GetInt32(12) }, 
+                        throwOnNullKey: False, 
+                        hasNullKey: hasNullKey2);
+                    !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+                    {
+                        entityType2 = entry2.EntityType;
+                        return instance2 = (HabitLog)entry2.Entity;
+                    } : 
+                    {
+                        ISnapshot shadowSnapshot2;
+                        shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                        entityType2 = [LIFTABLE Constant: EntityType: HabitLog | Resolver: namelessParameter{9} => namelessParameter{9}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog")];
+                        instance2 = switch (entityType2)
+                        {
+                            case [LIFTABLE Constant: EntityType: HabitLog | Resolver: namelessParameter{10} => namelessParameter{10}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog")]: 
+                                {
+                                    return 
+                                    {
+                                        HabitLog instance;
+                                        instance = new HabitLog();
+                                        instance.<Id>k__BackingField = dataReader.IsDBNull(12) ? default(int) : dataReader.GetInt32(12);
+                                        instance.<DoneDate>k__BackingField = dataReader.IsDBNull(13) ? default(DateOnly) : dataReader.GetFieldValue<DateOnly>(13);
+                                        instance.<HabitId>k__BackingField = dataReader.IsDBNull(14) ? default(int) : dataReader.GetInt32(14);
+                                        instance.<Note>k__BackingField = dataReader.IsDBNull(15) ? default(string) : dataReader.GetString(15);
+                                        instance.<Value>k__BackingField = dataReader.IsDBNull(16) ? default(int) : dataReader.GetInt32(16);
+                                        (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                            context: materializationContext2.Context, 
+                                            entity: instance, 
+                                            queryTrackingBehavior: TrackAll, 
+                                            structuralType: [LIFTABLE Constant: EntityType: HabitLog | Resolver: namelessParameter{11} => namelessParameter{11}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog")]) : default(void);
+                                        return instance;
+                                    }}
+                            default: 
+                                default(HabitLog)
+                        }
+                        ;
+                        entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                            entityType: entityType2, 
+                            entity: instance2, 
+                            snapshot: shadowSnapshot2);
+                        return instance2;
+                    } : default(void);
+                    return instance2;
+                };
+                return entity;
+            }, 
+            inverseNavigation: [LIFTABLE Constant: Navigation: HabitLog.Habit (Habit) Required ToPrincipal Habit Inverse: Logs | Resolver: namelessParameter{12} => namelessParameter{12}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.HabitLog").FindNavigation("Habit")], 
+            fixup: (namelessParameter{13}, namelessParameter{14}) => 
+            {
+                [LIFTABLE Constant: ClrCollectionAccessor<Habit, ICollection<HabitLog>, HabitLog> | Resolver: namelessParameter{15} => namelessParameter{15}.Dependencies.Model.FindEntityType("HabitTrakerApi.Models.Data.Habit").FindNavigation("Logs").GetCollectionAccessor()].Add(
+                    entity: namelessParameter{13}, 
+                    value: namelessParameter{14}, 
+                    forMaterialization: True);
+                return namelessParameter{14}.<Habit>k__BackingField = namelessParameter{13};
+            }, 
+            trackingQuery: True);
+        return IsTrue(resultCoordinator.ResultReady)
+         ? (Habit)(resultContext.Values[0]) : default(Habit);
+    }, 
+    contextType: HabitTrakerApi.DbContext.AppDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2026-08-10 12:42:44.425 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:44.433 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:44.438 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:42:44.443 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2026-08-10 12:42:44.455 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (16ms).
+2026-08-10 12:42:44.460 +03:00 [DBG] Executing DbCommand [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[CategoryId], [h].[CreatedAt], [h].[Description], [h].[ExecutionDayOfMonth], [h].[ExecutionDayOfWeek], [h].[Priority], [h].[Status], [h].[TargetCount], [h].[Title], [h].[Type], [h].[UserId], [h0].[Id], [h0].[DoneDate], [h0].[HabitId], [h0].[Note], [h0].[Value]
+FROM [Habits] AS [h]
+LEFT JOIN [HabitLogs] AS [h0] ON [h].[Id] = [h0].[HabitId]
+WHERE [h].[UserId] = @userId
+ORDER BY [h].[Id]
+2026-08-10 12:42:44.485 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[CategoryId], [h].[CreatedAt], [h].[Description], [h].[ExecutionDayOfMonth], [h].[ExecutionDayOfWeek], [h].[Priority], [h].[Status], [h].[TargetCount], [h].[Title], [h].[Type], [h].[UserId], [h0].[Id], [h0].[DoneDate], [h0].[HabitId], [h0].[Note], [h0].[Value]
+FROM [Habits] AS [h]
+LEFT JOIN [HabitLogs] AS [h0] ON [h].[Id] = [h0].[HabitId]
+WHERE [h].[UserId] = @userId
+ORDER BY [h].[Id]
+2026-08-10 12:42:44.522 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:44.562 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:44.583 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:44.587 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:44.592 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:44.597 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:44.601 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:44.605 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:44.629 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 109ms reading results.
+2026-08-10 12:42:44.655 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:44.665 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (9ms).
+2026-08-10 12:42:44.919 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-10 12:42:44.923 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:44.928 +03:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2026-08-10 12:42:47.081 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-10 12:42:47.091 +03:00 [DBG] Creating DbConnection.
+2026-08-10 12:42:47.093 +03:00 [DBG] Created DbConnection. (2ms).
+2026-08-10 12:42:47.096 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:47.099 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:47.103 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:42:47.108 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2026-08-10 12:42:47.115 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (11ms).
+2026-08-10 12:42:47.121 +03:00 [DBG] Executing DbCommand [Parameters=[@chatId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[ChatId] = @chatId
+2026-08-10 12:42:47.134 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@chatId='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ChatId], [u].[CreatedAt], [u].[Email], [u].[Login], [u].[Password], [u].[PendingChatId], [u].[Role], [u].[TelegramAuthState]
+FROM [Users] AS [u]
+WHERE [u].[ChatId] = @chatId
+2026-08-10 12:42:47.139 +03:00 [DBG] Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:47.142 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:47.151 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 12ms reading results.
+2026-08-10 12:42:47.156 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:47.163 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (6ms).
+2026-08-10 12:42:47.168 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:47.173 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:47.177 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:42:47.182 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (5ms).
+2026-08-10 12:42:47.186 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (9ms).
+2026-08-10 12:42:47.191 +03:00 [DBG] Executing DbCommand [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[CategoryId], [h].[CreatedAt], [h].[Description], [h].[ExecutionDayOfMonth], [h].[ExecutionDayOfWeek], [h].[Priority], [h].[Status], [h].[TargetCount], [h].[Title], [h].[Type], [h].[UserId], [h0].[Id], [h0].[DoneDate], [h0].[HabitId], [h0].[Note], [h0].[Value]
+FROM [Habits] AS [h]
+LEFT JOIN [HabitLogs] AS [h0] ON [h].[Id] = [h0].[HabitId]
+WHERE [h].[UserId] = @userId AND [h].[Status] = 1
+ORDER BY [h].[Id]
+2026-08-10 12:42:47.210 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[CategoryId], [h].[CreatedAt], [h].[Description], [h].[ExecutionDayOfMonth], [h].[ExecutionDayOfWeek], [h].[Priority], [h].[Status], [h].[TargetCount], [h].[Title], [h].[Type], [h].[UserId], [h0].[Id], [h0].[DoneDate], [h0].[HabitId], [h0].[Note], [h0].[Value]
+FROM [Habits] AS [h]
+LEFT JOIN [HabitLogs] AS [h0] ON [h].[Id] = [h0].[HabitId]
+WHERE [h].[UserId] = @userId AND [h].[Status] = 1
+ORDER BY [h].[Id]
+2026-08-10 12:42:47.219 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:47.223 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:47.226 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:47.231 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:47.237 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:47.241 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:47.247 +03:00 [DBG] Context 'AppDbContext' started tracking 'Habit' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:42:47.251 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:47.257 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 37ms reading results.
+2026-08-10 12:42:47.262 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:47.267 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (5ms).
+2026-08-10 12:42:48.482 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-10 12:42:48.497 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:42:48.506 +03:00 [DBG] Disposed connection to database '' on server '' (9ms).
+2026-08-10 12:43:07.392 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-10 12:43:07.403 +03:00 [DBG] Compiling query expression: 
+'DbSet<HabitLog>()
+    .Any(l => l.HabitId == @habitId && l.DoneDate == @today)'
+2026-08-10 12:43:07.415 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM HabitLogs AS h
+                WHERE (h.HabitId == @habitId) && (h.DoneDate == @today))) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM HabitLogs AS h
+                WHERE (h.HabitId == @habitId) && (h.DoneDate == @today)), 
+            False, 
+            MultipleParameters
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: HabitTrakerApi.DbContext.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-10 12:43:07.427 +03:00 [DBG] Creating DbConnection.
+2026-08-10 12:43:07.429 +03:00 [DBG] Created DbConnection. (2ms).
+2026-08-10 12:43:07.433 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:07.454 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:07.466 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:43:07.470 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2026-08-10 12:43:07.479 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (12ms).
+2026-08-10 12:43:07.486 +03:00 [DBG] Executing DbCommand [Parameters=[@habitId='?' (DbType = Int32), @today='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HabitLogs] AS [h]
+        WHERE [h].[HabitId] = @habitId AND [h].[DoneDate] = @today) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-10 12:43:07.512 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@habitId='?' (DbType = Int32), @today='?' (DbType = Date)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [HabitLogs] AS [h]
+        WHERE [h].[HabitId] = @habitId AND [h].[DoneDate] = @today) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-10 12:43:07.518 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:07.528 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 9ms reading results.
+2026-08-10 12:43:07.532 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:07.537 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (4ms).
+2026-08-10 12:43:07.614 +03:00 [DBG] 'AppDbContext' generated a temporary value for the property 'HabitLog.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:43:07.650 +03:00 [DBG] Context 'AppDbContext' started tracking 'HabitLog' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:43:07.670 +03:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2026-08-10 12:43:07.684 +03:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2026-08-10 12:43:07.743 +03:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2026-08-10 12:43:07.903 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:07.915 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:07.941 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:43:07.958 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (17ms).
+2026-08-10 12:43:07.965 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (24ms).
+2026-08-10 12:43:07.978 +03:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Date), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [HabitLogs] ([DoneDate], [HabitId], [Note], [Value])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2026-08-10 12:43:08.028 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@p0='?' (DbType = Date), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [HabitLogs] ([DoneDate], [HabitId], [Note], [Value])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2026-08-10 12:43:08.076 +03:00 [DBG] The foreign key property 'HabitLog.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2026-08-10 12:43:08.086 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:08.091 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 48ms reading results.
+2026-08-10 12:43:08.096 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:08.099 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (2ms).
+2026-08-10 12:43:08.131 +03:00 [DBG] An entity of type 'HabitLog' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-10 12:43:08.143 +03:00 [DBG] SaveChanges completed for 'AppDbContext' with 1 entities written to the database.
+2026-08-10 12:43:08.161 +03:00 [DBG] Compiling query expression: 
+'DbSet<HabitLog>()
+    .Where(l => l.HabitId == @habitId)
+    .Select(l => l.DoneDate)
+    .OrderByDescending(d => d)'
+2026-08-10 12:43:08.185 +03:00 [DBG] Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<DateOnly>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT h.DoneDate
+        FROM HabitLogs AS h
+        WHERE h.HabitId == @habitId
+        ORDER BY h.DoneDate DESC) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT h.DoneDate
+        FROM HabitLogs AS h
+        WHERE h.HabitId == @habitId
+        ORDER BY h.DoneDate DESC, 
+        False, 
+        MultipleParameters
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        DateOnly? value1;
+        value1 = (DateOnly?)dataReader.GetFieldValue<DateOnly>(0);
+        return (DateOnly)value1;
+    }, 
+    contextType: HabitTrakerApi.DbContext.AppDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2026-08-10 12:43:08.217 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:08.231 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:08.248 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 12:43:08.263 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (14ms).
+2026-08-10 12:43:08.269 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (20ms).
+2026-08-10 12:43:08.278 +03:00 [DBG] Executing DbCommand [Parameters=[@habitId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[DoneDate]
+FROM [HabitLogs] AS [h]
+WHERE [h].[HabitId] = @habitId
+ORDER BY [h].[DoneDate] DESC
+2026-08-10 12:43:08.300 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@habitId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[DoneDate]
+FROM [HabitLogs] AS [h]
+WHERE [h].[HabitId] = @habitId
+ORDER BY [h].[DoneDate] DESC
+2026-08-10 12:43:08.325 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:08.331 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 15ms reading results.
+2026-08-10 12:43:08.336 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:08.342 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (5ms).
+2026-08-10 12:43:08.600 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-10 12:43:08.604 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 12:43:08.610 +03:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2026-08-10 16:22:07.426 +03:00 [INF] Application is shutting down...
+2026-08-10 16:22:07.496 +03:00 [DBG] Hosting stopping
+2026-08-10 16:22:07.743 +03:00 [DBG] Stopping bus instances: IBus
+2026-08-10 16:22:07.764 +03:00 [DBG] Stopping bus: "loopback://localhost/"
+2026-08-10 16:22:07.796 +03:00 [DBG] Endpoint Stopping: "loopback://localhost/TelegramNotification"
+2026-08-10 16:22:07.841 +03:00 [DBG] Endpoint Stopping: "loopback://localhost/DESKTOP213IU6O_HabitTrakerApi_bus_xoqoyyyezfzrbc6gbdxxpo7qfp"
+2026-08-10 16:22:07.844 +03:00 [DBG] Endpoint Completed: "loopback://localhost/TelegramNotification"
+2026-08-10 16:22:07.844 +03:00 [DBG] Endpoint Completed: "loopback://localhost/DESKTOP213IU6O_HabitTrakerApi_bus_xoqoyyyezfzrbc6gbdxxpo7qfp"
+2026-08-10 16:22:07.888 +03:00 [DBG] Consumer Completed: "loopback://localhost/DESKTOP213IU6O_HabitTrakerApi_bus_xoqoyyyezfzrbc6gbdxxpo7qfp": 0 received, 0 concurrent
+2026-08-10 16:22:07.888 +03:00 [DBG] Consumer Completed: "loopback://localhost/TelegramNotification": 0 received, 0 concurrent
+2026-08-10 16:22:07.930 +03:00 [INF] Bus stopped: "loopback://localhost/"
+2026-08-10 16:22:07.942 +03:00 [DBG] Hosting stopped
+2026-08-10 16:22:29.962 +03:00 [INF] Запуск веб-хоста приложения...
+2026-08-10 16:22:33.407 +03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-08-10 16:22:33.603 +03:00 [INF] Анализ миграций и запуск наполнения базы данных (DbSeeder)...
+2026-08-10 16:22:35.416 +03:00 [DBG] Entity Framework Core 10.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.6' with options: EngineType=SqlServer 
+2026-08-10 16:22:35.947 +03:00 [DBG] Creating DbConnection.
+2026-08-10 16:22:36.044 +03:00 [DBG] Created DbConnection. (90ms).
+2026-08-10 16:22:36.063 +03:00 [DBG] Migrating using database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:36.103 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:36.510 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:36.552 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-10 16:22:36.638 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (63ms).
+2026-08-10 16:22:36.742 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (198ms).
+2026-08-10 16:22:36.781 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-10 16:22:37.109 +03:00 [INF] Executed DbCommand (336ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-10 16:22:37.242 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:37.270 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (23ms).
+2026-08-10 16:22:37.276 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:37.284 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:37.289 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-10 16:22:37.300 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-10 16:22:37.302 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2026-08-10 16:22:37.304 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (4ms).
+2026-08-10 16:22:37.306 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-10 16:22:37.433 +03:00 [INF] Executed DbCommand (127ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-10 16:22:37.562 +03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-08-10 16:22:37.578 +03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-08-10 16:22:37.585 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-10 16:22:37.588 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2026-08-10 16:22:37.592 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (6ms).
+2026-08-10 16:22:37.596 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-10 16:22:37.620 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-10 16:22:37.632 +03:00 [DBG] Committing transaction.
+2026-08-10 16:22:37.645 +03:00 [DBG] Committed transaction.
+2026-08-10 16:22:37.659 +03:00 [DBG] Disposing transaction.
+2026-08-10 16:22:37.684 +03:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-08-10 16:22:37.689 +03:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-08-10 16:22:37.698 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-08-10 16:22:37.709 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (10ms).
+2026-08-10 16:22:37.721 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (22ms).
+2026-08-10 16:22:37.725 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-10 16:22:37.728 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-10 16:22:37.747 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-10 16:22:37.750 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (3ms).
+2026-08-10 16:22:37.753 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (6ms).
+2026-08-10 16:22:37.755 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-10 16:22:37.760 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-10 16:22:37.776 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 16:22:37.778 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2026-08-10 16:22:37.780 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2026-08-10 16:22:37.785 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-10 16:22:37.803 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-10 16:22:37.824 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:37.842 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 31ms reading results.
+2026-08-10 16:22:37.864 +03:00 [INF] No migrations were applied. The database is already up to date.
+2026-08-10 16:22:37.923 +03:00 [DBG] Committing transaction.
+2026-08-10 16:22:37.941 +03:00 [DBG] Committed transaction.
+2026-08-10 16:22:37.959 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-08-10 16:22:37.963 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (4ms).
+2026-08-10 16:22:37.972 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (12ms).
+2026-08-10 16:22:37.978 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-10 16:22:37.988 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-10 16:22:37.993 +03:00 [DBG] Disposing transaction.
+2026-08-10 16:22:37.996 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:38.004 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (8ms).
+2026-08-10 16:22:38.123 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2026-08-10 16:22:38.443 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u), 
+            False, 
+            MultipleParameters
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: HabitTrakerApi.DbContext.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-10 16:22:38.545 +03:00 [DBG] Opening connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:38.547 +03:00 [DBG] Opened connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:38.549 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-10 16:22:38.551 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-08-10 16:22:38.554 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2026-08-10 16:22:38.557 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-10 16:22:38.573 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-10 16:22:38.587 +03:00 [DBG] Closing data reader to 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:38.590 +03:00 [DBG] A data reader for 'HabitTraker' on server 'DESKTOP-213IU6O' is being disposed after spending 11ms reading results.
+2026-08-10 16:22:38.593 +03:00 [DBG] Closing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:38.596 +03:00 [DBG] Closed connection to database 'HabitTraker' on server 'DESKTOP-213IU6O' (2ms).
+2026-08-10 16:22:38.604 +03:00 [INF] База данных успешно проверена и заполнена тестовыми данными!
+2026-08-10 16:22:38.611 +03:00 [DBG] 'AppDbContext' disposed.
+2026-08-10 16:22:38.622 +03:00 [DBG] Disposing connection to database 'HabitTraker' on server 'DESKTOP-213IU6O'.
+2026-08-10 16:22:38.627 +03:00 [DBG] Disposed connection to database '' on server '' (6ms).
+2026-08-10 16:22:38.726 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-08-10 16:22:38.856 +03:00 [INF] API успешно сконфигурировано и начинает слушать порты...
+2026-08-10 16:22:38.861 +03:00 [DBG] Hosting starting
+2026-08-10 16:22:38.997 +03:00 [INF] Configured endpoint TelegramNotification, Consumer: HabitTrakerApi.Messaging.Consumers.TelegramNotificationConsumer
+2026-08-10 16:22:39.226 +03:00 [INF] User profile is available. Using 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-10 16:22:39.243 +03:00 [DBG] Starting bus instances: IBus
+2026-08-10 16:22:39.252 +03:00 [DBG] Starting bus: "loopback://localhost/"
+2026-08-10 16:22:39.342 +03:00 [DBG] Endpoint Ready: "loopback://localhost/TelegramNotification"
+2026-08-10 16:22:39.342 +03:00 [DBG] Endpoint Ready: "loopback://localhost/DESKTOP213IU6O_HabitTrakerApi_bus_4y3oyyyezfzry8hrbdxxpauuni"
+2026-08-10 16:22:39.348 +03:00 [DBG] Reading data from file 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys\key-0f2061ab-bbee-420a-8dc9-7a86076fd805.xml'.
+2026-08-10 16:22:39.351 +03:00 [INF] Bus started: "loopback://localhost/"
+2026-08-10 16:22:39.362 +03:00 [DBG] Reading data from file 'C:\Users\ITService\AppData\Local\ASP.NET\DataProtection-Keys\key-ff7eef80-ca71-4115-99c5-9ffb8b18ba77.xml'.
+2026-08-10 16:22:39.377 +03:00 [DBG] Found key {0f2061ab-bbee-420a-8dc9-7a86076fd805}.
+2026-08-10 16:22:39.402 +03:00 [DBG] Found key {ff7eef80-ca71-4115-99c5-9ffb8b18ba77}.
+2026-08-10 16:22:39.424 +03:00 [DBG] Considering key {0f2061ab-bbee-420a-8dc9-7a86076fd805} with expiration date 2026-08-28 05:34:58Z as default key.
+2026-08-10 16:22:39.429 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-10 16:22:39.438 +03:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-08-10 16:22:39.443 +03:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-10 16:22:39.454 +03:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-08-10 16:22:39.460 +03:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-08-10 16:22:39.475 +03:00 [DBG] Using key {0f2061ab-bbee-420a-8dc9-7a86076fd805} as the default key.
+2026-08-10 16:22:39.478 +03:00 [DBG] Key ring with default key {0f2061ab-bbee-420a-8dc9-7a86076fd805} was loaded during application startup.
+2026-08-10 16:22:39.532 +03:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-08-10 16:22:39.537 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-08-10 16:22:41.541 +03:00 [INF] Now listening on: http://localhost:5203
+2026-08-10 16:22:41.545 +03:00 [DBG] Loaded hosting startup assembly HabitTrakerApi
+2026-08-10 16:22:41.548 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-10 16:22:41.553 +03:00 [INF] Hosting environment: Development
+2026-08-10 16:22:41.555 +03:00 [INF] Content root path: C:\Users\ITService\Desktop\HabitTracker\HabitTrakerApi
+2026-08-10 16:22:41.556 +03:00 [DBG] Hosting started
+2026-08-10 16:22:46.645 +03:00 [DBG] Connection id "0HNNMS9RT2E6A" accepted.
+2026-08-10 16:22:47.094 +03:00 [DBG] Connection id "0HNNMS9RT2E6B" accepted.
+2026-08-10 16:22:47.118 +03:00 [DBG] Connection id "0HNNMS9RT2E6A" started.
+2026-08-10 16:22:47.675 +03:00 [DBG] Connection id "0HNNMS9RT2E6B" started.
+2026-08-10 16:22:47.928 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/ - null null
+2026-08-10 16:22:48.032 +03:00 [DBG] No candidates found for the request path '/'
+2026-08-10 16:22:48.168 +03:00 [DBG] Request did not match any endpoints
+2026-08-10 16:22:48.465 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-08-10 16:22:48.587 +03:00 [DBG] Connection id "0HNNMS9RT2E6B" completed keep alive response.
+2026-08-10 16:22:48.618 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/ - 404 0 null 696.1116ms
+2026-08-10 16:22:48.718 +03:00 [DBG] Connection id "0HNNMS9RT2E6A" received FIN.
+2026-08-10 16:22:48.724 +03:00 [DBG] Connection id "0HNNMS9RT2E6B" received FIN.
+2026-08-10 16:22:48.893 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5203/, Response status code: 404
+2026-08-10 16:22:48.894 +03:00 [DBG] Connection id "0HNNMS9RT2E6A" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-10 16:22:48.894 +03:00 [DBG] Connection id "0HNNMS9RT2E6B" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-10 16:22:48.901 +03:00 [DBG] Connection id "0HNNMS9RT2E6A" disconnecting.
+2026-08-10 16:22:48.906 +03:00 [DBG] Connection id "0HNNMS9RT2E6B" disconnecting.
+2026-08-10 16:22:48.929 +03:00 [DBG] Connection id "0HNNMS9RT2E6A" stopped.
+2026-08-10 16:22:48.932 +03:00 [DBG] Connection id "0HNNMS9RT2E6B" stopped.
+2026-08-10 16:22:50.555 +03:00 [DBG] Connection id "0HNNMS9RT2E6C" accepted.
+2026-08-10 16:22:50.564 +03:00 [DBG] Connection id "0HNNMS9RT2E6C" started.
+2026-08-10 16:22:50.575 +03:00 [DBG] Connection id "0HNNMS9RT2E6D" accepted.
+2026-08-10 16:22:50.581 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/ - null null
+2026-08-10 16:22:50.610 +03:00 [DBG] Connection id "0HNNMS9RT2E6D" started.
+2026-08-10 16:22:50.617 +03:00 [DBG] No candidates found for the request path '/'
+2026-08-10 16:22:50.619 +03:00 [DBG] Request did not match any endpoints
+2026-08-10 16:22:50.632 +03:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-08-10 16:22:50.634 +03:00 [DBG] Connection id "0HNNMS9RT2E6C" completed keep alive response.
+2026-08-10 16:22:50.636 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/ - 404 0 null 55.2826ms
+2026-08-10 16:22:50.643 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5203/, Response status code: 404
+2026-08-10 16:22:53.060 +03:00 [DBG] Connection id "0HNNMS9RT2E6D" received FIN.
+2026-08-10 16:22:53.061 +03:00 [DBG] Connection id "0HNNMS9RT2E6C" received FIN.
+2026-08-10 16:22:53.082 +03:00 [DBG] Connection id "0HNNMS9RT2E6D" disconnecting.
+2026-08-10 16:22:53.085 +03:00 [DBG] Connection id "0HNNMS9RT2E6C" disconnecting.
+2026-08-10 16:22:53.098 +03:00 [DBG] Connection id "0HNNMS9RT2E6D" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-10 16:22:53.104 +03:00 [DBG] Connection id "0HNNMS9RT2E6C" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-10 16:22:53.119 +03:00 [DBG] Connection id "0HNNMS9RT2E6D" stopped.
+2026-08-10 16:22:53.148 +03:00 [DBG] Connection id "0HNNMS9RT2E6C" stopped.
+2026-08-10 16:22:57.354 +03:00 [DBG] Connection id "0HNNMS9RT2E6E" accepted.
+2026-08-10 16:22:57.408 +03:00 [DBG] Connection id "0HNNMS9RT2E6E" started.
+2026-08-10 16:22:57.412 +03:00 [DBG] Connection id "0HNNMS9RT2E6F" accepted.
+2026-08-10 16:22:57.499 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/index.html - null null
+2026-08-10 16:22:57.505 +03:00 [DBG] Connection id "0HNNMS9RT2E6F" started.
+2026-08-10 16:22:57.523 +03:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2026-08-10 16:22:57.531 +03:00 [DBG] Request did not match any endpoints
+2026-08-10 16:22:57.645 +03:00 [DBG] Connection id "0HNNMS9RT2E6E" completed keep alive response.
+2026-08-10 16:22:57.647 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/index.html - 304 null null 147.5876ms
+2026-08-10 16:22:57.692 +03:00 [DBG] Connection id "0HNNMS9RT2E6G" accepted.
+2026-08-10 16:22:57.699 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-10 16:22:57.699 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/index.css - null null
+2026-08-10 16:22:57.730 +03:00 [DBG] Connection id "0HNNMS9RT2E6H" accepted.
+2026-08-10 16:22:57.730 +03:00 [DBG] Connection id "0HNNMS9RT2E6G" started.
+2026-08-10 16:22:57.735 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2026-08-10 16:22:57.738 +03:00 [DBG] No candidates found for the request path '/swagger/index.css'
+2026-08-10 16:22:57.741 +03:00 [DBG] Connection id "0HNNMS9RT2E6I" accepted.
+2026-08-10 16:22:57.743 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-bundle.js - null null
+2026-08-10 16:22:57.744 +03:00 [DBG] Request did not match any endpoints
+2026-08-10 16:22:57.745 +03:00 [DBG] Request did not match any endpoints
+2026-08-10 16:22:57.747 +03:00 [DBG] Connection id "0HNNMS9RT2E6H" started.
+2026-08-10 16:22:57.754 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2026-08-10 16:22:57.781 +03:00 [DBG] Connection id "0HNNMS9RT2E6E" completed keep alive response.
+2026-08-10 16:22:57.794 +03:00 [DBG] Connection id "0HNNMS9RT2E6F" completed keep alive response.
+2026-08-10 16:22:57.795 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/index.js - null null
+2026-08-10 16:22:57.796 +03:00 [DBG] Request did not match any endpoints
+2026-08-10 16:22:57.797 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/index.css - 304 null null 98.3951ms
+2026-08-10 16:22:57.799 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-standalone-preset.js - 304 null null 100.0831ms
+2026-08-10 16:22:57.802 +03:00 [DBG] No candidates found for the request path '/swagger/index.js'
+2026-08-10 16:22:57.819 +03:00 [DBG] Connection id "0HNNMS9RT2E6G" completed keep alive response.
+2026-08-10 16:22:57.822 +03:00 [DBG] Connection id "0HNNMS9RT2E6I" started.
+2026-08-10 16:22:57.848 +03:00 [DBG] Request did not match any endpoints
+2026-08-10 16:22:57.849 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui-bundle.js - 304 null null 106.4644ms
+2026-08-10 16:22:57.854 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui.css - null null
+2026-08-10 16:22:57.898 +03:00 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2026-08-10 16:22:57.900 +03:00 [DBG] Request did not match any endpoints
+2026-08-10 16:22:57.868 +03:00 [DBG] Connection id "0HNNMS9RT2E6H" completed keep alive response.
+2026-08-10 16:22:57.919 +03:00 [DBG] Connection id "0HNNMS9RT2E6I" completed keep alive response.
+2026-08-10 16:22:57.948 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/swagger-ui.css - 304 null null 94.2147ms
+2026-08-10 16:22:57.922 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/index.js - 304 null null 127.29ms
+2026-08-10 16:22:58.579 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5203/swagger/v1/swagger.json - null null
+2026-08-10 16:22:58.748 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2026-08-10 16:22:58.752 +03:00 [DBG] Request did not match any endpoints
+2026-08-10 16:22:58.797 +03:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-08-10 16:22:58.837 +03:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-08-10 16:22:59.147 +03:00 [DBG] Connection id "0HNNMS9RT2E6I" completed keep alive response.
+2026-08-10 16:22:59.153 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5203/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 574.2028ms
+2026-08-10 16:25:09.746 +03:00 [DBG] Connection id "0HNNMS9RT2E6E" disconnecting.
+2026-08-10 16:25:10.223 +03:00 [DBG] Connection id "0HNNMS9RT2E6F" disconnecting.
+2026-08-10 16:25:10.876 +03:00 [DBG] Connection id "0HNNMS9RT2E6F" stopped.
+2026-08-10 16:25:10.248 +03:00 [DBG] Connection id "0HNNMS9RT2E6G" disconnecting.
+2026-08-10 16:25:10.874 +03:00 [DBG] Connection id "0HNNMS9RT2E6E" stopped.
+2026-08-10 16:25:10.894 +03:00 [DBG] Connection id "0HNNMS9RT2E6F" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-10 16:25:10.881 +03:00 [DBG] Connection id "0HNNMS9RT2E6I" disconnecting.
+2026-08-10 16:25:10.915 +03:00 [DBG] Connection id "0HNNMS9RT2E6I" stopped.
+2026-08-10 16:25:10.248 +03:00 [DBG] Connection id "0HNNMS9RT2E6H" disconnecting.
+2026-08-10 16:25:10.930 +03:00 [DBG] Connection id "0HNNMS9RT2E6H" stopped.
+2026-08-10 16:25:10.932 +03:00 [DBG] Connection id "0HNNMS9RT2E6H" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-10 16:25:10.901 +03:00 [DBG] Connection id "0HNNMS9RT2E6E" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-10 16:25:10.940 +03:00 [DBG] Connection id "0HNNMS9RT2E6I" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-10 16:25:10.884 +03:00 [DBG] Connection id "0HNNMS9RT2E6G" stopped.
+2026-08-10 16:25:10.945 +03:00 [DBG] Connection id "0HNNMS9RT2E6G" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-10 16:58:08.894 +03:00 [INF] Application is shutting down...
+2026-08-10 16:58:08.999 +03:00 [DBG] Hosting stopping
+2026-08-10 16:58:09.100 +03:00 [DBG] Stopping bus instances: IBus
+2026-08-10 16:58:09.115 +03:00 [DBG] Stopping bus: "loopback://localhost/"
+2026-08-10 16:58:09.125 +03:00 [DBG] Endpoint Stopping: "loopback://localhost/TelegramNotification"
+2026-08-10 16:58:09.147 +03:00 [DBG] Endpoint Stopping: "loopback://localhost/DESKTOP213IU6O_HabitTrakerApi_bus_4y3oyyyezfzry8hrbdxxpauuni"
+2026-08-10 16:58:09.148 +03:00 [DBG] Endpoint Completed: "loopback://localhost/TelegramNotification"
+2026-08-10 16:58:09.226 +03:00 [DBG] Endpoint Completed: "loopback://localhost/DESKTOP213IU6O_HabitTrakerApi_bus_4y3oyyyezfzry8hrbdxxpauuni"
+2026-08-10 16:58:09.247 +03:00 [DBG] Consumer Completed: "loopback://localhost/TelegramNotification": 0 received, 0 concurrent
+2026-08-10 16:58:09.247 +03:00 [DBG] Consumer Completed: "loopback://localhost/DESKTOP213IU6O_HabitTrakerApi_bus_4y3oyyyezfzry8hrbdxxpauuni": 0 received, 0 concurrent
+2026-08-10 16:58:09.275 +03:00 [INF] Bus stopped: "loopback://localhost/"
+2026-08-10 16:58:09.283 +03:00 [DBG] Hosting stopped

@@ -10,7 +10,6 @@ public class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<HabitLog> HabitLogs => Set<HabitLog>();
     public DbSet<Category> Categories => Set<Category>();
     public DbSet<Reminder> Reminders => Set<Reminder>();
-
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }

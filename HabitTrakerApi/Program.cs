@@ -115,10 +115,8 @@ try
     builder.Services.AddHttpContextAccessor();
     builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
-    // Сборка приложения
     var app = builder.Build();
 
-    // 3. БЕЗОПАСНАЯ ИНИЦИАЛИЗАЦИЯ И СИДИНГ БАЗЫ ДАННЫХ
     using (var scope = app.Services.CreateScope())
     {
         var services = scope.ServiceProvider;
